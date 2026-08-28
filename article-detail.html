@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — ARTICLE-DETAIL.HTML
+         Page Détail d'un Article
+         Version : 1.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Page détaillée d'un article avec
+                       image d'en-tête, métadonnées, contenu
+                       formaté, partage social, navigation
+                       et articles similaires
+         ============================================================ -->
+    
+    <!-- Métadonnées de base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Lancement du projet de résilience climatique à Masisi | HOPE CHILD-DRC</title>
+    <meta name="description" content="HOPE CHILD-DRC lance officiellement son nouveau projet de renforcement de la résilience climatique dans le village de Bweremana, territoire de Masisi.">
+    <meta name="keywords" content="HOPE CHILD-DRC, article, résilience climatique, agriculture durable, Masisi, Bweremana, RDC, projet">
+    <meta name="author" content="HOPE CHILD-DRC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.hopechilddrc.org/article-detail">
+    <meta property="og:title" content="Lancement du projet de résilience climatique à Masisi | HOPE CHILD-DRC">
+    <meta property="og:description" content="HOPE CHILD-DRC lance son nouveau projet de renforcement de la résilience climatique à Bweremana, Masisi.">
+    <meta property="og:image" content="assets/images/actualites/article-1.jpg">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="article:published_time" content="2024-03-15">
+    <meta property="article:author" content="HOPE CHILD-DRC">
+    <meta property="article:section" content="Projets">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lancement du projet de résilience climatique à Masisi | HOPE CHILD-DRC">
+    <meta name="twitter:description" content="HOPE CHILD-DRC lance son nouveau projet de résilience climatique à Bweremana, Masisi.">
+    <meta name="twitter:image" content="assets/images/actualites/article-1.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Lancement du projet de résilience climatique pour une agriculture durable à Masisi",
+        "description": "HOPE CHILD-DRC lance officiellement son nouveau projet de renforcement de la résilience climatique dans le village de Bweremana, territoire de Masisi.",
+        "image": "assets/images/actualites/article-1.jpg",
+        "datePublished": "2024-03-15",
+        "dateModified": "2024-03-15",
+        "author": {
+            "@type": "NGO",
+            "name": "HOPE CHILD-DRC",
+            "url": "https://www.hopechilddrc.org"
+        },
+        "publisher": {
+            "@type": "NGO",
+            "name": "HOPE CHILD-DRC",
+            "url": "https://www.hopechilddrc.org"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.hopechilddrc.org/article-detail"
+        },
+        "articleSection": "Projets",
+        "locationCreated": {
+            "@type": "Place",
+            "name": "Bweremana, Masisi, Nord-Kivu, RDC"
+        }
+    }
+    </script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Local -->
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/article-detail.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Préchargement -->
+    <link rel="preload" href="assets/css/article-detail.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/article-detail.js" as="script">
+</head>
+<body>
+    
+    <!-- ============================================================
+         CONTENEUR NAVBAR (Injecté par layout.js)
+         ============================================================ -->
+    <div id="navbar-container"></div>
+    
+    <!-- ============================================================
+         CONTENU PRINCIPAL
+         ============================================================ -->
+    <main id="main-content" role="main">
+        
+        <!-- ============================================================
+             HERO + BREADCRUMB
+             ============================================================ -->
+        <section class="page-hero page-hero-compact" id="page-hero" aria-label="Détail de l'article">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            Accueil
+                        </a>
+                        <span class="separator">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <a href="actualites.html">
+                            <i class="fas fa-newspaper"></i>
+                            Actualités
+                        </a>
+                        <span class="separator">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="current">Résilience Climatique</span>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 1 : CONTENU DE L'ARTICLE
+             ============================================================ -->
+        <article class="article-detail-section" aria-label="Contenu de l'article">
+            <div class="container-lg">
+                
+                <!-- En-tête de l'article -->
+                <header class="article-header">
+                    
+                    <!-- Badge catégorie -->
+                    <div class="article-category">
+                        <span class="article-category-badge">
+                            <i class="fas fa-project-diagram"></i>
+                            Projets
+                        </span>
+                    </div>
+                    
+                    <!-- Titre -->
+                    <h1 class="article-title">
+                        Lancement du projet de résilience climatique pour une agriculture durable à Masisi
+                    </h1>
+                    
+                    <!-- Métadonnées -->
+                    <div class="article-meta">
+                        <div class="article-meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>15 Mars 2024</span>
+                        </div>
+                        <div class="article-meta-item">
+                            <i class="fas fa-user"></i>
+                            <span>Équipe HOPE CHILD-DRC</span>
+                        </div>
+                        <div class="article-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>5 min de lecture</span>
+                        </div>
+                        <div class="article-meta-item">
+                            <i class="fas fa-eye"></i>
+                            <span>1 245 vues</span>
+                        </div>
+                    </div>
+                </header>
+                
+                <!-- Image d'en-tête -->
+                <div class="article-hero-image">
+                    <img src="assets/images/actualites/article-1.jpg" alt="Lancement du projet de résilience climatique à Masisi" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'article-image-placeholder\'><i class=\'fas fa-seedling\'></i></div>';">
+                    <div class="article-image-caption">
+                        <i class="fas fa-camera"></i>
+                        Village de Bweremana, Territoire de Masisi, Nord-Kivu
+                    </div>
+                </div>
+                
+                <!-- Contenu de l'article -->
+                <div class="article-content">
+                    
+                    <!-- Introduction -->
+                    <p class="article-lead">
+                        <strong>HOPE CHILD-DRC</strong> lance officiellement son nouveau projet de 
+                        renforcement de la résilience climatique dans le village de Bweremana, 
+                        territoire de Masisi. Ce projet ambitieux vise à promouvoir une agriculture 
+                        durable face aux défis croissants du changement climatique.
+                    </p>
+                    
+                    <!-- Section 1 : Contexte -->
+                    <h2 class="article-heading">
+                        <i class="fas fa-info-circle"></i>
+                        Contexte du Projet
+                    </h2>
+                    
+                    <p class="article-paragraph">
+                        Le changement climatique affecte durement les communautés agricoles du 
+                        territoire de Masisi. Les variations imprévisibles des saisons, la dégradation 
+                        des sols et les événements météorologiques extrêmes menacent la sécurité 
+                        alimentaire des familles qui dépendent de l'agriculture pour leur survie.
+                    </p>
+                    
+                    <p class="article-paragraph">
+                        Le village de <strong>Bweremana</strong>, situé dans le Groupement Mumpfunyi 
+                        Shanga, est particulièrement vulnérable. Les pratiques agricoles traditionnelles 
+                        ne suffisent plus à garantir des récoltes suffisantes pour nourrir les familles. 
+                        Les rendements ont diminué de manière significative au cours des dernières 
+                        années, plongeant de nombreuses familles dans l'insécurité alimentaire.
+                    </p>
+                    
+                    <!-- Citation -->
+                    <blockquote class="article-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>
+                            « Nous avons constaté une dégradation progressive des conditions agricoles 
+                            dans la région. Il était urgent d'agir pour aider ces communautés à 
+                            s'adapter et à renforcer leur résilience face au changement climatique. »
+                        </p>
+                        <cite>— Coordonnateur de HOPE CHILD-DRC</cite>
+                    </blockquote>
+                    
+                    <!-- Section 2 : Objectifs -->
+                    <h2 class="article-heading">
+                        <i class="fas fa-bullseye"></i>
+                        Objectifs du Projet
+                    </h2>
+                    
+                    <p class="article-paragraph">
+                        Le projet poursuit plusieurs objectifs complémentaires :
+                    </p>
+                    
+                    <ul class="article-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>
+                                <strong>Former les agriculteurs</strong> aux techniques agricoles 
+                                durables et résilientes face au changement climatique.
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>
+                                <strong>Introduire des variétés de cultures</strong> résistantes à 
+                                la sécheresse et adaptées aux conditions locales.
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>
+                                <strong>Mettre en place des pratiques</strong> de conservation des 
+                                sols et de gestion durable des terres agricoles.
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>
+                                <strong>Diversifier les sources de revenus</strong> pour les familles 
+                                à travers des activités génératrices de revenus.
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>
+                                <strong>Renforcer la sécurité alimentaire</strong> de la communauté 
+                                de manière durable.
+                            </span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Section 3 : Activités -->
+                    <h2 class="article-heading">
+                        <i class="fas fa-tasks"></i>
+                        Activités Prévues
+                    </h2>
+                    
+                    <p class="article-paragraph">
+                        Plusieurs activités sont prévues dans le cadre de ce projet :
+                    </p>
+                    
+                    <ol class="article-list article-list-ordered">
+                        <li>
+                            <span>
+                                <strong>Sessions de formation</strong> sur les techniques agricoles 
+                                durables et la gestion de l'eau.
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <strong>Distribution de semences</strong> de variétés résistantes 
+                                à la sécheresse.
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <strong>Installation de systèmes d'irrigation</strong> simples et 
+                                durables pour garantir l'accès à l'eau.
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <strong>Création de coopératives agricoles</strong> pour mutualiser 
+                                les ressources.
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <strong>Suivi et évaluation</strong> des impacts sur la sécurité 
+                                alimentaire des familles.
+                            </span>
+                        </li>
+                    </ol>
+                    
+                    <!-- Section 4 : Impact attendu -->
+                    <h2 class="article-heading">
+                        <i class="fas fa-chart-bar"></i>
+                        Impact Attendu
+                    </h2>
+                    
+                    <p class="article-paragraph">
+                        À travers ce projet, HOPE CHILD-DRC ambitionne de :
+                    </p>
+                    
+                    <div class="article-stats-inline">
+                        <div class="article-stat-inline">
+                            <span class="article-stat-number">100+</span>
+                            <span class="article-stat-label">Agriculteurs formés</span>
+                        </div>
+                        <div class="article-stat-inline">
+                            <span class="article-stat-number">5</span>
+                            <span class="article-stat-label">Variétés de semences</span>
+                        </div>
+                        <div class="article-stat-inline">
+                            <span class="article-stat-number">3</span>
+                            <span class="article-stat-label">Systèmes d'irrigation</span>
+                        </div>
+                        <div class="article-stat-inline">
+                            <span class="article-stat-number">80%</span>
+                            <span class="article-stat-label">Sécurité alimentaire améliorée</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 5 : Appel à l'action -->
+                    <div class="article-cta-box">
+                        <div class="article-cta-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="article-cta-content">
+                            <h3>Soutenez ce projet</h3>
+                            <p>
+                                Votre contribution nous aide à renforcer la résilience climatique 
+                                des communautés de Bweremana et à garantir leur sécurité alimentaire.
+                            </p>
+                            <a href="don.html" class="btn btn-accent btn-md">
+                                <i class="fas fa-heart"></i>
+                                Faire un Don
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ============================================================
+                     SECTION 2 : PARTAGE SOCIAL
+                     ============================================================ -->
+                <div class="article-share-section">
+                    <span class="article-share-label">Partager cet article :</span>
+                    <div class="article-share-buttons">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.hopechilddrc.org/article-detail" 
+                           class="share-btn share-facebook" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Partager sur Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.hopechilddrc.org/article-detail" 
+                           class="share-btn share-linkedin" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Partager sur LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=https://www.hopechilddrc.org/article-detail" 
+                           class="share-btn share-twitter" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Partager sur Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://wa.me/?text=https://www.hopechilddrc.org/article-detail" 
+                           class="share-btn share-whatsapp" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Partager sur WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <button class="share-btn share-copy" 
+                                id="copy-link-btn" 
+                                aria-label="Copier le lien">
+                            <i class="fas fa-link"></i>
+                            <span>Copier le lien</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- ============================================================
+                     SECTION 3 : NAVIGATION ARTICLE (PRÉCÉDENT/SUIVANT)
+                     ============================================================ -->
+                <nav class="article-navigation" aria-label="Navigation entre articles">
+                    <a href="actualites.html" class="article-nav-link article-nav-prev">
+                        <i class="fas fa-arrow-left"></i>
+                        <div class="article-nav-content">
+                            <span class="article-nav-label">Article précédent</span>
+                            <span class="article-nav-title">35 jeunes filles formées à Nyiragongo</span>
+                        </div>
+                    </a>
+                    <a href="actualites.html" class="article-nav-link article-nav-next">
+                        <div class="article-nav-content">
+                            <span class="article-nav-label">Article suivant</span>
+                            <span class="article-nav-title">Partenariat renforcé avec FHOVE, VIZAZI CONGO et AVDA</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </nav>
+                
+            </div>
+        </article>
+        
+        <!-- ============================================================
+             SECTION 4 : ARTICLES SIMILAIRES
+             ============================================================ -->
+        <section class="section related-articles-section" id="articles-similaires" aria-label="Articles similaires">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">À lire aussi</span>
+                    <h2 class="section-title">Articles similaires</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="related-articles-grid">
+                    
+                    <!-- Article similaire 1 -->
+                    <article class="related-article-card" data-aos="fade-up" data-delay="0">
+                        <div class="related-article-image">
+                            <img src="assets/images/actualites/article-5.jpg" alt="Partenariat avec FHOVE et AVDA" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'related-image-placeholder\'><i class=\'fas fa-handshake\'></i></div>';">
+                            <span class="related-article-category">Projets</span>
+                        </div>
+                        <div class="related-article-content">
+                            <h3 class="related-article-title">
+                                Partenariat renforcé avec FHOVE, VIZAZI CONGO et AVDA pour la protection de l'enfance
+                            </h3>
+                            <span class="related-article-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                5 Novembre 2023
+                            </span>
+                            <a href="article-detail.html" class="related-article-link">
+                                Lire l'article
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article similaire 2 -->
+                    <article class="related-article-card" data-aos="fade-up" data-delay="150">
+                        <div class="related-article-image">
+                            <img src="assets/images/actualites/article-9.jpg" alt="Éducation des adultes à Rutshuru" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'related-image-placeholder\'><i class=\'fas fa-graduation-cap\'></i></div>';">
+                            <span class="related-article-category">Projets</span>
+                        </div>
+                        <div class="related-article-content">
+                            <h3 class="related-article-title">
+                                L'éducation des adultes comme levier de prévention des violences à Rutshuru
+                            </h3>
+                            <span class="related-article-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                10 Avril 2023
+                            </span>
+                            <a href="article-detail.html" class="related-article-link">
+                                Lire l'article
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article similaire 3 -->
+                    <article class="related-article-card" data-aos="fade-up" data-delay="300">
+                        <div class="related-article-image">
+                            <img src="assets/images/actualites/article-3.jpg" alt="Protection des enfants à Rutshuru" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'related-image-placeholder\'><i class=\'fas fa-shield-alt\'></i></div>';">
+                            <span class="related-article-category">Terrain</span>
+                        </div>
+                        <div class="related-article-content">
+                            <h3 class="related-article-title">
+                                70 acteurs humanitaires formés pour la protection des enfants à Rutshuru
+                            </h3>
+                            <span class="related-article-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                10 Janvier 2024
+                            </span>
+                            <a href="article-detail.html" class="related-article-link">
+                                Lire l'article
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                </div>
+                
+                <!-- Retour aux actualités -->
+                <div class="back-to-news">
+                    <a href="actualites.html" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-arrow-left"></i>
+                        Voir toutes les actualités
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ============================================================
+         CONTENEUR FOOTER (Injecté par layout.js)
+         ============================================================ -->
+    <div id="footer-container"></div>
+    
+    <!-- ============================================================
+         SCRIPTS JAVASCRIPT
+         ============================================================ -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/article-detail.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

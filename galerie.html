@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — GALERIE.HTML (CORRIGÉ)
+         Page Médiathèque / Galerie
+         Version : 2.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Galerie médias avec support vidéo MP4 locale
+         ============================================================ -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Galerie Médias | HOPE CHILD-DRC</title>
+    <meta name="description" content="Découvrez la galerie médias de HOPE CHILD-DRC : photos, vidéos et rapports d'activités en RDC.">
+    <meta name="keywords" content="HOPE CHILD-DRC, galerie, photos, vidéos, rapports, RDC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hc-drc.netlify.app/galerie">
+    <meta property="og:title" content="Galerie Médias | HOPE CHILD-DRC">
+    <meta property="og:description" content="Photos, vidéos et rapports de HOPE CHILD-DRC.">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/galerie.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="preload" href="assets/css/galerie.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/galerie.js" as="script">
+</head>
+<body>
+    
+    <div id="navbar-container"></div>
+    
+    <main id="main-content" role="main">
+        
+        <!-- HERO + BREADCRUMB -->
+        <section class="page-hero" aria-label="Galerie Médias">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+                        <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                        <span class="current">Galerie Médias</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title">Galerie Médias</h1>
+                    <p class="page-hero-subtitle">
+                        Photos, vidéos et rapports de nos actions sur le terrain
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION GALERIE -->
+        <section class="section galerie-section" aria-label="Galerie médias">
+            <div class="container-xl">
+                
+                <!-- Filtres -->
+                <div class="filter-bar galerie-filter-bar" role="tablist" aria-label="Filtres">
+                    <button class="filter-btn active" data-filter="tous" aria-selected="true">
+                        <i class="fas fa-th-large"></i> Tous
+                    </button>
+                    <button class="filter-btn" data-filter="photos" aria-selected="false">
+                        <i class="fas fa-camera"></i> Photos
+                    </button>
+                    <button class="filter-btn" data-filter="videos" aria-selected="false">
+                        <i class="fas fa-video"></i> Vidéos
+                    </button>
+                    <button class="filter-btn" data-filter="rapports" aria-selected="false">
+                        <i class="fas fa-file-pdf"></i> Rapports
+                    </button>
+                </div>
+                
+                <!-- Grille médias -->
+                <div class="galerie-grid" id="galerie-grid">
+                    
+                    <!-- Photo 1 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Formation des acteurs humanitaires à Rutshuru">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-1.jpg" alt="Formation à Rutshuru" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Formation à Rutshuru</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo 2 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Jeunes filles formées à Nyiragongo">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-2.jpg" alt="Filles formées à Nyiragongo" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Filles formées à Nyiragongo</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo 3 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Résilience climatique à Masisi">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-3.jpg" alt="Masisi" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Résilience climatique à Masisi</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo 4 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Sensibilisation communautaire">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-4.jpg" alt="Sensibilisation" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Sensibilisation communautaire</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo 5 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Équipe sur le terrain">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-5.jpg" alt="Équipe" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Équipe sur le terrain</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo 6 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Distribution à Bweremana">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-6.jpg" alt="Distribution" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Distribution à Bweremana</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo 7 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Photo 7">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-7.jpg" alt="Photo 7" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Photo 7</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo 8 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Photo 8">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-8.jpg" alt="Photo 8" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Photo 8</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo 9 -->
+                    <div class="galerie-item" data-category="photos" data-type="photo" data-caption="Photo 9">
+                        <div class="galerie-item-image">
+                            <img src="assets/images/galerie/photo-9.jpg" alt="Photo 9" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'galerie-item-placeholder\'><i class=\'fas fa-image\'></i></div>';">
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-search-plus"></i></div>
+                                <span class="galerie-item-caption">Photo 9</span>
+                            </div>
+                            <span class="galerie-item-badge"><i class="fas fa-camera"></i> Photo</span>
+                        </div>
+                    </div>
+
+                    <!-- ✅ Vidéo 1 : MP4 locale -->
+                    <div class="galerie-item" data-category="videos" data-type="video" data-caption="Présentation de HOPE CHILD-DRC" data-video-url="assets/videos/video-1-thumbnail.mp4">
+                        <div class="galerie-item-image">
+                            <video class="galerie-video-thumbnail" 
+                                   src="assets/videos/video-1-thumbnail.mp4" 
+                                   muted loop playsinline preload="metadata">
+                            </video>
+                            <div class="galerie-item-overlay">
+                                <div class="galerie-item-overlay-icon"><i class="fas fa-play"></i></div>
+                                <span class="galerie-item-caption">Présentation de HOPE CHILD-DRC</span>
+                            </div>
+                            <span class="galerie-item-badge video-badge"><i class="fas fa-video"></i> Vidéo</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Rapport 1 -->
+                    <div class="galerie-item" data-category="rapports" data-type="rapport" data-caption="Rapport annuel 2025">
+                        <div class="galerie-item-document">
+                            <div class="galerie-document-icon"><i class="fas fa-file-pdf"></i></div>
+                            <div class="galerie-document-info">
+                                <h3 class="galerie-document-title">Rapport annuel 2025</h3>
+                                <span class="galerie-document-desc">PDF · 2 Ko</span>
+                            </div>
+                            <a href="assets/documents/rapport-annuel-2025.pdf" class="galerie-document-download" download>
+                                <i class="fas fa-download"></i>
+                            </a>
+                            <span class="galerie-item-badge report-badge"><i class="fas fa-file-pdf"></i> Rapport</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Rapport 2 -->
+                    <div class="galerie-item" data-category="rapports" data-type="rapport" data-caption="Rapport d'activités 2025">
+                        <div class="galerie-item-document">
+                            <div class="galerie-document-icon"><i class="fas fa-file-pdf"></i></div>
+                            <div class="galerie-document-info">
+                                <h3 class="galerie-document-title">Rapport d'activités 2025</h3>
+                                <span class="galerie-document-desc">PDF · 1 MB</span>
+                            </div>
+                            <a href="assets/documents/rapport-activites-2025.pdf" class="galerie-document-download" download>
+                                <i class="fas fa-download"></i>
+                            </a>
+                            <span class="galerie-item-badge report-badge"><i class="fas fa-file-pdf"></i> Rapport</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Aucun résultat -->
+                <div class="galerie-no-results" style="display: none;">
+                    <div class="no-results-icon"><i class="fas fa-folder-open"></i></div>
+                    <h3>Aucun média trouvé</h3>
+                    <p>Essayez de sélectionner un autre filtre.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ✅ LIGHTBOX CORRIGÉE -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse">
+            
+            <!-- Image -->
+            <div class="lightbox-content" id="lightbox-image-content">
+                <img src="" alt="" id="lightbox-image">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+            
+            <!-- ✅ Conteneur vidéo unique (YouTube + MP4) -->
+            <div class="lightbox-video-content" id="lightbox-video-content" style="display: none;">
+                <!-- YouTube -->
+                <iframe id="lightbox-video-iframe" src="" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+                <!-- MP4 locale -->
+                <video id="lightbox-video-player" 
+                       controls playsinline preload="auto"
+                       style="width: 100%; height: 100%; object-fit: contain; display: none;">
+                </video>
+            </div>
+            
+            <button class="lightbox-close" id="lightbox-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
+            <button class="lightbox-prev" id="lightbox-prev" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next" id="lightbox-next" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="lightbox-counter" id="lightbox-counter">
+                <span id="lightbox-current">1</span> / <span id="lightbox-total">12</span>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <section class="section galerie-cta-section" aria-label="Appel à l'action">
+            <div class="container-xl">
+                <div class="galerie-cta-card reveal-up" data-aos="fade-up">
+                    <div class="galerie-cta-content">
+                        <div class="galerie-cta-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h2 class="galerie-cta-title">Votre soutien change des vies</h2>
+                        <p class="galerie-cta-text">
+                            Derrière chaque photo et vidéo, il y a des enfants et des 
+                            communautés qui ont besoin de votre aide.
+                        </p>
+                        <div class="galerie-cta-buttons">
+                            <a href="don.html" class="btn btn-accent btn-lg"><i class="fas fa-heart"></i> Faire un Don</a>
+                            <a href="contact.html" class="btn btn-outline-primary btn-lg"><i class="fas fa-envelope"></i> Nous Contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <div id="footer-container"></div>
+    
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/galerie.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

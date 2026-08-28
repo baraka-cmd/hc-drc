@@ -1,0 +1,552 @@
+/* ============================================================
+   HOPE CHILD-DRC — FAQ.CSS
+   Styles Spécifiques de la Page FAQ
+   Version : 1.0.0
+   Auteur : HOPE CHILD-DRC Web Team
+   Description : Tous les styles de la page FAQ,
+                 filtres, accordéon, recherche, CTA
+   ============================================================ */
+
+/* ============================================================
+   TABLE DES MATIÈRES
+   ------------------------------------------------------------
+   1.  PAGE HERO + BREADCRUMB
+   2.  SECTION FAQ
+   3.  BARRE DE FILTRES
+   4.  ACCORDÉON FAQ
+   5.  ITEM FAQ
+   6.  EN-TÊTE FAQ
+   7.  CONTENU FAQ
+   8.  MESSAGE AUCUN RÉSULTAT
+   9.  SECTION CTA
+   10. ANIMATIONS
+   11. MEDIA QUERIES
+   12. ACCESSIBILITÉ
+   ============================================================ */
+
+/* ============================================================
+   1. PAGE HERO + BREADCRUMB
+   ============================================================ */
+.page-hero {
+    position: relative;
+    background: var(--gradient-hero);
+    padding: calc(var(--navbar-height) + 3rem) 0 4rem;
+    margin-top: var(--navbar-height);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 209, 59, 0.04);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 163, 218, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.page-hero .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-lg);
+    padding: 0;
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.6);
+    flex-wrap: wrap;
+}
+
+.page-hero .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-weight: var(--font-weight-medium);
+}
+
+.page-hero .breadcrumb a:hover {
+    color: var(--color-secondary);
+}
+
+.page-hero .breadcrumb .separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 9px;
+}
+
+.page-hero .breadcrumb .current {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.page-hero-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-black);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: var(--letter-spacing-tight);
+    animation: pageHeroTitleIn 0.8s ease-out both;
+}
+
+.page-hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius-pill);
+    margin: var(--spacing-md) auto 0;
+    animation: pageHeroLineIn 1s ease-out 0.3s both;
+}
+
+@keyframes pageHeroTitleIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pageHeroLineIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.page-hero-subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-light);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+    animation: pageHeroSubtitleIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes pageHeroSubtitleIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   2. SECTION FAQ
+   ============================================================ */
+.faq-section {
+    background: var(--color-off-white);
+    position: relative;
+}
+
+.faq-section::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: var(--color-secondary-alpha);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ============================================================
+   3. BARRE DE FILTRES
+   ============================================================ */
+.faq-filter-bar {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    z-index: 1;
+}
+
+.faq-filter-bar .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-dark);
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-pill);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+}
+
+.faq-filter-bar .filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-filter-bar .filter-btn.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 15px rgba(8, 38, 75, 0.3);
+}
+
+/* ============================================================
+   4. ACCORDÉON FAQ
+   ============================================================ */
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   5. ITEM FAQ
+   ============================================================ */
+.faq-item {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-light-gray);
+    transition: all var(--transition-normal);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-light-gray);
+}
+
+.faq-item.active {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+/* ============================================================
+   6. EN-TÊTE FAQ
+   ============================================================ */
+.faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    transition: all var(--transition-fast);
+    user-select: none;
+    gap: var(--spacing-md);
+}
+
+.faq-header span {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex: 1;
+}
+
+.faq-header span i {
+    color: var(--color-secondary);
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.faq-header > i {
+    transition: transform var(--transition-normal);
+    color: var(--color-gray);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.faq-header:hover {
+    background: var(--color-off-white);
+}
+
+.faq-item.active .faq-header {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.faq-item.active .faq-header span i {
+    color: var(--color-secondary);
+}
+
+.faq-item.active .faq-header > i {
+    color: var(--color-secondary);
+    transform: rotate(180deg);
+}
+
+/* ============================================================
+   7. CONTENU FAQ
+   ============================================================ */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-slow);
+}
+
+.faq-item.active .faq-content {
+    max-height: 400px;
+}
+
+.faq-body {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    color: var(--color-gray-dark);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    border-top: 1px solid var(--color-light-gray);
+    background: var(--color-off-white);
+}
+
+.faq-body a {
+    color: var(--color-info);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-fast);
+}
+
+.faq-body a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* ============================================================
+   8. MESSAGE AUCUN RÉSULTAT
+   ============================================================ */
+.faq-no-results {
+    text-align: center;
+    padding: var(--spacing-3xl);
+    background: var(--color-white);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-sm);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.faq-no-results i {
+    font-size: 50px;
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+.faq-no-results h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.faq-no-results p {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+}
+
+/* ============================================================
+   9. SECTION CTA
+   ============================================================ */
+.faq-cta {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-2xl);
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-xl);
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 209, 59, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.faq-cta h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    z-index: 1;
+}
+
+.faq-cta p {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.faq-cta .btn {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   10. ANIMATIONS
+   ============================================================ */
+.faq-item {
+    animation: faqItemIn 0.4s ease-out both;
+}
+
+.faq-item:nth-child(1) { animation-delay: 0.05s; }
+.faq-item:nth-child(2) { animation-delay: 0.1s; }
+.faq-item:nth-child(3) { animation-delay: 0.15s; }
+.faq-item:nth-child(4) { animation-delay: 0.2s; }
+.faq-item:nth-child(5) { animation-delay: 0.25s; }
+.faq-item:nth-child(6) { animation-delay: 0.3s; }
+.faq-item:nth-child(7) { animation-delay: 0.35s; }
+.faq-item:nth-child(8) { animation-delay: 0.4s; }
+.faq-item:nth-child(9) { animation-delay: 0.45s; }
+.faq-item:nth-child(10) { animation-delay: 0.5s; }
+.faq-item:nth-child(11) { animation-delay: 0.55s; }
+
+@keyframes faqItemIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   11. MEDIA QUERIES
+   ============================================================ */
+
+/* --- TABLETTE (≤ 768px) --- */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: calc(var(--navbar-height) + 2rem) 0 3rem;
+    }
+
+    .page-hero-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .page-hero .breadcrumb {
+        font-size: 10px;
+    }
+
+    .faq-filter-bar {
+        gap: 6px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: 4px;
+        justify-content: flex-start;
+    }
+
+    .faq-filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .faq-filter-bar .filter-btn {
+        flex-shrink: 0;
+        padding: 8px 14px;
+        font-size: 10px;
+    }
+
+    .faq-header {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-xs);
+    }
+
+    .faq-body {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-xs);
+    }
+
+    .faq-cta {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* --- MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+    .page-hero-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .page-hero-subtitle {
+        font-size: var(--font-size-xs);
+    }
+
+    .faq-header {
+        font-size: 11px;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .faq-header span i {
+        font-size: 11px;
+    }
+}
+
+/* ============================================================
+   12. ACCESSIBILITÉ — RÉDUCTION DE MOUVEMENT
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .page-hero-title,
+    .page-hero-subtitle,
+    .faq-item {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .faq-item:hover {
+        transform: none;
+    }
+}
+
+/* ============================================================
+   FIN DU FICHIER FAQ.CSS
+   ============================================================ */

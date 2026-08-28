@@ -1,0 +1,1125 @@
+/* ============================================================
+   HOPE CHILD-DRC — EQUIPE.CSS
+   Styles Spécifiques de la Page Notre Équipe
+   Version : 1.0.0
+   Auteur : HOPE CHILD-DRC Web Team
+   Description : Tous les styles de la page Équipe,
+                 coordination, membres, conseil, commission,
+                 bénévoles, CTA rejoignez-nous
+   ============================================================ */
+
+/* ============================================================
+   TABLE DES MATIÈRES
+   ------------------------------------------------------------
+   1.  PAGE HERO + BREADCRUMB
+   2.  SECTION INTRODUCTION
+   3.  SECTION COORDINATION
+   4.  SECTION ÉQUIPE PROGRAMME & SUPPORT
+   5.  CARTES MEMBRES D'ÉQUIPE
+   6.  SECTION CONSEIL D'ADMINISTRATION
+   7.  SECTION COMMISSION DE CONTRÔLE
+   8.  SECTION BÉNÉVOLES
+   9.  SECTION CTA REJOIGNEZ-NOUS
+   10. NOTES PLACEHOLDER
+   11. ANIMATIONS SPÉCIFIQUES
+   12. MEDIA QUERIES
+   ============================================================ */
+
+/* ============================================================
+   1. PAGE HERO + BREADCRUMB
+   ============================================================ */
+.page-hero {
+    position: relative;
+    background: var(--gradient-hero);
+    padding: calc(var(--navbar-height) + 3rem) 0 4rem;
+    margin-top: var(--navbar-height);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 209, 59, 0.04);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 163, 218, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.page-hero .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-lg);
+    padding: 0;
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.6);
+    flex-wrap: wrap;
+}
+
+.page-hero .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-weight: var(--font-weight-medium);
+}
+
+.page-hero .breadcrumb a:hover {
+    color: var(--color-secondary);
+}
+
+.page-hero .breadcrumb .separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 9px;
+}
+
+.page-hero .breadcrumb .current {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.page-hero-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-black);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: var(--letter-spacing-tight);
+    animation: pageHeroTitleIn 0.8s ease-out both;
+}
+
+.page-hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius-pill);
+    margin: var(--spacing-md) auto 0;
+    animation: pageHeroLineIn 1s ease-out 0.3s both;
+    transform-origin: center;
+}
+
+@keyframes pageHeroTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pageHeroLineIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.page-hero-subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-light);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+    animation: pageHeroSubtitleIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes pageHeroSubtitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   2. SECTION INTRODUCTION
+   ============================================================ */
+.team-intro-section {
+    background: var(--color-white);
+    padding-bottom: var(--spacing-2xl);
+}
+
+.team-intro-card {
+    background: var(--color-off-white);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-light-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-secondary);
+}
+
+.team-intro-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-md);
+    animation: float 3s ease-in-out infinite;
+}
+
+.team-intro-text {
+    font-size: var(--font-size-md);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.team-intro-text strong {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+.team-intro-text em {
+    color: var(--color-accent);
+    font-style: italic;
+}
+
+/* ============================================================
+   HOPE CHILD-DRC — EQUIPE.CSS (CORRECTION PHOTOS)
+   Styles corrigés pour les photos de l'équipe
+   ============================================================ */
+
+/* ============================================================
+   CARTE COORDINATION — PHOTO DU DIRECTEUR
+   ============================================================ */
+.coordination-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-light-gray);
+    transition: all var(--transition-normal);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.coordination-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-5px);
+}
+
+.coordination-card-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+/* Photo du Coordonnateur */
+.coordination-photo {
+    width: 200px;
+    height: 200px;
+    min-width: 200px;
+    border-radius: var(--border-radius-full);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 60px;
+    border: 4px solid var(--color-secondary);
+    box-shadow: 0 0 0 4px var(--color-primary), 0 8px 25px rgba(8, 38, 75, 0.3);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.coordination-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform var(--transition-slow);
+}
+
+.coordination-card:hover .coordination-photo {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-primary), 0 12px 30px rgba(8, 38, 75, 0.4);
+}
+
+.coordination-card:hover .coordination-photo img {
+    transform: scale(1.05);
+}
+
+.coordination-photo i {
+    font-size: 70px;
+    color: var(--color-secondary);
+}
+
+/* Info du Coordonnateur */
+.coordination-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.coordination-name {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.coordination-role {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    background: var(--color-accent-alpha);
+    padding: 4px 14px;
+    border-radius: var(--border-radius-pill);
+    margin-bottom: var(--spacing-sm);
+}
+
+.coordination-desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-md);
+}
+
+.coordination-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--border-radius-pill);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+}
+
+.coordination-contact a:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3);
+}
+
+
+
+/* ============================================================
+   4. SECTION ÉQUIPE PROGRAMME & SUPPORT
+   ============================================================ */
+.team-program-section {
+    background: var(--color-white);
+}
+
+.team-support-section {
+    background: var(--color-off-white);
+}
+
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.support-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+}
+
+/* ============================================================
+   CARTES ÉQUIPE — PHOTOS DES MEMBRES
+   ============================================================ */
+.team-members-section {
+    background: var(--color-off-white);
+}
+
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.team-member-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-light-gray);
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Photo du membre — HAUTEUR AUGMENTÉE */
+.team-member-photo {
+    width: 100%;
+    height: 280px; /* ← HAUTEUR AUGMENTÉE pour bien voir la photo */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-light);
+    color: var(--color-gray);
+    font-size: 60px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.team-member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform var(--transition-slow);
+}
+
+.team-member-card:hover .team-member-photo img {
+    transform: scale(1.08);
+}
+
+/* Icône fallback bien centrée */
+.team-member-photo i {
+    font-size: 70px;
+    color: var(--color-gray);
+    transition: all var(--transition-normal);
+}
+
+.team-member-card:hover .team-member-photo i {
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+/* Overlay gradient sur la photo */
+.team-member-photo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(180deg, transparent, rgba(8, 38, 75, 0.5));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+}
+
+.team-member-card:hover .team-member-photo::after {
+    opacity: 1;
+}
+
+/* Info du membre */
+.team-member-info {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.team-member-name {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: 4px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.team-member-role {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    background: var(--color-accent-alpha);
+    padding: 4px 12px;
+    border-radius: var(--border-radius-pill);
+    margin-bottom: var(--spacing-sm);
+    align-self: flex-start;
+}
+
+.team-member-bio {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+    flex: 1;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* --- LAPTOP (≤ 1280px) --- */
+@media (max-width: 1280px) {
+    .team-members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    .team-member-photo {
+        height: 260px;
+    }
+}
+
+/* --- TABLETTE LARGE (≤ 992px) --- */
+@media (max-width: 992px) {
+    .coordination-card-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-lg);
+    }
+    
+    .coordination-photo {
+        width: 180px;
+        height: 180px;
+        min-width: 180px;
+        margin: 0 auto;
+    }
+    
+    .coordination-name {
+        font-size: var(--font-size-lg);
+    }
+    
+    .coordination-contact {
+        justify-content: center;
+        display: flex;
+    }
+    
+    .team-member-photo {
+        height: 240px;
+    }
+}
+
+/* --- TABLETTE (≤ 768px) --- */
+@media (max-width: 768px) {
+    .team-members-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        max-width: 500px;
+    }
+    
+    .team-member-photo {
+        height: 300px; /* Plus grande sur mobile */
+    }
+    
+    .coordination-photo {
+        width: 150px;
+        height: 150px;
+        min-width: 150px;
+    }
+    
+    .coordination-photo i {
+        font-size: 50px;
+    }
+}
+
+/* --- MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+    .team-member-photo {
+        height: 250px;
+    }
+    
+    .team-member-name {
+        font-size: var(--font-size-sm);
+    }
+    
+    .team-member-bio {
+        font-size: var(--font-size-xs);
+    }
+    
+    .coordination-photo {
+        width: 130px;
+        height: 130px;
+        min-width: 130px;
+        border-width: 3px;
+    }
+}
+
+/* --- MOBILE SMALL (≤ 375px) --- */
+@media (max-width: 375px) {
+    .team-member-photo {
+        height: 220px;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITÉ
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .team-member-card:hover,
+    .coordination-card:hover {
+        transform: none;
+    }
+    
+    .team-member-card:hover .team-member-photo img,
+    .coordination-card:hover .coordination-photo img {
+        transform: none;
+    }
+}
+/* ============================================================
+   6. SECTION CONSEIL D'ADMINISTRATION
+   ============================================================ */
+.board-section {
+    background: var(--color-white);
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.board-card {
+    background: var(--color-off-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-light-gray);
+}
+
+.board-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-white);
+    border-color: var(--color-secondary);
+}
+
+.board-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    margin: 0 auto var(--spacing-sm);
+    border: 3px solid var(--color-secondary);
+    transition: all var(--transition-normal);
+    overflow: hidden;
+}
+
+.board-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.board-card:hover .board-photo {
+    transform: scale(1.08);
+    border-color: var(--color-accent);
+}
+
+.board-name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: 2px;
+}
+
+.board-role {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   7. SECTION COMMISSION DE CONTRÔLE
+   ============================================================ */
+.commission-section {
+    background: var(--color-off-white);
+}
+
+.commission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.commission-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-light-gray);
+}
+
+.commission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-info);
+}
+
+.commission-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    margin: 0 auto var(--spacing-sm);
+    border: 3px solid var(--color-info);
+    overflow: hidden;
+}
+
+.commission-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.commission-name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: 2px;
+}
+
+.commission-role {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray);
+}
+
+.commission-note {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    background: rgba(255, 209, 59, 0.08);
+    border: 1px dashed rgba(230, 184, 0, 0.4);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    max-width: 700px;
+    margin: var(--spacing-xl) auto 0;
+}
+
+.commission-note-icon {
+    color: #E6B800;
+    font-size: var(--font-size-md);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.commission-note p {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-dark);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   8. SECTION BÉNÉVOLES
+   ============================================================ */
+.volunteers-section {
+    background: var(--color-white);
+}
+
+.volunteers-card {
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-4xl) var(--spacing-3xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.volunteers-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 209, 59, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.volunteers-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -15%;
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 163, 218, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.volunteers-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-secondary-alpha);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-md);
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.volunteers-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+.volunteers-text {
+    font-size: var(--font-size-md);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: var(--line-height-relaxed);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+}
+
+.volunteers-card .btn {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   9. SECTION CTA REJOIGNEZ-NOUS
+   ============================================================ */
+.join-cta-section {
+    background: var(--color-off-white);
+}
+
+.join-cta-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-4xl) var(--spacing-3xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-light-gray);
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.join-cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+}
+
+.join-cta-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-accent-alpha);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-lg);
+    animation: float 3s ease-in-out infinite;
+}
+
+.join-cta-title {
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-3xl));
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.join-cta-text {
+    font-size: var(--font-size-md);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.join-cta-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.join-cta-buttons .btn {
+    min-width: 180px;
+    justify-content: center;
+}
+
+/* ============================================================
+   10. NOTES PLACEHOLDER (Style commun)
+   ============================================================ */
+.coordination-note,
+.team-note,
+.commission-note {
+    transition: all var(--transition-normal);
+}
+
+.coordination-note:hover,
+.team-note:hover,
+.commission-note:hover {
+    border-color: #E6B800;
+    background: rgba(255, 209, 59, 0.12);
+}
+
+/* ============================================================
+   11. ANIMATIONS SPÉCIFIQUES
+   ============================================================ */
+.team-intro-section,
+.coordination-section,
+.team-program-section,
+.team-support-section,
+.board-section,
+.commission-section,
+.volunteers-section,
+.join-cta-section {
+    animation: equipeSectionFadeIn 0.6s ease-out both;
+}
+
+@keyframes equipeSectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   12. MEDIA QUERIES
+   ============================================================ */
+
+/* --- LAPTOP (≤ 1280px) --- */
+@media (max-width: 1280px) {
+    .team-members-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .board-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- TABLETTE (≤ 992px) --- */
+@media (max-width: 992px) {
+    .team-members-grid,
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .board-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .commission-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- TABLETTE (≤ 768px) --- */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: calc(var(--navbar-height) + 2rem) 0 3rem;
+    }
+
+    .page-hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .coordination-card-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+    }
+
+    .coordination-photo {
+        width: 100px;
+        height: 100px;
+        font-size: var(--font-size-3xl);
+    }
+
+    .team-members-grid,
+    .support-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .team-member-photo {
+        height: 150px;
+    }
+
+    .board-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .commission-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+
+    .volunteers-card,
+    .join-cta-card {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .volunteers-title,
+    .join-cta-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .join-cta-buttons {
+        flex-direction: column;
+    }
+
+    .join-cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* --- MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+    .page-hero-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .page-hero .breadcrumb {
+        font-size: 10px;
+    }
+
+    .team-intro-card {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+
+    .team-intro-icon {
+        width: 55px;
+        height: 55px;
+        font-size: var(--font-size-lg);
+    }
+
+    .coordination-photo {
+        width: 80px;
+        height: 80px;
+        font-size: var(--font-size-2xl);
+        border-width: 3px;
+    }
+
+    .coordination-name {
+        font-size: var(--font-size-md);
+    }
+
+    .board-grid {
+        grid-template-columns: 1fr;
+        max-width: 250px;
+    }
+
+    .board-photo,
+    .commission-photo {
+        width: 60px;
+        height: 60px;
+        font-size: var(--font-size-lg);
+        border-width: 2px;
+    }
+
+    .volunteers-icon,
+    .join-cta-icon {
+        width: 60px;
+        height: 60px;
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* ============================================================
+   FIN DU FICHIER EQUIPE.CSS
+   ============================================================ */

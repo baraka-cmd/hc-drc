@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — PROJETS.HTML
+         Page Nos Projets — Version Dynamique
+         Version : 2.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Liste des projets avec liens dynamiques
+                       vers projet-detail.html?id=projet-X
+         ============================================================ -->
+    
+    <!-- Métadonnées de base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Nos Projets | HOPE CHILD-DRC</title>
+    <meta name="description" content="Découvrez les projets de HOPE CHILD-DRC : protection des enfants à Rutshuru, autonomisation des filles à Nyiragongo et résilience climatique à Masisi.">
+    <meta name="keywords" content="HOPE CHILD-DRC, projets, protection, éducation, agriculture, résilience climatique, Rutshuru, Nyiragongo, Masisi, RDC">
+    <meta name="author" content="HOPE CHILD-DRC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hc-rdc.netlify.app/projets">
+    <meta property="og:title" content="Nos Projets | HOPE CHILD-DRC">
+    <meta property="og:description" content="Découvrez les projets de HOPE CHILD-DRC pour la protection, l'éducation et le développement des enfants en RDC.">
+    <meta property="og:image" content="assets/images/logo/og-image.jpg">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nos Projets | HOPE CHILD-DRC">
+    <meta name="twitter:description" content="Découvrez les projets de HOPE CHILD-DRC.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Nos Projets - HOPE CHILD-DRC",
+        "url": "https://hc-rdc.netlify.app/projets",
+        "description": "Les projets de HOPE CHILD-DRC : protection, éducation et résilience climatique en RDC."
+    }
+    </script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Local -->
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/projets.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Préchargement -->
+    <link rel="preload" href="assets/css/projets.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/projets.js" as="script">
+</head>
+<body>
+    
+    <div id="navbar-container"></div>
+    
+    <main id="main-content" role="main">
+        
+        <!-- HERO + BREADCRUMB -->
+        <section class="page-hero" id="page-hero" aria-label="Nos Projets">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+                        <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                        <span class="current">Nos Projets</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title">Nos Projets</h1>
+                    <p class="page-hero-subtitle">
+                        Découvrez nos actions concrètes sur le terrain
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION FILTRES + GRILLE -->
+        <section class="section projects-section" id="projets-liste" aria-label="Liste des projets">
+            <div class="container-xl">
+                
+                <!-- Barre de filtres -->
+                <div class="filter-bar projects-filter-bar" id="projects-filter-bar" role="tablist" aria-label="Filtres des projets">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                        <i class="fas fa-th-large"></i> Tous
+                    </button>
+                    <button class="filter-btn" data-filter="en-cours" role="tab" aria-selected="false">
+                        <i class="fas fa-spinner"></i> En cours
+                    </button>
+                    <button class="filter-btn" data-filter="termine" role="tab" aria-selected="false">
+                        <i class="fas fa-check-circle"></i> Terminés
+                    </button>
+                </div>
+                
+                <!-- Grille des projets — LIENS DYNAMIQUES -->
+                <div class="projects-grid" id="projects-grid">
+                    
+                    <!-- Projet 1 : Protection Rutshuru -->
+                    <div class="project-card" data-status="termine" data-category="protection" data-project-id="projet-1">
+                        <div class="project-image">
+                            <img src="assets/images/projets/protection-rutshuru.jpg" alt="Protection des enfants à Rutshuru" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'project-image-placeholder\'><i class=\'fas fa-shield-alt\'></i></div>';">
+                            <div class="project-status-badge status-termine">
+                                <i class="fas fa-check-circle"></i> Terminé
+                            </div>
+                            <div class="project-category-badge">
+                                <i class="fas fa-shield-alt"></i> Protection
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Renforcement des mécanismes communautaires de protection de l'enfant</h3>
+                            <p class="project-description">
+                                Formation de 70 acteurs humanitaires des ONG partenaires FHOVE et AVDA 
+                                pour la prévention des violences et la protection des enfants à Rutshuru.
+                            </p>
+                            <div class="project-details">
+                                <div class="project-detail-item"><i class="fas fa-map-marker-alt"></i><span>Rutshuru, Bisoko</span></div>
+                                <div class="project-detail-item"><i class="fas fa-users"></i><span>70+ bénéficiaires</span></div>
+                                <div class="project-detail-item"><i class="fas fa-calendar"></i><span>2022 - 2023</span></div>
+                            </div>
+                            <div class="project-impact">
+                                <i class="fas fa-bullseye"></i><span>70 acteurs humanitaires formés</span>
+                            </div>
+                            <!-- ✅ LIEN DYNAMIQUE -->
+                            <a href="projet-detail.html?id=projet-1" class="project-link">
+                                Voir les détails <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 2 : Autonomisation Nyiragongo -->
+                    <div class="project-card" data-status="termine" data-category="education" data-project-id="projet-2">
+                        <div class="project-image">
+                            <img src="assets/images/projets/education-nyiragongo.jpg" alt="Autonomisation des filles à Nyiragongo" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'project-image-placeholder\'><i class=\'fas fa-book\'></i></div>';">
+                            <div class="project-status-badge status-termine">
+                                <i class="fas fa-check-circle"></i> Terminé
+                            </div>
+                            <div class="project-category-badge">
+                                <i class="fas fa-book"></i> Éducation
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Autonomisation des filles par l'éducation</h3>
+                            <p class="project-description">
+                                35 jeunes filles mineures formées et équipées en machines ordinateurs 
+                                à Nyiragongo. Restauration de leur dignité et statut social.
+                            </p>
+                            <div class="project-details">
+                                <div class="project-detail-item"><i class="fas fa-map-marker-alt"></i><span>Nyiragongo, Turunga</span></div>
+                                <div class="project-detail-item"><i class="fas fa-users"></i><span>35 bénéficiaires</span></div>
+                                <div class="project-detail-item"><i class="fas fa-calendar"></i><span>2023 - 2024</span></div>
+                            </div>
+                            <div class="project-impact">
+                                <i class="fas fa-bullseye"></i><span>35 jeunes filles formées et équipées</span>
+                            </div>
+                            <!-- ✅ LIEN DYNAMIQUE -->
+                            <a href="projet-detail.html?id=projet-2" class="project-link">
+                                Voir les détails <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Projet 3 : Résilience climatique Masisi -->
+                    <div class="project-card" data-status="en-cours" data-category="securite-alimentaire" data-project-id="projet-3">
+                        <div class="project-image">
+                            <img src="assets/images/projets/agriculture-masisi.jpg" alt="Résilience climatique à Masisi" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'project-image-placeholder\'><i class=\'fas fa-seedling\'></i></div>';">
+                            <div class="project-status-badge status-en-cours">
+                                <i class="fas fa-spinner"></i> En cours
+                            </div>
+                            <div class="project-category-badge">
+                                <i class="fas fa-wheat-alt"></i> Sécurité Alimentaire
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Résilience climatique pour une agriculture durable</h3>
+                            <p class="project-description">
+                                Renforcement de la résilience climatique pour une agriculture durable 
+                                dans le village de Bweremana, Groupement Mumpfunyi Shanga.
+                            </p>
+                            <div class="project-details">
+                                <div class="project-detail-item"><i class="fas fa-map-marker-alt"></i><span>Masisi, Bweremana</span></div>
+                                <div class="project-detail-item"><i class="fas fa-users"></i><span>Communauté de Bweremana</span></div>
+                                <div class="project-detail-item"><i class="fas fa-calendar"></i><span>2024 - En cours</span></div>
+                            </div>
+                            <div class="project-progress">
+                                <div class="progress-label">
+                                    <span>Avancement</span>
+                                    <span class="progress-percentage">35%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-accent" style="width: 35%;"></div>
+                                </div>
+                            </div>
+                            <!-- ✅ LIEN DYNAMIQUE -->
+                            <a href="projet-detail.html?id=projet-3" class="project-link">
+                                Voir les détails <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Message aucun résultat -->
+                <div class="projects-no-results" id="projects-no-results" style="display: none;">
+                    <div class="no-results-icon"><i class="fas fa-folder-open"></i></div>
+                    <h3>Aucun projet trouvé</h3>
+                    <p>Essayez de sélectionner un autre filtre.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION CTA -->
+        <section class="section projects-cta-section" id="cta" aria-label="Appel à l'action">
+            <div class="container-xl">
+                <div class="projects-cta-card reveal-up" data-aos="fade-up">
+                    <div class="projects-cta-content">
+                        <div class="projects-cta-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h2 class="projects-cta-title">Soutenez nos projets</h2>
+                        <p class="projects-cta-text">
+                            Votre contribution nous permet de protéger les enfants, de les éduquer 
+                            et de renforcer la résilience des communautés en RDC.
+                        </p>
+                        <div class="projects-cta-buttons">
+                            <a href="don.html" class="btn btn-accent btn-lg"><i class="fas fa-heart"></i> Faire un Don</a>
+                            <a href="contact.html" class="btn btn-outline-primary btn-lg"><i class="fas fa-envelope"></i> Devenir Partenaire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <div id="footer-container"></div>
+    
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/projets.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

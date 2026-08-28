@@ -1,0 +1,692 @@
+{
+  "site": {
+    "name": "HOPE CHILD-DRC",
+    "acronym": "HC-DRC",
+    "slogan_fr": "Sauvons des vies",
+    "slogan_en": "Saving Lives",
+    "motto_fr": "Agir pour l'humanité",
+    "motto_en": "Acting for Humanity",
+    "description_fr": "HOPE CHILD-DRC est une ONG de développement basée à Goma, RDC. Nous œuvrons pour la protection, l'éducation et le bien-être des enfants vulnérables depuis 2021.",
+    "description_en": "HOPE CHILD-DRC is a development NGO based in Goma, DRC. We work for the protection, education and well-being of vulnerable children since 2021.",
+    "keywords_fr": "ONG, RDC, Goma, enfants vulnérables, protection enfant, éducation, santé, nutrition, humanitaire, développement, Nord-Kivu",
+    "keywords_en": "NGO, DRC, Goma, vulnerable children, child protection, education, health, nutrition, humanitarian, development, North Kivu",
+    "author": "HOPE CHILD-DRC",
+    "url": "https://www.hopechilddrc.org",
+    "domain": "hopechilddrc.org",
+    "year": 2024,
+    "yearCreated": 2021,
+    "dateCreated": "2021-05-25",
+    "version": "1.0.0",
+    "status": "production",
+    "environment": "production"
+  },
+
+  "logo": {
+    "main": "assets/images/logo/logo-main.png",
+    "white": "assets/images/logo/logo-white.png",
+    "dark": "assets/images/logo/logo-dark.png",
+    "favicon": "assets/images/logo/favicon.ico",
+    "appleTouchIcon": "assets/images/logo/apple-touch-icon.png",
+    "ogImage": "assets/images/logo/og-image.jpg",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "alt_fr": "Logo HOPE CHILD-DRC",
+    "alt_en": "HOPE CHILD-DRC Logo",
+    "width": 200,
+    "height": 200
+  },
+
+  "colors": {
+    "primary": "#08264B",
+    "primary_dark": "#051A33",
+    "primary_light": "#0D3B6E",
+    "secondary": "#FFD13B",
+    "secondary_dark": "#E6B800",
+    "secondary_light": "#FFE066",
+    "accent": "#FF4500",
+    "accent_dark": "#CC3700",
+    "accent_light": "#FF6B33",
+    "info": "#00A3DA",
+    "info_dark": "#0082B3",
+    "info_light": "#66C9EB",
+    "success": "#28A745",
+    "warning": "#FFC107",
+    "danger": "#DC3545",
+    "white": "#FFFFFF",
+    "off_white": "#F8F9FA",
+    "light": "#F1F3F5",
+    "light_gray": "#E9ECEF",
+    "gray": "#ADB5BD",
+    "gray_dark": "#6C757D",
+    "dark": "#343A40",
+    "black": "#1A1A2E"
+  },
+
+  "contact": {
+    "email": {
+      "main": "hopechilddrc@gmail.com",
+      "info": "info@hopechilddrc.org",
+      "contact": "contact@hopechilddrc.org",
+      "donation": "don@hopechilddrc.org",
+      "partnership": "partenariat@hopechilddrc.org",
+      "career": "recrutement@hopechilddrc.org",
+      "press": "presse@hopechilddrc.org"
+    },
+    "phone": {
+      "main": "+243 995 349 736",
+      "main_clean": "+243995349736",
+      "whatsapp_1": "+243995349736",
+      "whatsapp_2": "+243901945827",
+      "mobile_1": "+243 995 349 736",
+      "mobile_2": "+243 901 945 827",
+      "mobile_1_clean": "+243995349736",
+      "mobile_2_clean": "+243901945827"
+    },
+    "whatsapp": {
+      "number_1": "243995349736",
+      "number_2": "243901945827",
+      "link_1": "https://wa.me/243995349736",
+      "link_2": "https://wa.me/243901945827",
+      "message_default": "Bonjour HOPE CHILD-DRC, je souhaite avoir plus d'informations."
+    },
+    "address": {
+      "street": "",
+      "avenue": "",
+      "quarter": "",
+      "commune": "Goma",
+      "city": "Goma",
+      "province": "Nord-Kivu",
+      "country_fr": "République Démocratique du Congo",
+      "country_en": "Democratic Republic of Congo",
+      "country_code": "RDC",
+      "country_code_en": "DRC",
+      "postal_code": "",
+      "full_fr": "Goma, Nord-Kivu, République Démocratique du Congo",
+      "full_en": "Goma, North Kivu, Democratic Republic of Congo",
+      "google_maps": "https://maps.google.com/?q=Goma,Nord-Kivu,RDC",
+      "google_maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127577.123456789!2d29.123456!3d-1.6792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwNDAnNDUuMSJTIDI5wrAxMycyNC41IkU!5e0!3m2!1sfr!2scd!4v1234567890",
+      "latitude": -1.6792,
+      "longitude": 29.2236,
+      "timezone": "Africa/Lubumbashi",
+      "timezone_offset": "UTC+2"
+    },
+    "hours": {
+      "monday": { "open": "08:00", "close": "17:00", "label_fr": "Lundi", "label_en": "Monday" },
+      "tuesday": { "open": "08:00", "close": "17:00", "label_fr": "Mardi", "label_en": "Tuesday" },
+      "wednesday": { "open": "08:00", "close": "17:00", "label_fr": "Mercredi", "label_en": "Wednesday" },
+      "thursday": { "open": "08:00", "close": "17:00", "label_fr": "Jeudi", "label_en": "Thursday" },
+      "friday": { "open": "08:00", "close": "17:00", "label_fr": "Vendredi", "label_en": "Friday" },
+      "saturday": { "open": "09:00", "close": "13:00", "label_fr": "Samedi", "label_en": "Saturday" },
+      "sunday": { "open": null, "close": null, "label_fr": "Dimanche", "label_en": "Sunday", "closed": true }
+    }
+  },
+
+  "socials": {
+    "facebook": {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/hopechilddrc",
+      "handle": "@hopechilddrc",
+      "icon": "fab fa-facebook-f",
+      "color": "#1877F2",
+      "share_url": "https://www.facebook.com/sharer/sharer.php?u="
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/company/hopechilddrc",
+      "handle": "HOPE CHILD-DRC",
+      "icon": "fab fa-linkedin-in",
+      "color": "#0A66C2",
+      "share_url": "https://www.linkedin.com/sharing/share-offsite/?url="
+    },
+    "youtube": {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@hopechilddrc",
+      "handle": "@hopechilddrc",
+      "icon": "fab fa-youtube",
+      "color": "#FF0000"
+    },
+    "twitter": {
+      "name": "Twitter / X",
+      "url": "https://twitter.com/hopechilddrc",
+      "handle": "@hopechilddrc",
+      "icon": "fab fa-x-twitter",
+      "color": "#000000",
+      "share_url": "https://twitter.com/intent/tweet?url="
+    },
+    "instagram": {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/hopechilddrc",
+      "handle": "@hopechilddrc",
+      "icon": "fab fa-instagram",
+      "color": "#E4405F"
+    },
+    "whatsapp": {
+      "name": "WhatsApp",
+      "url": "https://wa.me/243995349736",
+      "handle": "+243 995 349 736",
+      "icon": "fab fa-whatsapp",
+      "color": "#25D366",
+      "share_url": "https://api.whatsapp.com/send?text="
+    }
+  },
+
+  "navigation": {
+    "menus": [
+      {
+        "id": "home",
+        "label_fr": "Accueil",
+        "label_en": "Home",
+        "url": "index.html",
+        "icon": "fa-home",
+        "order": 1
+      },
+      {
+        "id": "about",
+        "label_fr": "À Propos",
+        "label_en": "About",
+        "url": "about.html",
+        "icon": "fa-info-circle",
+        "order": 2,
+        "dropdown": [
+          {
+            "id": "history",
+            "label_fr": "Notre Histoire",
+            "label_en": "Our History",
+            "url": "about.html#histoire",
+            "icon": "fa-history"
+          },
+          {
+            "id": "mission",
+            "label_fr": "Mission & Vision",
+            "label_en": "Mission & Vision",
+            "url": "about.html#mission",
+            "icon": "fa-bullseye"
+          },
+          {
+            "id": "values",
+            "label_fr": "Nos Valeurs",
+            "label_en": "Our Values",
+            "url": "about.html#valeurs",
+            "icon": "fa-heart"
+          },
+          {
+            "id": "team",
+            "label_fr": "Notre Équipe",
+            "label_en": "Our Team",
+            "url": "equipe.html",
+            "icon": "fa-users"
+          }
+        ]
+      },
+      {
+        "id": "projects",
+        "label_fr": "Nos Projets",
+        "label_en": "Our Projects",
+        "url": "projets.html",
+        "icon": "fa-project-diagram",
+        "order": 3,
+        "dropdown": [
+          {
+            "id": "all_projects",
+            "label_fr": "Tous les Projets",
+            "label_en": "All Projects",
+            "url": "projets.html",
+            "icon": "fa-list"
+          },
+          {
+            "id": "ongoing",
+            "label_fr": "Projets en cours",
+            "label_en": "Ongoing Projects",
+            "url": "projets.html?statut=en-cours",
+            "icon": "fa-spinner"
+          },
+          {
+            "id": "completed",
+            "label_fr": "Projets terminés",
+            "label_en": "Completed Projects",
+            "url": "projets.html?statut=termine",
+            "icon": "fa-check-circle"
+          }
+        ]
+      },
+      {
+        "id": "domains",
+        "label_fr": "Domaines",
+        "label_en": "Domains",
+        "url": "domaines.html",
+        "icon": "fa-th-large",
+        "order": 4,
+        "dropdown": [
+          {
+            "id": "protection",
+            "label_fr": "Protection",
+            "label_en": "Protection",
+            "url": "domaines.html#protection",
+            "icon": "fa-shield-alt"
+          },
+          {
+            "id": "education",
+            "label_fr": "Éducation",
+            "label_en": "Education",
+            "url": "domaines.html#education",
+            "icon": "fa-book"
+          },
+          {
+            "id": "food",
+            "label_fr": "Sécurité Alimentaire",
+            "label_en": "Food Security",
+            "url": "domaines.html#securite-alimentaire",
+            "icon": "fa-wheat-alt"
+          },
+          {
+            "id": "health",
+            "label_fr": "Santé & Nutrition",
+            "label_en": "Health & Nutrition",
+            "url": "domaines.html#sante-nutrition",
+            "icon": "fa-heartbeat"
+          },
+          {
+            "id": "wash",
+            "label_fr": "WASH",
+            "label_en": "WASH",
+            "url": "domaines.html#wash",
+            "icon": "fa-water"
+          },
+          {
+            "id": "training",
+            "label_fr": "Formation Professionnelle",
+            "label_en": "Professional Training",
+            "url": "domaines.html#formation",
+            "icon": "fa-briefcase"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "label_fr": "Contact",
+        "label_en": "Contact",
+        "url": "contact.html",
+        "icon": "fa-envelope",
+        "order": 5
+      }
+    ],
+    "donate_button": {
+      "label_fr": "Faire un Don",
+      "label_en": "Donate",
+      "url": "don.html",
+      "icon": "fa-heart",
+      "show": true,
+      "animation": "pulse"
+    }
+  },
+
+  "hero": {
+    "slides": [
+      {
+        "id": "slide-1",
+        "image": "assets/images/hero/slide-1.jpg",
+        "image_mobile": "assets/images/hero/slide-1-mobile.jpg",
+        "badge_fr": "Protection des Enfants",
+        "badge_en": "Child Protection",
+        "title_fr": "Protégeons nos enfants",
+        "title_en": "Let's protect our children",
+        "subtitle_fr": "Chaque enfant mérite un environnement sûr et protecteur.",
+        "subtitle_en": "Every child deserves a safe and protective environment.",
+        "button_primary_label_fr": "Faire un Don",
+        "button_primary_label_en": "Donate",
+        "button_primary_url": "don.html",
+        "button_secondary_label_fr": "En savoir plus",
+        "button_secondary_label_en": "Learn more",
+        "button_secondary_url": "projets.html"
+      },
+      {
+        "id": "slide-2",
+        "image": "assets/images/hero/slide-2.jpg",
+        "image_mobile": "assets/images/hero/slide-2-mobile.jpg",
+        "badge_fr": "Éducation",
+        "badge_en": "Education",
+        "title_fr": "L'éducation pour tous",
+        "title_en": "Education for all",
+        "subtitle_fr": "35 jeunes filles formées et autonomisées à Nyiragongo.",
+        "subtitle_en": "35 young girls trained and empowered in Nyiragongo.",
+        "button_primary_label_fr": "Découvrir nos Projets",
+        "button_primary_label_en": "Discover our Projects",
+        "button_primary_url": "projets.html",
+        "button_secondary_label_fr": "Nous Contacter",
+        "button_secondary_label_en": "Contact Us",
+        "button_secondary_url": "contact.html"
+      },
+      {
+        "id": "slide-3",
+        "image": "assets/images/hero/slide-3.jpg",
+        "image_mobile": "assets/images/hero/slide-3-mobile.jpg",
+        "badge_fr": "Sécurité Alimentaire",
+        "badge_en": "Food Security",
+        "title_fr": "Une agriculture durable",
+        "title_en": "Sustainable agriculture",
+        "subtitle_fr": "Renforcement de la résilience climatique à Masisi.",
+        "subtitle_en": "Strengthening climate resilience in Masisi.",
+        "button_primary_label_fr": "Soutenir notre cause",
+        "button_primary_label_en": "Support our cause",
+        "button_primary_url": "don.html",
+        "button_secondary_label_fr": "Voir l'impact",
+        "button_secondary_label_en": "See impact",
+        "button_secondary_url": "impact.html"
+      }
+    ],
+    "autoplay": true,
+    "autoplay_speed": 5000,
+    "transition_speed": 800,
+    "show_arrows": true,
+    "show_dots": true,
+    "show_badges": true,
+    "show_buttons": true,
+    "show_scroll_indicator": true,
+    "overlay_opacity": 0.7
+  },
+
+  "sections": {
+    "about": {
+      "show": true,
+      "order": 1,
+      "show_stats": true,
+      "show_cta": true
+    },
+    "domains": {
+      "show": true,
+      "order": 2,
+      "columns": 3,
+      "show_icons": true,
+      "show_descriptions": true
+    },
+    "impact": {
+      "show": true,
+      "order": 3,
+      "counters_animated": true,
+      "counters_duration": 2000
+    },
+    "where": {
+      "show": true,
+      "order": 4,
+      "show_map": true,
+      "show_table": true
+    },
+    "projects": {
+      "show": true,
+      "order": 5,
+      "featured_count": 3,
+      "show_filters": true
+    },
+    "testimonials": {
+      "show": true,
+      "order": 6,
+      "count": 3,
+      "autoplay": true,
+      "autoplay_speed": 6000
+    },
+    "partners": {
+      "show": true,
+      "order": 7,
+      "show_logos": true,
+      "logos_autoplay": true
+    },
+    "newsletter": {
+      "show": true,
+      "order": 8,
+      "service": "mailchimp"
+    },
+    "cta": {
+      "show": true,
+      "order": 9
+    }
+  },
+
+  "stats": {
+    "items": [
+      {
+        "id": "stat-1",
+        "value": 70,
+        "suffix": "+",
+        "prefix": "",
+        "label_fr": "Acteurs Humanitaires Formés",
+        "label_en": "Trained Humanitarian Workers",
+        "icon": "fa-users",
+        "color": "#FF4500",
+        "animated": true
+      },
+      {
+        "id": "stat-2",
+        "value": 35,
+        "suffix": "",
+        "prefix": "",
+        "label_fr": "Jeunes Filles Autonomisées",
+        "label_en": "Empowered Young Girls",
+        "icon": "fa-female",
+        "color": "#FFD13B",
+        "animated": true
+      },
+      {
+        "id": "stat-3",
+        "value": 3,
+        "suffix": "",
+        "prefix": "",
+        "label_fr": "Projets Réalisés",
+        "label_en": "Completed Projects",
+        "icon": "fa-project-diagram",
+        "color": "#00A3DA",
+        "animated": true
+      },
+      {
+        "id": "stat-4",
+        "value": 3,
+        "suffix": "",
+        "prefix": "",
+        "label_fr": "Zones d'Intervention",
+        "label_en": "Intervention Zones",
+        "icon": "fa-map-marker-alt",
+        "color": "#2ECC71",
+        "animated": true
+      },
+      {
+        "id": "stat-5",
+        "value": 2021,
+        "suffix": "",
+        "prefix": "",
+        "label_fr": "Année de Création",
+        "label_en": "Year Founded",
+        "icon": "fa-calendar",
+        "color": "#9B59B6",
+        "animated": false
+      },
+      {
+        "id": "stat-6",
+        "value": 6,
+        "suffix": "",
+        "prefix": "",
+        "label_fr": "Domaines d'Intervention",
+        "label_en": "Intervention Domains",
+        "icon": "fa-th-large",
+        "color": "#E67E22",
+        "animated": true
+      }
+    ]
+  },
+
+  "donation": {
+    "enabled": true,
+    "currency": "USD",
+    "currency_symbol": "$",
+    "suggested_amounts": [10, 25, 50, 100, 250, 500],
+    "default_amount": 25,
+    "min_amount": 5,
+    "max_amount": 10000,
+    "allow_custom_amount": true,
+    "allow_monthly": true,
+    "payment_methods": {
+      "bank_transfer": {
+        "enabled": true,
+        "label_fr": "Virement bancaire",
+        "label_en": "Bank transfer",
+        "account_name": "HOPE CHILD-DRC",
+        "account_number": "",
+        "bank_name": "",
+        "swift_code": "",
+        "iban": ""
+      },
+      "mobile_money": {
+        "enabled": true,
+        "label_fr": "Mobile Money",
+        "label_en": "Mobile Money",
+        "numbers": [
+          {
+            "provider": "M-Pesa",
+            "number": "+243 995 349 736"
+          },
+          {
+            "provider": "Orange Money",
+            "number": "+243 901 945 827"
+          },
+          {
+            "provider": "Airtel Money",
+            "number": "+243 995 349 736"
+          }
+        ]
+      },
+      "paypal": {
+        "enabled": false,
+        "label_fr": "PayPal",
+        "label_en": "PayPal",
+        "email": "",
+        "button_id": ""
+      }
+    },
+    "equivalents": {
+      "10": {
+        "label_fr": "Kit scolaire pour 1 enfant",
+        "label_en": "School kit for 1 child",
+        "icon": "fa-pencil-alt"
+      },
+      "25": {
+        "label_fr": "Formation professionnelle pour 1 jeune",
+        "label_en": "Professional training for 1 youth",
+        "icon": "fa-graduation-cap"
+      },
+      "50": {
+        "label_fr": "Soutien agricole pour 1 famille",
+        "label_en": "Agricultural support for 1 family",
+        "icon": "fa-seedling"
+      },
+      "100": {
+        "label_fr": "Prise en charge complète pour 1 enfant",
+        "label_en": "Complete care for 1 child",
+        "icon": "fa-heart"
+      },
+      "250": {
+        "label_fr": "Équipement pour une salle de classe",
+        "label_en": "Equipment for a classroom",
+        "icon": "fa-school"
+      },
+      "500": {
+        "label_fr": "Projet communautaire complet",
+        "label_en": "Complete community project",
+        "icon": "fa-globe"
+      }
+    }
+  },
+
+  "newsletter": {
+    "enabled": true,
+    "service": "mailchimp",
+    "form_action": "",
+    "method": "POST",
+    "fields": {
+      "email": {
+        "name": "email",
+        "placeholder_fr": "Votre adresse email",
+        "placeholder_en": "Your email address",
+        "required": true
+      },
+      "name": {
+        "name": "name",
+        "placeholder_fr": "Votre nom",
+        "placeholder_en": "Your name",
+        "required": false
+      }
+    },
+    "success_message_fr": "Merci ! Vous êtes maintenant inscrit à notre newsletter.",
+    "success_message_en": "Thank you! You are now subscribed to our newsletter.",
+    "error_message_fr": "Une erreur est survenue. Veuillez réessayer.",
+    "error_message_en": "An error occurred. Please try again."
+  },
+
+  "cookies": {
+    "enabled": true,
+    "storage_key": "hc_drc_cookies_consent",
+    "expiration_days": 365,
+    "banner": {
+      "title_fr": "🍪 Utilisation des cookies",
+      "title_en": "🍪 Cookie usage",
+      "text_fr": "Nous utilisons des cookies pour améliorer votre expérience sur notre site. En continuant à naviguer, vous acceptez notre politique de cookies.",
+      "text_en": "We use cookies to improve your experience on our site. By continuing to browse, you accept our cookie policy.",
+      "accept_label_fr": "Accepter",
+      "accept_label_en": "Accept",
+      "reject_label_fr": "Refuser",
+      "reject_label_en": "Reject",
+      "learn_more_label_fr": "En savoir plus",
+      "learn_more_label_en": "Learn more",
+      "learn_more_url": "politique-cookies.html"
+    }
+  },
+
+  "seo": {
+    "enable_jsonld": true,
+    "enable_open_graph": true,
+    "enable_twitter_cards": true,
+    "twitter_handle": "@hopechilddrc",
+    "facebook_app_id": "",
+    "google_analytics_id": "",
+    "google_tag_manager_id": "",
+    "default_og_image": "assets/images/logo/og-image.jpg",
+    "default_og_type": "website",
+    "default_locale": "fr_FR",
+    "alternate_locale": "en_US"
+  },
+
+  "analytics": {
+    "google_analytics": {
+      "enabled": false,
+      "tracking_id": ""
+    },
+    "google_tag_manager": {
+      "enabled": false,
+      "container_id": ""
+    },
+    "facebook_pixel": {
+      "enabled": false,
+      "pixel_id": ""
+    }
+  },
+
+  "maintenance": {
+    "enabled": false,
+    "message_fr": "Le site est en maintenance. Merci de revenir bientôt.",
+    "message_en": "The site is under maintenance. Please check back soon.",
+    "allowed_ips": []
+  },
+
+  "legal": {
+    "organization_name_fr": "HOPE CHILD-DRC",
+    "organization_name_en": "HOPE CHILD-DRC",
+    "registration_number": "",
+    "legal_status_fr": "ONG de Développement",
+    "legal_status_en": "Development NGO",
+    "nature_fr": "Apolitique",
+    "nature_en": "Apolitical",
+    "headquarters_fr": "Goma, Nord-Kivu, RDC",
+    "headquarters_en": "Goma, North Kivu, DRC",
+    "founding_date": "2021-05-25",
+    "publication_director": "",
+    "hosting_provider": "",
+    "hosting_address": ""
+  }
+}

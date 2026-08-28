@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — PROJET-DETAIL.HTML (DYNAMIQUE)
+         Version : 2.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Page détaillée dynamique — le contenu
+                       est chargé selon ?id=projet-X
+         ============================================================ -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO : sera mis à jour dynamiquement par projet-detail.js -->
+    <title>Détail du Projet | HOPE CHILD-DRC</title>
+    <meta name="description" content="Découvrez les détails des projets de HOPE CHILD-DRC : protection, éducation, agriculture durable en RDC.">
+    <meta name="keywords" content="HOPE CHILD-DRC, projet, protection, éducation, agriculture, RDC">
+    <meta name="author" content="HOPE CHILD-DRC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hc-rdc.netlify.app/projet-detail">
+    <meta property="og:title" content="Détail du Projet | HOPE CHILD-DRC">
+    <meta property="og:description" content="Découvrez les projets de HOPE CHILD-DRC.">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    <meta property="og:locale" content="fr_FR">
+    
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/projet-detail.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="preload" href="assets/css/projet-detail.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/projet-detail.js" as="script">
+</head>
+<body>
+    
+    <div id="navbar-container"></div>
+    
+    <main id="main-content" role="main">
+        
+        <!-- HERO + BREADCRUMB (rempli par JS) -->
+        <section class="page-hero" id="page-hero" aria-label="Détail du Projet">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+                        <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                        <a href="projets.html"><i class="fas fa-project-diagram"></i> Nos Projets</a>
+                        <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                        <span class="current" id="breadcrumb-current">Chargement...</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title" id="project-title">Chargement du projet...</h1>
+                    <p class="page-hero-subtitle" id="project-subtitle">Veuillez patienter...</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION INFOS CLÉS (remplie par JS) -->
+        <section class="section project-key-info-section" aria-label="Informations clés">
+            <div class="container-xl">
+                <div class="key-info-grid" id="key-info-grid">
+                    <!-- Les 6 cartes seront générées par JS -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION ONGLETS -->
+        <section class="section project-tabs-section" aria-label="Détails du projet">
+            <div class="container-xl">
+                
+                <!-- Navigation des onglets -->
+                <div class="tabs-nav project-tabs-nav" role="tablist" aria-label="Onglets du projet">
+                    <button class="tab-btn active" data-tab="description" role="tab" aria-selected="true">
+                        <i class="fas fa-info-circle"></i> Description
+                    </button>
+                    <button class="tab-btn" data-tab="objectifs" role="tab" aria-selected="false">
+                        <i class="fas fa-bullseye"></i> Objectifs
+                    </button>
+                    <button class="tab-btn" data-tab="activites" role="tab" aria-selected="false">
+                        <i class="fas fa-tasks"></i> Activités
+                    </button>
+                    <button class="tab-btn" data-tab="resultats" role="tab" aria-selected="false">
+                        <i class="fas fa-chart-bar"></i> Résultats
+                    </button>
+                    <button class="tab-btn" data-tab="galerie" role="tab" aria-selected="false">
+                        <i class="fas fa-images"></i> Galerie
+                    </button>
+                </div>
+                
+                <!-- Contenu des onglets -->
+                <div class="tabs-content">
+                    
+                    <!-- Description (remplie par JS) -->
+                    <div class="tab-content active" id="tab-description" role="tabpanel">
+                        <div class="tab-inner">
+                            <div class="description-grid">
+                                <div class="description-text" id="project-description">
+                                    <p>Chargement de la description...</p>
+                                </div>
+                                <div class="description-image" id="project-image-container">
+                                    <div class="description-image-placeholder">
+                                        <i class="fas fa-image"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Objectifs (remplie par JS) -->
+                    <div class="tab-content" id="tab-objectifs" role="tabpanel">
+                        <div class="tab-inner">
+                            <h3 class="tab-content-title"><i class="fas fa-bullseye"></i> Objectifs du Projet</h3>
+                            <div class="objectives-grid" id="objectives-grid">
+                                <p>Chargement des objectifs...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activités (remplie par JS) -->
+                    <div class="tab-content" id="tab-activites" role="tabpanel">
+                        <div class="tab-inner">
+                            <h3 class="tab-content-title"><i class="fas fa-tasks"></i> Activités du Projet</h3>
+                            <div class="accordion" id="activities-accordion">
+                                <p>Chargement des activités...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Résultats (remplie par JS) -->
+                    <div class="tab-content" id="tab-resultats" role="tabpanel">
+                        <div class="tab-inner">
+                            <h3 class="tab-content-title"><i class="fas fa-chart-bar"></i> Résultats</h3>
+                            <div class="results-grid" id="results-grid">
+                                <p>Chargement des résultats...</p>
+                            </div>
+                            <div class="results-progress" id="results-progress"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Galerie (remplie par JS) -->
+                    <div class="tab-content" id="tab-galerie" role="tabpanel">
+                        <div class="tab-inner">
+                            <h3 class="tab-content-title"><i class="fas fa-images"></i> Galerie du Projet</h3>
+                            <div class="gallery-grid project-gallery" id="project-gallery">
+                                <p>Chargement de la galerie...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION CTA -->
+        <section class="section project-cta-section" aria-label="Appel à l'action">
+            <div class="container-xl">
+                <div class="project-cta-card reveal-up" data-aos="fade-up">
+                    <div class="project-cta-content">
+                        <div class="project-cta-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h2 class="project-cta-title">Soutenez ce projet</h2>
+                        <p class="project-cta-text" id="project-cta-text">
+                            Votre contribution nous aide à changer des vies en RDC.
+                        </p>
+                        <div class="project-cta-buttons">
+                            <a href="don.html" class="btn btn-accent btn-lg"><i class="fas fa-heart"></i> Faire un Don</a>
+                            <a href="projets.html" class="btn btn-outline-primary btn-lg"><i class="fas fa-arrow-left"></i> Voir tous les Projets</a>
+                            <a href="contact.html" class="btn btn-outline-primary btn-lg"><i class="fas fa-envelope"></i> Nous Contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <div id="footer-container"></div>
+    
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/projet-detail.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

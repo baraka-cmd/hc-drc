@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — ACTUALITES.HTML
+         Page Actualités
+         Version : 1.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Liste des actualités avec filtres
+                       par catégorie, recherche, grille d'articles
+                       et pagination
+         ============================================================ -->
+    
+    <!-- Métadonnées de base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Actualités | HOPE CHILD-DRC</title>
+    <meta name="description" content="Découvrez les dernières actualités de HOPE CHILD-DRC : projets, terrain, publications et actualités institutionnelles. Restez informés de nos actions en RDC.">
+    <meta name="keywords" content="HOPE CHILD-DRC, actualités, nouvelles, projets, terrain, publications, ONG RDC, Goma, Nord-Kivu">
+    <meta name="author" content="HOPE CHILD-DRC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hopechilddrc.org/actualites">
+    <meta property="og:title" content="Actualités | HOPE CHILD-DRC">
+    <meta property="og:description" content="Les dernières nouvelles de HOPE CHILD-DRC : projets, terrain et publications.">
+    <meta property="og:image" content="assets/images/logo/og-image.jpg">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Actualités | HOPE CHILD-DRC">
+    <meta name="twitter:description" content="Les dernières nouvelles de HOPE CHILD-DRC.">
+    <meta name="twitter:image" content="assets/images/logo/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Actualités HOPE CHILD-DRC",
+        "url": "https://www.hopechilddrc.org/actualites",
+        "description": "Les dernières actualités de HOPE CHILD-DRC : projets, terrain, publications et actualités institutionnelles.",
+        "publisher": {
+            "@type": "NGO",
+            "name": "HOPE CHILD-DRC",
+            "url": "https://www.hopechilddrc.org"
+        }
+    }
+    </script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Local -->
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/actualites.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Préchargement -->
+    <link rel="preload" href="assets/css/actualites.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/actualites.js" as="script">
+</head>
+<body>
+    
+    <!-- ============================================================
+         CONTENEUR NAVBAR (Injecté par layout.js)
+         ============================================================ -->
+    <div id="navbar-container"></div>
+    
+    <!-- ============================================================
+         CONTENU PRINCIPAL
+         ============================================================ -->
+    <main id="main-content" role="main">
+        
+        <!-- ============================================================
+             HERO + BREADCRUMB
+             ============================================================ -->
+        <section class="page-hero" id="page-hero" aria-label="Actualités">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            Accueil
+                        </a>
+                        <span class="separator">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="current">Actualités</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title">Nos Actualités</h1>
+                    <p class="page-hero-subtitle">
+                        Les dernières nouvelles de HOPE CHILD-DRC : projets, terrain, publications et actualités institutionnelles
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 1 : FILTRES + RECHERCHE + GRILLE D'ARTICLES
+             ============================================================ -->
+        <section class="section actualites-section" id="actualites-liste" aria-label="Liste des actualités">
+            <div class="container-xl">
+                
+                <!-- Barre d'outils : Filtres + Recherche -->
+                <div class="actualites-toolbar">
+                    
+                    <!-- Filtres par catégorie -->
+                    <div class="filter-bar actualites-filter-bar" id="actualites-filter-bar" role="tablist" aria-label="Filtres des actualités">
+                        <button class="filter-btn active" data-filter="tous" role="tab" aria-selected="true">
+                            <i class="fas fa-th-large"></i>
+                            Tous
+                        </button>
+                        <button class="filter-btn" data-filter="projets" role="tab" aria-selected="false">
+                            <i class="fas fa-project-diagram"></i>
+                            Projets
+                        </button>
+                        <button class="filter-btn" data-filter="terrain" role="tab" aria-selected="false">
+                            <i class="fas fa-hands-helping"></i>
+                            Terrain
+                        </button>
+                        <button class="filter-btn" data-filter="institutionnel" role="tab" aria-selected="false">
+                            <i class="fas fa-building"></i>
+                            Institutionnel
+                        </button>
+                        <button class="filter-btn" data-filter="publications" role="tab" aria-selected="false">
+                            <i class="fas fa-file-alt"></i>
+                            Publications
+                        </button>
+                    </div>
+                    
+                    <!-- Barre de recherche -->
+                    <div class="search-bar actualites-search-bar">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="search" 
+                               id="actualites-search-input" 
+                               class="form-control" 
+                               placeholder="Rechercher un article..." 
+                               aria-label="Rechercher un article">
+                        <button class="search-clear-btn" id="search-clear-btn" aria-label="Effacer la recherche" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Grille d'articles -->
+                <div class="actualites-grid" id="actualites-grid">
+                    
+                    <!-- Article 1 : Projets -->
+                    <article class="actualite-card" data-category="projets" data-title="lancement projet resilience climatique masisi bweremana">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-1.jpg" alt="Lancement du projet de résilience climatique à Masisi" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-seedling\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-project-diagram"></i>
+                                Projets
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    15 Mars 2024
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Équipe HOPE CHILD-DRC
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                Lancement du projet de résilience climatique pour une agriculture durable à Masisi
+                            </h3>
+                            <p class="actualite-excerpt">
+                                HOPE CHILD-DRC lance officiellement son nouveau projet de renforcement de la résilience climatique dans le village de Bweremana, territoire de Masisi. Ce projet vise à promouvoir une agriculture durable face aux défis du changement climatique.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 2 : Terrain -->
+                    <article class="actualite-card" data-category="terrain" data-title="autonomisation filles nyiragongo formation ordinateurs">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-2.jpg" alt="Formation des jeunes filles à Nyiragongo" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-female\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-hands-helping"></i>
+                                Terrain
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    28 Février 2024
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Équipe HOPE CHILD-DRC
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                35 jeunes filles formées et équipées en informatique à Nyiragongo
+                            </h3>
+                            <p class="actualite-excerpt">
+                                Notre projet d'autonomisation des filles par l'éducation à Turunga a permis de former 35 jeunes filles mineures en informatique. Au-delà de l'aspect économique, ce programme a restauré leur dignité et leur statut social.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 3 : Terrain -->
+                    <article class="actualite-card" data-category="terrain" data-title="protection enfants rutshuru formation acteurs humanitaires fhove avda">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-3.jpg" alt="Formation des acteurs humanitaires à Rutshuru" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-shield-alt\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-hands-helping"></i>
+                                Terrain
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    10 Janvier 2024
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Équipe HOPE CHILD-DRC
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                70 acteurs humanitaires formés pour la protection des enfants à Rutshuru
+                            </h3>
+                            <p class="actualite-excerpt">
+                                En partenariat avec les ONG FHOVE, VIZAZI CONGO et AVDA, HOPE CHILD-DRC a renforcé les capacités de 70 acteurs humanitaires pour la prévention, l'identification et le référencement des cas de violence contre les enfants.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 4 : Institutionnel -->
+                    <article class="actualite-card" data-category="institutionnel" data-title="publication rapport annuel 2023 hope child drc">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-4.jpg" alt="Rapport annuel HOPE CHILD-DRC 2023" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-file-alt\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-building"></i>
+                                Institutionnel
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    20 Décembre 2023
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Direction
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                Publication du rapport annuel 2023 de HOPE CHILD-DRC
+                            </h3>
+                            <p class="actualite-excerpt">
+                                Notre rapport annuel 2023 est maintenant disponible. Il présente nos réalisations, nos défis et nos perspectives pour l'année à venir. Un document qui témoigne de notre engagement pour les enfants vulnérables.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 5 : Projets -->
+                    <article class="actualite-card" data-category="projets" data-title="partenariat renforce fhove avda protection enfance rutshuru">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-5.jpg" alt="Partenariat avec FHOVE et AVDA" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-handshake\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-project-diagram"></i>
+                                Projets
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    5 Novembre 2023
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Équipe HOPE CHILD-DRC
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                Partenariat renforcé avec FHOVE et AVDA pour la protection de l'enfance
+                            </h3>
+                            <p class="actualite-excerpt">
+                                HOPE CHILD-DRC renforce son partenariat avec les ONG nationales FHOVE et AVDA pour améliorer les mécanismes communautaires de protection de l'enfant dans le territoire de Rutshuru.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 6 : Publications -->
+                    <article class="actualite-card" data-category="publications" data-title="guide bonnes pratiques protection enfance rdc">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-6.jpg" alt="Guide de bonnes pratiques" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-book\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-file-alt"></i>
+                                Publications
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    15 Octobre 2023
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Équipe HOPE CHILD-DRC
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                Nouveau guide : Bonnes pratiques de protection de l'enfance en RDC
+                            </h3>
+                            <p class="actualite-excerpt">
+                                Nous publions un guide pratique destiné aux acteurs humanitaires et communautaires sur les bonnes pratiques de protection de l'enfance en République Démocratique du Congo.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 7 : Terrain -->
+                    <article class="actualite-card" data-category="terrain" data-title="sensibilisation communautaire bonnes pratiques hygiene nord kivu">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-7.jpg" alt="Sensibilisation WASH" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-water\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-hands-helping"></i>
+                                Terrain
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    20 Septembre 2023
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Équipe HOPE CHILD-DRC
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                Campagnes de sensibilisation aux bonnes pratiques d'hygiène au Nord-Kivu
+                            </h3>
+                            <p class="actualite-excerpt">
+                                Nos équipes ont mené des campagnes de sensibilisation sur les bonnes pratiques d'hygiène et d'assainissement dans plusieurs communautés du Nord-Kivu pour prévenir les maladies hydriques.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 8 : Institutionnel -->
+                    <article class="actualite-card" data-category="institutionnel" data-title="hope child drc celebre deux ans existence">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-8.jpg" alt="Anniversaire HOPE CHILD-DRC" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-birthday-cake\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-building"></i>
+                                Institutionnel
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    25 Mai 2023
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Direction
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                HOPE CHILD-DRC célèbre ses 2 ans d'existence
+                            </h3>
+                            <p class="actualite-excerpt">
+                                À l'occasion de notre deuxième anniversaire, nous revenons sur deux années d'engagement pour la protection des enfants vulnérables en RDC et partageons notre vision pour l'avenir.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article 9 : Projets -->
+                    <article class="actualite-card" data-category="projets" data-title="education adultes prevention violences bisoko rutshuru">
+                        <div class="actualite-image">
+                            <img src="assets/images/actualites/article-9.jpg" alt="Éducation des adultes à Rutshuru" loading="lazy" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=\'actualite-image-placeholder\'><i class=\'fas fa-graduation-cap\'></i></div>';">
+                            <span class="actualite-category-badge">
+                                <i class="fas fa-project-diagram"></i>
+                                Projets
+                            </span>
+                        </div>
+                        <div class="actualite-content">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    10 Avril 2023
+                                </span>
+                                <span class="actualite-author">
+                                    <i class="fas fa-user"></i>
+                                    Équipe HOPE CHILD-DRC
+                                </span>
+                            </div>
+                            <h3 class="actualite-title">
+                                L'éducation des adultes comme levier de prévention des violences à Rutshuru
+                            </h3>
+                            <p class="actualite-excerpt">
+                                Notre projet d'éducation des adultes à Bisoko contribue à la prévention des violences et à la protection des enfants en renforçant les capacités des parents et des leaders communautaires.
+                            </p>
+                            <a href="article-detail.html" class="actualite-link">
+                                Lire la suite
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                </div>
+                
+                <!-- Message aucun résultat -->
+                <div class="actualites-no-results" id="actualites-no-results" style="display: none;">
+                    <div class="no-results-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Aucun article trouvé</h3>
+                    <p>Aucun article ne correspond à votre recherche ou à votre filtre.</p>
+                    <button class="btn btn-primary btn-md" id="reset-filters-btn">
+                        <i class="fas fa-undo"></i>
+                        Réinitialiser les filtres
+                    </button>
+                </div>
+                
+                <!-- Pagination -->
+                <nav class="pagination-wrapper" aria-label="Pagination des actualités">
+                    <div class="pagination" id="actualites-pagination">
+                        <button class="pagination-btn" data-page="prev" aria-label="Page précédente" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="pagination-btn active" data-page="1" aria-label="Page 1" aria-current="page">1</button>
+                        <button class="pagination-btn" data-page="2" aria-label="Page 2">2</button>
+                        <button class="pagination-btn" data-page="3" aria-label="Page 3">3</button>
+                        <button class="pagination-btn" data-page="next" aria-label="Page suivante">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </nav>
+                
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 2 : NEWSLETTER
+             ============================================================ -->
+        <section class="newsletter-section" id="newsletter" aria-label="Newsletter">
+            <div class="container-md">
+                <div class="newsletter-content">
+                    <div class="newsletter-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h2 class="newsletter-title">Restez Informés</h2>
+                    <p class="newsletter-subtitle">
+                        Inscrivez-vous à notre newsletter pour recevoir nos actualités, 
+                        nos rapports et les histoires de nos bénéficiaires.
+                    </p>
+                    <form class="newsletter-form" 
+                        id="newsletter-form" 
+                        name="newsletter" 
+                        method="POST" 
+                        data-netlify="true"
+                        netlify-honeypot="bot-field"
+                        action="/index.html"
+                        novalidate>
+                        
+                        <!-- Champ caché obligatoire pour Netlify Forms -->
+                        <input type="hidden" name="form-name" value="newsletter">
+                        
+                        <!-- Anti-spam honeypot -->
+                        <p style="display: none;">
+                            <label>Ne remplissez pas ce champ : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                        </p>
+                        
+                        <div class="input-group">
+                            <span class="input-group-icon">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <input type="email" 
+                                name="email"
+                                class="form-control" 
+                                placeholder="Votre adresse email" 
+                                required 
+                                aria-label="Votre adresse email">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-paper-plane"></i>
+                            S'inscrire
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ============================================================
+         CONTENEUR FOOTER (Injecté par layout.js)
+         ============================================================ -->
+    <div id="footer-container"></div>
+    
+    <!-- ============================================================
+         SCRIPTS JAVASCRIPT
+         ============================================================ -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/actualites.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

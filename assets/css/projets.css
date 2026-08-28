@@ -1,0 +1,910 @@
+/* ============================================================
+   HOPE CHILD-DRC — PROJETS.CSS
+   Styles Spécifiques de la Page Nos Projets
+   Version : 1.0.0
+   Auteur : HOPE CHILD-DRC Web Team
+   Description : Tous les styles de la page Projets,
+                 filtres, grille, cartes projets, statuts,
+                 pagination, CTA
+   ============================================================ */
+
+/* ============================================================
+   TABLE DES MATIÈRES
+   ------------------------------------------------------------
+   1.  PAGE HERO + BREADCRUMB
+   2.  BARRE DE FILTRES
+   3.  GRILLE DES PROJETS
+   4.  CARTES PROJETS
+   5.  IMAGES & PLACEHOLDERS
+   6.  BADGES DE STATUT
+   7.  DÉTAILS DES PROJETS
+   8.  BARRE DE PROGRESSION
+   9.  MESSAGE AUCUN RÉSULTAT
+   10. PAGINATION
+   11. SECTION CTA
+   12. ANIMATIONS SPÉCIFIQUES
+   13. MEDIA QUERIES
+   ============================================================ */
+
+/* ============================================================
+   1. PAGE HERO + BREADCRUMB
+   ============================================================ */
+.page-hero {
+    position: relative;
+    background: var(--gradient-hero);
+    padding: calc(var(--navbar-height) + 3rem) 0 4rem;
+    margin-top: var(--navbar-height);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 209, 59, 0.04);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 163, 218, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.page-hero .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-lg);
+    padding: 0;
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.6);
+    flex-wrap: wrap;
+}
+
+.page-hero .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-weight: var(--font-weight-medium);
+}
+
+.page-hero .breadcrumb a:hover {
+    color: var(--color-secondary);
+}
+
+.page-hero .breadcrumb .separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 9px;
+}
+
+.page-hero .breadcrumb .current {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.page-hero-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-black);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: var(--letter-spacing-tight);
+    animation: pageHeroTitleIn 0.8s ease-out both;
+}
+
+.page-hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius-pill);
+    margin: var(--spacing-md) auto 0;
+    animation: pageHeroLineIn 1s ease-out 0.3s both;
+    transform-origin: center;
+}
+
+@keyframes pageHeroTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pageHeroLineIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.page-hero-subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-light);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+    animation: pageHeroSubtitleIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes pageHeroSubtitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   2. BARRE DE FILTRES
+   ============================================================ */
+.projects-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-dark);
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-pill);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.filter-btn i {
+    font-size: 13px;
+    color: var(--color-primary);
+    transition: all var(--transition-normal);
+}
+
+.filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-off-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-btn.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 15px rgba(8, 38, 75, 0.3);
+}
+
+.filter-btn.active i {
+    color: var(--color-secondary);
+}
+
+.filter-btn.active:hover {
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    border-color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   3. GRILLE DES PROJETS
+   ============================================================ */
+.projects-section {
+    background: var(--color-white);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    transition: all var(--transition-normal);
+}
+
+/* ============================================================
+   4. CARTES PROJETS
+   ============================================================ */
+.project-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-light-gray);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-secondary);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: 3;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-secondary);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* ============================================================
+   5. IMAGES & PLACEHOLDERS
+   ============================================================ */
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: var(--color-light);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.08);
+}
+
+.project-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-4xl);
+    color: var(--color-gray);
+    background: linear-gradient(135deg, var(--color-light), var(--color-off-white));
+}
+
+.project-image-placeholder i {
+    transition: all var(--transition-normal);
+}
+
+.project-card:hover .project-image-placeholder i {
+    transform: scale(1.2);
+    color: var(--color-primary);
+}
+
+/* ============================================================
+   6. BADGES DE STATUT
+   ============================================================ */
+.project-status-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--border-radius-pill);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.status-termine {
+    background: rgba(40, 167, 69, 0.15);
+    color: #28A745;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.status-en-cours {
+    background: rgba(230, 126, 34, 0.15);
+    color: #D35400;
+    border: 1px solid rgba(230, 126, 34, 0.3);
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-a-venir {
+    background: rgba(0, 163, 218, 0.12);
+    color: #00A3DA;
+    border: 1px solid rgba(0, 163, 218, 0.3);
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.project-category-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--border-radius-pill);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    z-index: 2;
+    background: rgba(8, 38, 75, 0.85);
+    color: var(--color-secondary);
+    border: 1px solid rgba(255, 209, 59, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* ============================================================
+   7. DÉTAILS DES PROJETS
+   ============================================================ */
+.project-content {
+    padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+}
+
+.project-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-off-white);
+    border-radius: var(--border-radius-md);
+}
+
+.project-detail-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-dark);
+}
+
+.project-detail-item i {
+    color: var(--color-primary);
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 11px;
+}
+
+/* Impact */
+.project-impact {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+    padding: 8px 12px;
+    background: var(--color-accent-alpha);
+    border-radius: var(--border-radius-md);
+    border-left: 3px solid var(--color-accent);
+}
+
+.project-impact i {
+    font-size: 12px;
+}
+
+/* ============================================================
+   8. BARRE DE PROGRESSION
+   ============================================================ */
+.project-progress {
+    margin-bottom: var(--spacing-md);
+}
+
+.project-progress .progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+}
+
+.project-progress .progress-percentage {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+}
+
+.project-progress .progress {
+    height: 8px;
+    background: var(--color-light);
+    border-radius: var(--border-radius-pill);
+    overflow: hidden;
+}
+
+.project-progress .progress-bar {
+    height: 100%;
+    border-radius: var(--border-radius-pill);
+    transition: width 1.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-progress .progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+/* Projet à venir */
+.project-coming-soon {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-info);
+    margin-bottom: var(--spacing-md);
+    padding: 8px 12px;
+    background: var(--color-info-alpha);
+    border-radius: var(--border-radius-md);
+    border-left: 3px solid var(--color-info);
+}
+
+/* Lien */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.project-link i {
+    font-size: 12px;
+    transition: transform var(--transition-fast);
+}
+
+.project-link:hover {
+    color: var(--color-accent);
+}
+
+.project-link:hover i {
+    transform: translateX(5px);
+}
+
+/* ============================================================
+   9. MESSAGE AUCUN RÉSULTAT
+   ============================================================ */
+.projects-no-results {
+    text-align: center;
+    padding: var(--spacing-4xl) var(--spacing-xl);
+}
+
+.no-results-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-light);
+    color: var(--color-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-md);
+}
+
+.projects-no-results h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.projects-no-results p {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray);
+    margin: 0;
+}
+
+.projects-no-results.show {
+    animation: noResultsIn 0.4s ease-out both;
+}
+
+@keyframes noResultsIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ============================================================
+   10. PAGINATION
+   ============================================================ */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: var(--spacing-3xl);
+}
+
+.pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 var(--spacing-sm);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-dark);
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.pagination-btn:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background: var(--color-off-white);
+    transform: translateY(-2px);
+}
+
+.pagination-btn.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(8, 38, 75, 0.3);
+}
+
+.pagination-btn.active:hover {
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+}
+
+/* ============================================================
+   11. SECTION CTA
+   ============================================================ */
+.projects-cta-section {
+    background: var(--color-off-white);
+}
+
+.projects-cta-card {
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-4xl) var(--spacing-3xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.projects-cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 209, 59, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.projects-cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -15%;
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 163, 218, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.projects-cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.projects-cta-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-secondary-alpha);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-lg);
+    animation: float 3s ease-in-out infinite;
+}
+
+.projects-cta-title {
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-3xl));
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.projects-cta-text {
+    font-size: var(--font-size-md);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: var(--line-height-relaxed);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.projects-cta-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projects-cta-buttons .btn {
+    min-width: 160px;
+    justify-content: center;
+}
+
+/* ============================================================
+   12. ANIMATIONS SPÉCIFIQUES
+   ============================================================ */
+.projects-section,
+.projects-cta-section {
+    animation: projectsSectionFadeIn 0.6s ease-out both;
+}
+
+@keyframes projectsSectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation de filtrage */
+.project-card.filtering-out {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.project-card.filtering-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+/* ============================================================
+   13. MEDIA QUERIES
+   ============================================================ */
+
+/* --- LAPTOP (≤ 1280px) --- */
+@media (max-width: 1280px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+/* --- TABLETTE (≤ 768px) --- */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: calc(var(--navbar-height) + 2rem) 0 3rem;
+    }
+
+    .page-hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .projects-filter-bar {
+        gap: var(--spacing-xs);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: var(--spacing-xs);
+        justify-content: flex-start;
+    }
+
+    .projects-filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 11px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+    }
+
+    .project-title {
+        font-size: var(--font-size-sm);
+    }
+
+    .projects-cta-card {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .projects-cta-buttons {
+        flex-direction: column;
+    }
+
+    .projects-cta-buttons .btn {
+        width: 100%;
+    }
+
+    .pagination-btn {
+        min-width: 36px;
+        height: 36px;
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* --- MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+    .page-hero-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .page-hero .breadcrumb {
+        font-size: 10px;
+    }
+
+    .project-image {
+        height: 150px;
+    }
+
+    .project-status-badge,
+    .project-category-badge {
+        font-size: 8px;
+        padding: 4px 10px;
+        top: 10px;
+    }
+
+    .project-status-badge { left: 10px; }
+    .project-category-badge { right: 10px; }
+
+    .project-content {
+        padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+    }
+
+    .project-details {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .project-detail-item {
+        font-size: 10px;
+    }
+
+    .pagination {
+        gap: 4px;
+    }
+
+    .pagination-btn {
+        min-width: 32px;
+        height: 32px;
+        font-size: 10px;
+    }
+}
+
+/* ============================================================
+   FIN DU FICHIER PROJETS.CSS
+   ============================================================ */

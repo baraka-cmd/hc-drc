@@ -1,0 +1,979 @@
+/* ============================================================
+   HOPE CHILD-DRC — DOMAINES.CSS
+   Styles Spécifiques de la Page Domaines d'Intervention
+   Version : 1.0.0
+   Auteur : HOPE CHILD-DRC Web Team
+   Description : Tous les styles de la page Domaines,
+                 filtres, grille des domaines, cartes détaillées,
+                 approche intégrée, diagramme, CTA
+   ============================================================ */
+
+/* ============================================================
+   TABLE DES MATIÈRES
+   ------------------------------------------------------------
+   1.  PAGE HERO + BREADCRUMB
+   2.  SECTION INTRODUCTION
+   3.  BARRE DE FILTRES
+   4.  GRILLE DES DOMAINES
+   5.  CARTES DOMAINES DÉTAILLÉES
+   6.  MESSAGE AUCUN RÉSULTAT
+   7.  SECTION APPROCHE INTÉGRÉE
+   8.  DIAGRAMME D'APPROCHE
+   9.  SECTION CTA
+   10. ANIMATIONS SPÉCIFIQUES
+   11. MEDIA QUERIES
+   ============================================================ */
+
+/* ============================================================
+   1. PAGE HERO + BREADCRUMB
+   ============================================================ */
+.page-hero {
+    position: relative;
+    background: var(--gradient-hero);
+    padding: calc(var(--navbar-height) + 3rem) 0 4rem;
+    margin-top: var(--navbar-height);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 209, 59, 0.04);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 163, 218, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.page-hero .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-lg);
+    padding: 0;
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.6);
+    flex-wrap: wrap;
+}
+
+.page-hero .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-weight: var(--font-weight-medium);
+}
+
+.page-hero .breadcrumb a:hover {
+    color: var(--color-secondary);
+}
+
+.page-hero .breadcrumb .separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 9px;
+}
+
+.page-hero .breadcrumb .current {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.page-hero-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-black);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: var(--letter-spacing-tight);
+    animation: pageHeroTitleIn 0.8s ease-out both;
+}
+
+.page-hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius-pill);
+    margin: var(--spacing-md) auto 0;
+    animation: pageHeroLineIn 1s ease-out 0.3s both;
+    transform-origin: center;
+}
+
+@keyframes pageHeroTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pageHeroLineIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.page-hero-subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-light);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+    animation: pageHeroSubtitleIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes pageHeroSubtitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   2. SECTION INTRODUCTION
+   ============================================================ */
+.domains-intro-section {
+    background: var(--color-white);
+    padding-bottom: var(--spacing-xl);
+}
+
+.domains-intro-card {
+    background: var(--color-off-white);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-2xl) var(--spacing-3xl);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-light-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.domains-intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-secondary);
+}
+
+.domains-intro-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    margin: 0 auto var(--spacing-md);
+    animation: float 3s ease-in-out infinite;
+}
+
+.domains-intro-text {
+    font-size: var(--font-size-md);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.domains-intro-text strong {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================================
+   3. BARRE DE FILTRES
+   ============================================================ */
+.domains-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-dark);
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-pill);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.filter-btn i {
+    font-size: 13px;
+    color: var(--color-primary);
+    transition: all var(--transition-normal);
+}
+
+.filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-off-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-btn.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 15px rgba(8, 38, 75, 0.3);
+}
+
+.filter-btn.active i {
+    color: var(--color-secondary);
+}
+
+.filter-btn.active:hover {
+    background: var(--color-primary-dark);
+    color: var(--color-white);
+    border-color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   4. GRILLE DES DOMAINES
+   ============================================================ */
+.domains-grid-section {
+    background: var(--color-white);
+}
+
+.domains-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    transition: all var(--transition-normal);
+}
+
+/* ============================================================
+   5. CARTES DOMAINES DÉTAILLÉES
+   ============================================================ */
+.domain-detail-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-light-gray);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.domain-detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-secondary);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.domain-detail-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-secondary);
+}
+
+.domain-detail-card:hover::before {
+    opacity: 1;
+}
+
+/* En-tête de la carte */
+.domain-detail-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.domain-detail-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    flex-shrink: 0;
+    transition: all var(--transition-normal);
+}
+
+.domain-detail-card:hover .domain-detail-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.domain-detail-badge {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    background: var(--color-light);
+    padding: 4px 12px;
+    border-radius: var(--border-radius-pill);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Titre */
+.domain-detail-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Texte */
+.domain-detail-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Liste des sous-domaines */
+.domain-detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.domain-detail-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-dark);
+    padding: 6px 10px;
+    border-radius: var(--border-radius-md);
+    background: var(--color-off-white);
+    transition: all var(--transition-fast);
+}
+
+.domain-detail-list li:hover {
+    background: var(--color-light);
+    padding-left: var(--spacing-md);
+}
+
+.domain-detail-list li i {
+    color: var(--color-success);
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+/* Lien */
+.domain-detail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    margin-top: auto;
+}
+
+.domain-detail-link i {
+    font-size: 12px;
+    transition: transform var(--transition-fast);
+}
+
+.domain-detail-link:hover {
+    color: var(--color-accent);
+}
+
+.domain-detail-link:hover i {
+    transform: translateX(5px);
+}
+
+/* ============================================================
+   6. MESSAGE AUCUN RÉSULTAT
+   ============================================================ */
+.domains-no-results {
+    text-align: center;
+    padding: var(--spacing-4xl) var(--spacing-xl);
+}
+
+.no-results-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-light);
+    color: var(--color-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-md);
+}
+
+.domains-no-results h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.domains-no-results p {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray);
+    margin: 0;
+}
+
+/* Animation d'apparition */
+.domains-no-results.show {
+    animation: noResultsIn 0.4s ease-out both;
+}
+
+@keyframes noResultsIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ============================================================
+   7. SECTION APPROCHE INTÉGRÉE
+   ============================================================ */
+.approach-section {
+    background: var(--color-off-white);
+}
+
+.approach-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-4xl) var(--spacing-3xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-light-gray);
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.approach-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.approach-content {
+    text-align: center;
+}
+
+.approach-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary-alpha);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-md);
+    animation: float 3s ease-in-out infinite;
+}
+
+.approach-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.approach-text {
+    font-size: var(--font-size-md);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.approach-text strong {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================================
+   8. DIAGRAMME D'APPROCHE
+   ============================================================ */
+.approach-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+    padding: var(--spacing-2xl);
+    background: var(--color-off-white);
+    border-radius: var(--border-radius-xl);
+    position: relative;
+}
+
+/* Ligne de connexion */
+.approach-diagram::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 2px;
+    background: var(--color-light-gray);
+    z-index: 0;
+}
+
+/* Centre - Enfant */
+.approach-center {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 0 8px rgba(8, 38, 75, 0.08);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.approach-center i {
+    font-size: var(--font-size-2xl);
+}
+
+.approach-center span {
+    font-size: 9px;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Branches */
+.approach-branches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.approach-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.approach-branch:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.approach-branch i {
+    font-size: var(--font-size-xl);
+    margin-bottom: 2px;
+    transition: all var(--transition-normal);
+}
+
+.approach-branch span {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.approach-branch:hover i {
+    transform: scale(1.2);
+}
+
+/* Couleurs des branches */
+.branch-1 i { color: #FF4500; }
+.branch-2 i { color: #E6B800; }
+.branch-3 i { color: #27AE60; }
+.branch-4 i { color: #00A3DA; }
+.branch-5 i { color: #2980B9; }
+.branch-6 i { color: #8E44AD; }
+
+.branch-1:hover { border-color: #FF4500; }
+.branch-2:hover { border-color: #E6B800; }
+.branch-3:hover { border-color: #27AE60; }
+.branch-4:hover { border-color: #00A3DA; }
+.branch-5:hover { border-color: #2980B9; }
+.branch-6:hover { border-color: #8E44AD; }
+
+/* ============================================================
+   9. SECTION CTA
+   ============================================================ */
+.domains-cta-section {
+    background: var(--color-white);
+}
+
+.domains-cta-card {
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-4xl) var(--spacing-3xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.domains-cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 209, 59, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.domains-cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -15%;
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 163, 218, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.domains-cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.domains-cta-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-secondary-alpha);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-lg);
+    animation: float 3s ease-in-out infinite;
+}
+
+.domains-cta-title {
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-3xl));
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.domains-cta-text {
+    font-size: var(--font-size-md);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: var(--line-height-relaxed);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.domains-cta-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.domains-cta-buttons .btn {
+    min-width: 160px;
+    justify-content: center;
+}
+
+/* ============================================================
+   10. ANIMATIONS SPÉCIFIQUES
+   ============================================================ */
+.domains-intro-section,
+.domains-grid-section,
+.approach-section,
+.domains-cta-section {
+    animation: domainsSectionFadeIn 0.6s ease-out both;
+}
+
+@keyframes domainsSectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation de filtrage */
+.domain-detail-card.filtering-out {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.domain-detail-card.filtering-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+/* ============================================================
+   11. MEDIA QUERIES
+   ============================================================ */
+
+/* --- LAPTOP (≤ 1280px) --- */
+@media (max-width: 1280px) {
+    .domains-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+/* --- TABLETTE (≤ 992px) --- */
+@media (max-width: 992px) {
+    .approach-branches {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- TABLETTE (≤ 768px) --- */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: calc(var(--navbar-height) + 2rem) 0 3rem;
+    }
+
+    .page-hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .domains-filter-bar {
+        gap: var(--spacing-xs);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: var(--spacing-xs);
+        justify-content: flex-start;
+    }
+
+    .domains-filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 11px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .domains-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .domain-detail-card {
+        padding: var(--spacing-lg);
+    }
+
+    .approach-card {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .approach-diagram {
+        padding: var(--spacing-lg);
+    }
+
+    .approach-branches {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .approach-center {
+        width: 80px;
+        height: 80px;
+    }
+
+    .domains-cta-card {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .domains-cta-buttons {
+        flex-direction: column;
+    }
+
+    .domains-cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* --- MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+    .page-hero-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .page-hero .breadcrumb {
+        font-size: 10px;
+    }
+
+    .domains-intro-card {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+
+    .domains-intro-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-md);
+    }
+
+    .domain-detail-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-xs);
+    }
+
+    .domain-detail-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-lg);
+    }
+
+    .domain-detail-title {
+        font-size: var(--font-size-md);
+        text-align: center;
+    }
+
+    .domain-detail-text {
+        font-size: var(--font-size-xs);
+        text-align: center;
+    }
+
+    .approach-branches {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .approach-branch {
+        padding: var(--spacing-sm);
+    }
+
+    .approach-branch i {
+        font-size: var(--font-size-md);
+    }
+
+    .approach-branch span {
+        font-size: 9px;
+    }
+
+    .approach-center {
+        width: 65px;
+        height: 65px;
+    }
+
+    .approach-center i {
+        font-size: var(--font-size-lg);
+    }
+
+    .approach-center span {
+        font-size: 7px;
+    }
+}
+
+/* ============================================================
+   FIN DU FICHIER DOMAINES.CSS
+   ============================================================ */

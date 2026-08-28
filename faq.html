@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — FAQ.HTML
+         Page Foire Aux Questions
+         Version : 1.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Foire aux questions avec accordéon,
+                       filtres par catégorie et recherche
+         ============================================================ -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>FAQ | HOPE CHILD-DRC</title>
+    <meta name="description" content="Foire aux questions de HOPE CHILD-DRC : dons, bénévolat, partenariats, projets et informations générales.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hopechilddrc.org/faq">
+    <meta property="og:title" content="FAQ | HOPE CHILD-DRC">
+    <meta property="og:description" content="Foire aux questions de HOPE CHILD-DRC.">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Comment faire un don à HOPE CHILD-DRC ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Vous pouvez faire un don via notre page dédiée avec plusieurs moyens de paiement : virement bancaire, Mobile Money ou PayPal."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Comment devenir bénévole ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Contactez-nous via le formulaire de contact en indiquant votre intérêt pour le bénévolat."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/faq.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="preload" href="assets/css/faq.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/faq.js" as="script">
+</head>
+<body>
+    
+    <div id="navbar-container"></div>
+    
+    <main id="main-content" role="main">
+        
+        <section class="page-hero" id="page-hero" aria-label="FAQ">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+                        <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                        <span class="current">FAQ</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title">Foire Aux Questions</h1>
+                    <p class="page-hero-subtitle">
+                        Trouvez les réponses à vos questions les plus fréquentes
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section faq-section" aria-label="FAQ">
+            <div class="container-lg">
+                
+                <!-- Filtres -->
+                <div class="filter-bar faq-filter-bar" id="faq-filter-bar" role="tablist" aria-label="Filtres FAQ">
+                    <button class="filter-btn active" data-filter="tous">Tous</button>
+                    <button class="filter-btn" data-filter="dons">Dons</button>
+                    <button class="filter-btn" data-filter="benevolat">Bénévolat</button>
+                    <button class="filter-btn" data-filter="partenariats">Partenariats</button>
+                    <button class="filter-btn" data-filter="projets">Projets</button>
+                    <button class="filter-btn" data-filter="general">Général</button>
+                </div>
+                
+                <!-- Accordéon FAQ -->
+                <div class="faq-accordion" id="faq-accordion">
+                    
+                    <!-- Catégorie : Dons -->
+                    <div class="faq-item" data-category="dons">
+                        <div class="faq-header">
+                            <span><i class="fas fa-heart"></i> Comment faire un don à HOPE CHILD-DRC ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Vous pouvez faire un don via notre <a href="don.html">page dédiée</a> avec plusieurs moyens de paiement : virement bancaire, Mobile Money (M-Pesa, Orange Money, Airtel Money) ou PayPal.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="dons">
+                        <div class="faq-header">
+                            <span><i class="fas fa-heart"></i> Mon don est-il déductible des impôts ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Contactez-nous pour connaître les dispositions fiscales applicables dans votre pays. Nous pouvons fournir un reçu de don sur demande.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="dons">
+                        <div class="faq-header">
+                            <span><i class="fas fa-heart"></i> Comment mon don est-il utilisé ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Votre don finance directement nos projets de protection des enfants, d'éducation, de santé, de sécurité alimentaire et de formation professionnelle en RDC.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Catégorie : Bénévolat -->
+                    <div class="faq-item" data-category="benevolat">
+                        <div class="faq-header">
+                            <span><i class="fas fa-hands-helping"></i> Comment devenir bénévole ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Contactez-nous via notre <a href="contact.html">page de contact</a> en indiquant votre intérêt pour le bénévolat. Nous vous répondrons avec les opportunités disponibles.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="benevolat">
+                        <div class="faq-header">
+                            <span><i class="fas fa-hands-helping"></i> Quels types de bénévolat sont disponibles ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Nous proposons du bénévolat sur le terrain, du bénévolat administratif, et du bénévolat à distance (communication, traduction, collecte de fonds).
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Catégorie : Partenariats -->
+                    <div class="faq-item" data-category="partenariats">
+                        <div class="faq-header">
+                            <span><i class="fas fa-handshake"></i> Comment devenir partenaire ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Remplissez le formulaire sur notre <a href="partenaires.html">page partenaires</a> ou contactez-nous directement par email.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Catégorie : Projets -->
+                    <div class="faq-item" data-category="projets">
+                        <div class="faq-header">
+                            <span><i class="fas fa-project-diagram"></i> Où HOPE CHILD-DRC intervient-elle ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Nous intervenons dans la Province du Nord-Kivu, RDC : Rutshuru (Bisoko), Nyiragongo (Turunga) et Masisi (Bweremana).
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="projets">
+                        <div class="faq-header">
+                            <span><i class="fas fa-project-diagram"></i> Quels sont vos domaines d'intervention ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Nous intervenons dans 6 domaines : Protection, Éducation, Sécurité Alimentaire, Santé & Nutrition, WASH et Formation Professionnelle.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Catégorie : Général -->
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-header">
+                            <span><i class="fas fa-info-circle"></i> Quand HOPE CHILD-DRC a-t-elle été créée ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                HOPE CHILD-DRC a été créée le 25 mai 2021 à Goma, Province du Nord-Kivu, République Démocratique du Congo.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-header">
+                            <span><i class="fas fa-info-circle"></i> Comment contacter HOPE CHILD-DRC ?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-body">
+                                Par email : <a href="mailto:hopechilddrc@gmail.com">hopechilddrc@gmail.com</a><br>
+                                Par WhatsApp : <a href="https://wa.me/243995349736">+243 995 349 736</a><br>
+                                Via notre <a href="contact.html">page de contact</a>.
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Aucun résultat -->
+                <div class="faq-no-results" id="faq-no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>Aucune question trouvée</h3>
+                    <p>Essayez de sélectionner une autre catégorie.</p>
+                </div>
+                
+                <!-- CTA -->
+                <div class="faq-cta reveal-up" data-aos="fade-up">
+                    <h3>Vous avez d'autres questions ?</h3>
+                    <p>N'hésitez pas à nous contacter, nous serons ravis de vous répondre.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-envelope"></i>
+                        Nous Contacter
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+        
+    </main>
+    
+    <div id="footer-container"></div>
+    
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/faq.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

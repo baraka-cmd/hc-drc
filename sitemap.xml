@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- À Propos -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/about.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Projets -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/projets.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Détail Projet -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/projet-detail.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Domaines -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/domaines.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Impact -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/impact.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Équipe -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/equipe.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Partenaires -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/partenaires.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Actualités -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/actualites.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Détail Article -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/article-detail.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Galerie -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/galerie.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Contact -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/contact.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Don -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/don.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Où nous travaillons -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/ou-nous-travaillons.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- FAQ -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/faq.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Mentions Légales -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/mentions-legales.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <!-- Politique Confidentialité -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/politique-confidentialite.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <!-- Politique Cookies -->
+    <url>
+        <loc>https://hc-rdc.netlify.app/politique-cookies.html</loc>
+        <lastmod>2024-08-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+</urlset>

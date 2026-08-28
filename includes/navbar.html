@@ -1,0 +1,238 @@
+<!-- ============================================================
+     HOPE CHILD-DRC — NAVBAR.HTML
+     Barre de Navigation Complète
+     Version : 1.0.0
+     Description : Navigation principale du site,
+                   injectée dans toutes les pages via layout.js
+     ============================================================ -->
+
+<!-- Loader (Écran de chargement) -->
+<div class="loader-wrapper" id="loader-wrapper">
+    <div class="loader-content">
+        <!-- Logo uniquement -->
+        <div class="loader-logo">
+            <img src="assets/images/logo/logo-main.jpg" 
+                 alt="HOPE CHILD-DRC Logo" 
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-hands-helping\' style=\'font-size: 80px; color: #FFD13B; animation: pulse 2s infinite;\'></i>';">
+        </div>
+        
+        <!-- Spinner sous le logo -->
+        <div class="loader-spinner"></div>
+    </div>
+</div>
+
+<!-- Scroll Indicator (Barre de progression du défilement) -->
+<div class="scroll-indicator" id="scroll-indicator"></div>
+
+<!-- Barre de Navigation -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar-container">
+        
+        <!-- Logo -->
+        <a href="index.html" class="navbar-logo" aria-label="HOPE CHILD-DRC - Accueil">
+            <!-- Logo en haut -->
+            <img src="assets/images/logo/logo-main.jpg" 
+                alt="HOPE CHILD-DRC Logo" 
+                class="navbar-logo-img" 
+                onerror="this.style.display='none'; this.parentNode.insertBefore(Object.assign(document.createElement('i'), {className: 'fas fa-hands-helping navbar-logo-fallback', style: 'font-size: 45px; color: #FFD13B;'}), this);">
+            
+            <!-- Texte en dessous du logo -->
+            <div class="navbar-logo-text">
+                <span class="navbar-logo-title">HOPE CHILD-DRC</span>
+                <span class="navbar-logo-subtitle">Sauvons des vies</span>
+            </div>
+        </a>
+
+        <!-- Menu Principal -->
+        <ul class="navbar-menu" id="navbar-menu" role="menubar">
+            
+            <!-- Accueil -->
+            <li class="navbar-item" role="none">
+                <a href="index.html" class="navbar-link active" role="menuitem" aria-current="page">
+                    <i class="fas fa-home"></i>
+                    <span data-translate="nav.home">Accueil</span>
+                </a>
+            </li>
+
+            <!-- À Propos (Dropdown) -->
+            <li class="navbar-item dropdown" role="none">
+                <a href="about.html" class="navbar-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-translate="nav.about">À Propos</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-label="À Propos">
+                    <li role="none">
+                        <a href="about.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-history"></i>
+                            <span data-translate="nav.about_history">Notre Histoire</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="mission.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-bullseye"></i>
+                            <span data-translate="nav.about_mission">Mission & Vision</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="valeurs.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-heart"></i>
+                            <span data-translate="nav.about_values">Nos Valeurs</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-divider" role="separator"></li>
+                    <li role="none">
+                        <a href="equipe.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-users"></i>
+                            <span data-translate="nav.about_team">Notre Équipe</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Domaines d'Intervention (Dropdown) -->
+            <li class="navbar-item dropdown" role="none">
+                <a href="domaines.html" class="navbar-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-th-large"></i>
+                    <span data-translate="nav.domains">Domaines d'Intervention</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-label="Domaines d'Intervention">
+                    <li role="none">
+                        <a href="domaine-protection.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-shield-alt" style="color: #FF4500;"></i>
+                            <span data-translate="nav.domains_protection">Protection</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="domaine-education.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-book" style="color: #FFD13B;"></i>
+                            <span data-translate="nav.domains_education">Éducation</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="domaine-securite-alimentaire.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-wheat-alt" style="color: #2ECC71;"></i>
+                            <span data-translate="nav.domains_food">Sécurité Alimentaire</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="domaine-sante-nutrition.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-heartbeat" style="color: #00A3DA;"></i>
+                            <span data-translate="nav.domains_health">Santé & Nutrition</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="domaine-wash.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-water" style="color: #3498DB;"></i>
+                            <span data-translate="nav.domains_wash">WASH</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="domaine-formation.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-briefcase" style="color: #9B59B6;"></i>
+                            <span data-translate="nav.domains_training">Formation Professionnelle</span>
+                        </a>
+                    </li>
+                    <li class="dropdown-divider" role="separator"></li>
+                    <li role="none">
+                        <a href="domaines.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-th-large"></i>
+                            <span>Tous les Domaines</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Nos Projets -->
+            <li class="navbar-item" role="none">
+                <a href="projets.html" class="navbar-link" role="menuitem">
+                    <i class="fas fa-project-diagram"></i>
+                    <span data-translate="nav.projects">Nos Projets</span>
+                </a>
+            </li>
+
+            <!-- Médias (Dropdown) -->
+            <li class="navbar-item dropdown" role="none">
+                <a href="galerie.html" class="navbar-link" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-photo-video"></i>
+                    <span>Médias</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-label="Médias">
+                    <li role="none">
+                        <a href="galerie.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-images"></i>
+                            <span data-translate="nav.gallery">Galerie</span>
+                        </a>
+                    </li>
+                    <!-- ============================================================
+                    <li role="none">
+                        <a href="actualites.html" class="dropdown-item" role="menuitem">
+                            <i class="fas fa-newspaper"></i>
+                            <span data-translate="nav.news">Actualités</span>
+                        </a>
+                    </li>
+                    ============================================================ -->
+                </ul>
+            </li>
+
+            <!-- Impact -->
+            <li class="navbar-item" role="none">
+                <a href="impact.html" class="navbar-link" role="menuitem">
+                    <i class="fas fa-chart-bar"></i>
+                    <span data-translate="nav.impact">Notre Impact</span>
+                </a>
+            </li>
+
+            <!-- Partenaires -->
+            <li class="navbar-item" role="none">
+                <a href="partenaires.html" class="navbar-link" role="menuitem">
+                    <i class="fas fa-handshake"></i>
+                    <span data-translate="nav.partners">Partenaires</span>
+                </a>
+            </li>
+
+            <!-- Contact -->
+            <li class="navbar-item" role="none">
+                <a href="contact.html" class="navbar-link" role="menuitem">
+                    <i class="fas fa-envelope"></i>
+                    <span data-translate="nav.contact">Contact</span>
+                </a>
+            </li>
+            <!-- ============================================================
+           
+            <li class="navbar-item" role="none">
+                <div class="language-switcher" role="group" aria-label="Sélection de langue">
+                    <button class="language-btn active" data-lang="fr" aria-pressed="true" title="Français">
+                        FR
+                    </button>
+                    <button class="language-btn" data-lang="en" aria-pressed="false" title="English">
+                        EN
+                    </button>
+                </div>
+            </li>
+            ============================================================ -->
+
+            <!-- Bouton Don -->
+            <li class="navbar-item" role="none">
+                <a href="don.html" class="navbar-donate" role="menuitem">
+                    <i class="fas fa-heart"></i>
+                    <span data-translate="nav.donate">Faire un Don</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- Bouton Hamburger (Mobile) -->
+        <button class="navbar-toggle" id="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</nav>
+
+<!-- Overlay pour menu mobile -->
+<div class="navbar-overlay" id="navbar-overlay"></div>

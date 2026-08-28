@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — EQUIPE.HTML
+         Page Notre Équipe
+         Version : 2.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Présentation de l'équipe complète avec
+                       vrais noms, photos et rôles réels
+         ============================================================ -->
+    
+    <!-- Métadonnées de base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Notre Équipe | HOPE CHILD-DRC</title>
+    <meta name="description" content="Découvrez l'équipe de HOPE CHILD-DRC : RUHAMA BACISEZE GÉRARD (Coordonnateur), JOSEPH MUHIRE (Chargé de Programme), LUKISA KALABO ARNOLD (Chargé de Protection) et toute l'équipe engagée.">
+    <meta name="keywords" content="HOPE CHILD-DRC, équipe, RUHAMA BACISEZE, JOSEPH MUHIRE, ONG RDC, Goma, Nord-Kivu">
+    <meta name="author" content="HOPE CHILD-DRC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hc-rdc.netlify.app/equipe">
+    <meta property="og:title" content="Notre Équipe | HOPE CHILD-DRC">
+    <meta property="og:description" content="Découvrez l'équipe engagée de HOPE CHILD-DRC.">
+    <meta property="og:image" content="assets/images/logo/og-image.jpg">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notre Équipe | HOPE CHILD-DRC">
+    <meta name="twitter:description" content="Découvrez l'équipe engagée de HOPE CHILD-DRC.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Notre Équipe - HOPE CHILD-DRC",
+        "url": "https://hc-rdc.netlify.app/equipe",
+        "description": "L'équipe de HOPE CHILD-DRC : coordination, programme, support et protection."
+    }
+    </script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Local -->
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/equipe.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Préchargement -->
+    <link rel="preload" href="assets/css/equipe.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/equipe.js" as="script">
+</head>
+<body>
+    
+    <!-- ============================================================
+         CONTENEUR NAVBAR (Injecté par layout.js)
+         ============================================================ -->
+    <div id="navbar-container"></div>
+    
+    <!-- ============================================================
+         CONTENU PRINCIPAL
+         ============================================================ -->
+    <main id="main-content" role="main">
+        
+        <!-- ============================================================
+             HERO + BREADCRUMB
+             ============================================================ -->
+        <section class="page-hero" id="page-hero" aria-label="Notre Équipe">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            Accueil
+                        </a>
+                        <span class="separator">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="current">Notre Équipe</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title">Notre Équipe</h1>
+                    <p class="page-hero-subtitle">
+                        Des femmes et des hommes engagés pour la protection et le bien-être des enfants en RDC
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 1 : INTRODUCTION
+             ============================================================ -->
+        <section class="section team-intro-section" id="introduction" aria-label="Introduction">
+            <div class="container-md">
+                <div class="team-intro-card reveal-up" data-aos="fade-up">
+                    <div class="team-intro-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <p class="team-intro-text">
+                        L'équipe de <strong>HOPE CHILD-DRC</strong> est composée de professionnels 
+                        passionnés et dévoués qui partagent une vision commune : 
+                        <em>« Offrir un avenir sûr, sain et épanoui à chaque enfant en RDC »</em>. 
+                        Notre structure organisationnelle repose sur une équipe opérationnelle 
+                        engagée sur le terrain.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 2 : COORDINATION
+             ============================================================ -->
+        <section class="section coordination-section" id="coordination" aria-label="Coordination">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">Coordination</span>
+                    <h2 class="section-title">La Direction</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">
+                        L'équipe qui pilote la vision et la stratégie de l'organisation
+                    </p>
+                </div>
+                
+                <div class="coordination-grid">
+                    
+                    <!-- Coordonnateur -->
+                    <div class="coordination-card reveal-up" data-aos="fade-up">
+                        <div class="coordination-card-inner">
+                            <div class="coordination-photo">
+                                <img src="assets/images/equipe/ruhama-baciseze.jpg" alt="RUHAMA BACISEZE GÉRARD" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user-tie\'></i>';">
+                            </div>
+                            <div class="coordination-info">
+                                <h3 class="coordination-name">RUHAMA BACISEZE GÉRARD</h3>
+                                <span class="coordination-role">Coordonnateur / Directeur</span>
+                                <p class="coordination-desc">
+                                    Assure la direction générale de l'organisation, la coordination 
+                                    des programmes, les relations avec les partenaires et autorités, 
+                                    la mobilisation des ressources, la représentation de l'organisation 
+                                    et le suivi de la stratégie.
+                                </p>
+                                <div class="coordination-contact">
+                                    <a href="mailto:hopechilddrc@gmail.com">
+                                        <i class="fas fa-envelope"></i>
+                                        Contacter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 3 : ÉQUIPE OPÉRATIONNELLE
+             ============================================================ -->
+        <section class="section team-members-section" id="equipe-operationnelle" aria-label="Équipe opérationnelle">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">Équipe Opérationnelle</span>
+                    <h2 class="section-title">Nos Experts sur le Terrain</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">
+                        Les professionnels qui mettent en œuvre nos projets
+                    </p>
+                </div>
+                
+                <div class="team-members-grid">
+                    
+                    <!-- Membre 1 : Chargé de Programme -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="0">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/joseph-muhire.jpg" alt="JOSEPH MUHIRE" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">JOSEPH MUHIRE</h3>
+                            <span class="team-member-role">Chargé de Programme</span>
+                            <p class="team-member-bio">
+                                Planifie, coordonne et supervise les programmes/projets. Prépare 
+                                les plans d'action, budgets, rapports narratifs, chronogrammes 
+                                et assure le suivi des résultats et indicateurs.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre 2 : Assistant Programme -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="100">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/selestin-amani.jpg" alt="SELESTIN AMANI" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">SELESTIN AMANI</h3>
+                            <span class="team-member-role">Assistant Programme</span>
+                            <p class="team-member-bio">
+                                Appuie le Chargé de Programme dans la planification, la collecte 
+                                des données, la préparation des activités, le classement documentaire, 
+                                le suivi des indicateurs et la rédaction des rapports.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre 3 : Logisticien -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="200">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/cirimwami-victoire.jpg" alt="CIRIMWAMI VICTOIRE KACHELEWA" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">CIRIMWAMI VICTOIRE KACHELEWA</h3>
+                            <span class="team-member-role">Logisticien</span>
+                            <p class="team-member-bio">
+                                Gère les achats, stocks, équipements, transports, biens et infrastructures. 
+                                Assure la disponibilité des matériels nécessaires aux activités et veille 
+                                au respect des procédures logistiques.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre 4 : Agent Terrain -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="300">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/patricia-mulimbima.jpg" alt="PATRICIA MULIMBIMA PENDO" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">PATRICIA MULIMBIMA PENDO</h3>
+                            <span class="team-member-role">Agent Terrain</span>
+                            <p class="team-member-bio">
+                                Met en œuvre les activités directement auprès des communautés 
+                                bénéficiaires, sensibilise, collecte les données, identifie les besoins, 
+                                accompagne les bénéficiaires et remonte les informations à l'équipe de projet.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre 5 : IT / Informatique -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="400">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/baeni-bandi.jpg" alt="BAENI BANDI TRESOR" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">BAENI BANDI TRESOR</h3>
+                            <span class="team-member-role">IT / Informatique</span>
+                            <p class="team-member-bio">
+                                Assure la gestion du matériel informatique, des logiciels, des réseaux, 
+                                de la sécurité des données, des systèmes de collecte numérique et de 
+                                l'assistance technique au personnel.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre 6 : Chargé de Protection -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="500">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/lukisa-kalabo.jpg" alt="LUKISA KALABO ARNOLD" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">LUKISA KALABO ARNOLD</h3>
+                            <span class="team-member-role">Chargé de Protection</span>
+                            <p class="team-member-bio">
+                                Conçoit et supervise les interventions de protection, identifie les 
+                                risques auxquels sont exposés les enfants, organise les activités de 
+                                prévention et veille au respect des principes de Protection de l'enfant, 
+                                PSEA, AAP et Do No Harm.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre 7 : Caissière (placeholder) -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="600">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/nshokano muhigirwa.jpg" alt="nshokano muhigirwa" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">NSHOKANO MUHIGIRWA Evodie</h3>
+                            <span class="team-member-role">Caissière</span>
+                            <p class="team-member-bio">
+                                Assure la gestion de la petite caisse, les paiements autorisés, 
+                                la tenue du livre de caisse, la conservation des pièces justificatives 
+                                et le suivi des mouvements financiers conformément aux procédures.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre 8 : Chef de Projet (placeholder) -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="700">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/LOTINS.jpg" alt="nshokano muhigirwa" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">LOTINS N'KEKENI</h3>
+                            <span class="team-member-role">Chef de Projet</span>
+                            <p class="team-member-bio">
+                                Responsable opérationnel d'un projet spécifique. Planifie et supervise 
+                                les activités, gère l'équipe, suit le budget, les indicateurs, les risques, 
+                                la qualité et produit les rapports destinés à la coordination et aux bailleurs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Membre 9 : Conseiller Technique -->
+                    <div class="team-member-card reveal-up" data-aos="fade-up" data-delay="800">
+                        <div class="team-member-photo">
+                            <img src="assets/images/equipe/mude-tabana.jpg" alt="MUDE TABANA Mude" onerror="this.style.display='none'; this.parentNode.innerHTML='<i class=\'fas fa-lightbulb\'></i>';">
+                        </div>
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">MUDE TABANA Mude</h3>
+                            <span class="team-member-role">Conseiller Technique</span>
+                            <p class="team-member-bio">
+                                Apporte un appui technique et stratégique à la coordination et aux équipes 
+                                programmes. Contribue à l'amélioration continue de la qualité des interventions, 
+                                au renforcement des capacités techniques et à l'orientation méthodologique 
+                                des projets de HOPE CHILD-DRC.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 4 : BÉNÉVOLES
+             ============================================================ -->
+        <section class="section volunteers-section" id="benevoles" aria-label="Bénévoles">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">Bénévoles</span>
+                    <h2 class="section-title">Nos Volontaires Engagés</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">
+                        Des personnes qui donnent leur temps et leur énergie pour la cause
+                    </p>
+                </div>
+                
+                <div class="volunteers-card reveal-up" data-aos="fade-up">
+                    <div class="volunteers-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="volunteers-title">Rejoignez nos bénévoles</h3>
+                    <p class="volunteers-text">
+                        Nos bénévoles sont le cœur battant de HOPE CHILD-DRC. Ils interviennent 
+                        sur le terrain, soutiennent nos programmes et apportent leur expertise 
+                        dans divers domaines. Leur dévouement fait la différence dans la vie 
+                        des enfants et des communautés que nous servons.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-hands-helping"></i>
+                        Devenir Bénévole
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 5 : CTA REJOIGNEZ-NOUS
+             ============================================================ -->
+        <section class="section join-cta-section" id="rejoignez-nous" aria-label="Rejoignez-nous">
+            <div class="container-xl">
+                <div class="join-cta-card reveal-up" data-aos="fade-up">
+                    <div class="join-cta-content">
+                        <div class="join-cta-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h2 class="join-cta-title">
+                            Rejoignez notre équipe
+                        </h2>
+                        <p class="join-cta-text">
+                            Vous partagez notre passion pour la protection des enfants et le 
+                            développement communautaire ? Rejoignez HOPE CHILD-DRC et contribuez 
+                            à changer des vies en RDC.
+                        </p>
+                        <div class="join-cta-buttons">
+                            <a href="contact.html" class="btn btn-accent btn-lg">
+                                <i class="fas fa-paper-plane"></i>
+                                Envoyer votre candidature
+                            </a>
+                            <a href="contact.html" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-envelope"></i>
+                                Nous Contacter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ============================================================
+         CONTENEUR FOOTER (Injecté par layout.js)
+         ============================================================ -->
+    <div id="footer-container"></div>
+    
+    <!-- ============================================================
+         SCRIPTS JAVASCRIPT
+         ============================================================ -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/equipe.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

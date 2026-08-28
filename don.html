@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — DON.HTML
+         Page Faire un Don
+         Version : 1.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Page de don complète avec raisons de donner,
+                       montants suggérés, moyens de paiement,
+                       formulaire de don, FAQ et appel à l'action
+         ============================================================ -->
+    
+    <!-- Métadonnées de base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Faire un Don | HOPE CHILD-DRC</title>
+    <meta name="description" content="Soutenez HOPE CHILD-DRC et contribuez à changer la vie des enfants vulnérables en RDC. Don unique ou mensuel, chaque contribution compte.">
+    <meta name="keywords" content="HOPE CHILD-DRC, don, faire un don, soutenir, ONG RDC, enfants vulnérables, don mensuel, don unique">
+    <meta name="author" content="HOPE CHILD-DRC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hopechilddrc.org/don">
+    <meta property="og:title" content="Faire un Don | HOPE CHILD-DRC">
+    <meta property="og:description" content="Soutenez HOPE CHILD-DRC et contribuez à changer la vie des enfants vulnérables en RDC.">
+    <meta property="og:image" content="assets/images/logo/og-image.jpg">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Faire un Don | HOPE CHILD-DRC">
+    <meta name="twitter:description" content="Soutenez HOPE CHILD-DRC et changez des vies.">
+    <meta name="twitter:image" content="assets/images/logo/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DonateAction",
+        "name": "Faire un Don à HOPE CHILD-DRC",
+        "url": "https://www.hopechilddrc.org/don",
+        "description": "Soutenez HOPE CHILD-DRC pour protéger les enfants vulnérables en RDC.",
+        "agent": {
+            "@type": "NGO",
+            "name": "HOPE CHILD-DRC"
+        },
+        "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "minPrice": 10,
+            "maxPrice": 100
+        }
+    }
+    </script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Local -->
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/don.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Préchargement -->
+    <link rel="preload" href="assets/css/don.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/don.js" as="script">
+</head>
+<body>
+    
+    <!-- ============================================================
+         CONTENEUR NAVBAR (Injecté par layout.js)
+         ============================================================ -->
+    <div id="navbar-container"></div>
+    
+    <!-- ============================================================
+         CONTENU PRINCIPAL
+         ============================================================ -->
+    <main id="main-content" role="main">
+        
+        <!-- ============================================================
+             HERO + BREADCRUMB
+             ============================================================ -->
+        <section class="page-hero" id="page-hero" aria-label="Faire un Don">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            Accueil
+                        </a>
+                        <span class="separator">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="current">Faire un Don</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title">Faire un Don</h1>
+                    <p class="page-hero-subtitle">
+                        Votre générosité change des vies et offre un avenir aux enfants vulnérables en RDC
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 1 : POURQUOI DONNER
+             ============================================================ -->
+        <section class="section why-donate-section" id="pourquoi-donner" aria-label="Pourquoi donner">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">Votre Impact</span>
+                    <h2 class="section-title">Pourquoi donner ?</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">
+                        Chaque contribution, quelle que soit sa taille, fait une différence réelle
+                    </p>
+                </div>
+                
+                <div class="why-donate-grid">
+                    
+                    <!-- Raison 1 -->
+                    <div class="why-donate-card reveal-up" data-aos="fade-up" data-delay="0">
+                        <div class="why-donate-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="why-donate-title">Impact Direct</h3>
+                        <p class="why-donate-text">
+                            Votre don va directement aux projets sur le terrain : protection des enfants, 
+                            éducation, santé et sécurité alimentaire.
+                        </p>
+                    </div>
+                    
+                    <!-- Raison 2 -->
+                    <div class="why-donate-card reveal-up" data-aos="fade-up" data-delay="150">
+                        <div class="why-donate-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="why-donate-title">Transparence Totale</h3>
+                        <p class="why-donate-text">
+                            Nous rendons compte de chaque dollar utilisé à travers nos rapports 
+                            annuels et nos communications régulières.
+                        </p>
+                    </div>
+                    
+                    <!-- Raison 3 -->
+                    <div class="why-donate-card reveal-up" data-aos="fade-up" data-delay="300">
+                        <div class="why-donate-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="why-donate-title">Impact Durable</h3>
+                        <p class="why-donate-text">
+                            Nous investissons dans des solutions à long terme qui renforcent la 
+                            résilience des communautés et créent un changement durable.
+                        </p>
+                    </div>
+                    
+                    <!-- Raison 4 -->
+                    <div class="why-donate-card reveal-up" data-aos="fade-up" data-delay="450">
+                        <div class="why-donate-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="why-donate-title">Communauté Engagée</h3>
+                        <p class="why-donate-text">
+                            Vous rejoignez une communauté de personnes qui croient en un avenir 
+                            meilleur pour les enfants de la RDC.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 2 : MONTANTS SUGGÉRÉS
+             ============================================================ -->
+        <section class="section amounts-section" id="montants" aria-label="Montants suggérés">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">Choisissez votre contribution</span>
+                    <h2 class="section-title">Montants suggérés</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">
+                        Découvrez ce que votre don peut accomplir
+                    </p>
+                </div>
+                
+                <!-- Onglets Don unique / Mensuel -->
+                <div class="don-tabs-nav" id="don-tabs-nav" role="tablist" aria-label="Type de don">
+                    <button class="don-tab-btn active" data-tab="unique" role="tab" aria-selected="true" aria-controls="tab-unique">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        Don unique
+                    </button>
+                    <button class="don-tab-btn" data-tab="mensuel" role="tab" aria-selected="false" aria-controls="tab-mensuel">
+                        <i class="fas fa-sync-alt"></i>
+                        Don mensuel
+                    </button>
+                </div>
+                
+                <!-- Grille des montants -->
+                <div class="donate-amounts-grid" id="donate-amounts-grid">
+                    
+                    <!-- 10$ -->
+                    <div class="donate-amount-card" data-amount="10" data-aos="fade-up" data-delay="0">
+                        <div class="donate-amount-value">10$</div>
+                        <div class="donate-amount-equivalent">
+                            <i class="fas fa-book"></i>
+                            Kit scolaire pour 1 enfant
+                        </div>
+                        <div class="donate-amount-select">
+                            <button class="btn btn-outline-primary btn-sm select-amount-btn" data-amount="10">
+                                Sélectionner
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 25$ -->
+                    <div class="donate-amount-card" data-amount="25" data-aos="fade-up" data-delay="100">
+                        <div class="donate-amount-value">25$</div>
+                        <div class="donate-amount-equivalent">
+                            <i class="fas fa-laptop"></i>
+                            Formation professionnelle pour 1 jeune
+                        </div>
+                        <div class="donate-amount-select">
+                            <button class="btn btn-outline-primary btn-sm select-amount-btn" data-amount="25">
+                                Sélectionner
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 50$ -->
+                    <div class="donate-amount-card" data-amount="50" data-aos="fade-up" data-delay="200">
+                        <div class="donate-amount-value">50$</div>
+                        <div class="donate-amount-equivalent">
+                            <i class="fas fa-seedling"></i>
+                            Soutien agricole pour 1 famille
+                        </div>
+                        <div class="donate-amount-select">
+                            <button class="btn btn-outline-primary btn-sm select-amount-btn" data-amount="50">
+                                Sélectionner
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 100$ -->
+                    <div class="donate-amount-card" data-amount="100" data-aos="fade-up" data-delay="300">
+                        <div class="donate-amount-value">100$</div>
+                        <div class="donate-amount-equivalent">
+                            <i class="fas fa-heart"></i>
+                            Prise en charge complète pour 1 enfant
+                        </div>
+                        <div class="donate-amount-select">
+                            <button class="btn btn-outline-primary btn-sm select-amount-btn" data-amount="100">
+                                Sélectionner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Montant personnalisé -->
+                <div class="custom-amount-section reveal-up" data-aos="fade-up" data-delay="400">
+                    <label for="custom-amount" class="custom-amount-label">
+                        Ou entrez un montant personnalisé :
+                    </label>
+                    <div class="custom-amount-input-group">
+                        <input type="number" 
+                               id="custom-amount" 
+                               class="form-control custom-amount-input" 
+                               placeholder="Montant en USD" 
+                               min="1" 
+                               step="1">
+                        <span class="custom-amount-currency">USD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 3 : MOYENS DE PAIEMENT
+             ============================================================ -->
+        <section class="section payment-section" id="moyens-paiement" aria-label="Moyens de paiement">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">Comment donner</span>
+                    <h2 class="section-title">Moyens de paiement</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">
+                        Choisissez le mode de paiement qui vous convient
+                    </p>
+                </div>
+                
+                <div class="payment-methods-grid">
+                    
+                    <!-- Virement bancaire -->
+                    <div class="payment-method-card reveal-up" data-aos="fade-up" data-delay="0">
+                        <div class="payment-method-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3 class="payment-method-title">Virement bancaire</h3>
+                        <p class="payment-method-text">
+                            Effectuez un virement directement sur notre compte bancaire.
+                        </p>
+                        <div class="payment-method-details">
+                            <div class="bank-detail-item">
+                                <span class="bank-detail-label">Nom du compte</span>
+                                <span class="bank-detail-value">HOPE CHILD-DRC</span>
+                            </div>
+                            <div class="bank-detail-item">
+                                <span class="bank-detail-label">Banque</span>
+                                <span class="bank-detail-value">À compléter</span>
+                            </div>
+                            <div class="bank-detail-item">
+                                <span class="bank-detail-label">Numéro de compte</span>
+                                <span class="bank-detail-value">À compléter</span>
+                            </div>
+                            <div class="bank-detail-item">
+                                <span class="bank-detail-label">Code SWIFT</span>
+                                <span class="bank-detail-value">À compléter</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Money -->
+                    <div class="payment-method-card reveal-up" data-aos="fade-up" data-delay="150">
+                        <div class="payment-method-icon mobile-money">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="payment-method-title">Mobile Money</h3>
+                        <p class="payment-method-text">
+                            Envoyez votre don via M-Pesa, Orange Money ou Airtel Money.
+                        </p>
+                        <div class="payment-method-details">
+                            <div class="bank-detail-item">
+                                <span class="bank-detail-label">M-Pesa</span>
+                                <span class="bank-detail-value">+243 995 349 736</span>
+                            </div>
+                            <div class="bank-detail-item">
+                                <span class="bank-detail-label">Orange Money</span>
+                                <span class="bank-detail-value">+243 901 945 827</span>
+                            </div>
+                            <div class="bank-detail-item">
+                                <span class="bank-detail-label">Airtel Money</span>
+                                <span class="bank-detail-value">+243 995 349 736</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PayPal -->
+                    <div class="payment-method-card reveal-up" data-aos="fade-up" data-delay="300">
+                        <div class="payment-method-icon paypal">
+                            <i class="fab fa-paypal"></i>
+                        </div>
+                        <h3 class="payment-method-title">PayPal</h3>
+                        <p class="payment-method-text">
+                            Faites un don sécurisé en ligne via PayPal.
+                        </p>
+                        <div class="payment-method-details">
+                            <p class="paypal-note">
+                                Cliquez sur le bouton ci-dessous pour effectuer votre don via PayPal.
+                            </p>
+                            <button class="btn btn-primary btn-md btn-block" id="paypal-donate-btn">
+                                <i class="fab fa-paypal"></i>
+                                Donner avec PayPal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 4 : FORMULAIRE DE DON
+             ============================================================ -->
+        <section class="section don-form-section" id="formulaire-don" aria-label="Formulaire de don">
+            <div class="container-lg">
+                <div class="don-form-card reveal-up" data-aos="fade-up">
+                    <div class="don-form-header">
+                        <div class="don-form-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h2 class="don-form-title">Vos informations</h2>
+                        <p class="don-form-subtitle">
+                            Remplissez ce formulaire pour finaliser votre don
+                        </p>
+                    </div>
+                    
+                    <form class="don-form" 
+                        id="don-form" 
+                        name="don" 
+                        method="POST" 
+                        data-netlify="true"
+                        netlify-honeypot="bot-field"
+                        action="/don.html"
+                        novalidate>
+                        
+                        <!-- Champ caché obligatoire pour Netlify Forms -->
+                        <input type="hidden" name="form-name" value="don">
+                        
+                        <!-- Anti-spam honeypot -->
+                        <p style="display: none;">
+                            <label>Ne remplissez pas ce champ : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                        </p>
+                        
+                        <!-- Nom complet -->
+                        <div class="form-group">
+                            <label for="don-name" class="form-label">
+                                Nom complet
+                                <span class="required">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-icon">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <input type="text" 
+                                    name="nom"
+                                    id="don-name" 
+                                    class="form-control" 
+                                    placeholder="Votre nom complet" 
+                                    required 
+                                    autocomplete="name">
+                            </div>
+                            <span class="form-error-message" id="don-name-error">Veuillez entrer votre nom</span>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="don-email" class="form-label">
+                                Email
+                                <span class="required">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <input type="email" 
+                                    name="email"
+                                    id="don-email" 
+                                    class="form-control" 
+                                    placeholder="Votre adresse email" 
+                                    required 
+                                    autocomplete="email">
+                            </div>
+                            <span class="form-error-message" id="don-email-error">Veuillez entrer un email valide</span>
+                        </div>
+                        
+                        <!-- Montant -->
+                        <div class="form-group">
+                            <label for="don-amount" class="form-label">
+                                Montant du don (USD)
+                                <span class="required">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </span>
+                                <input type="number" 
+                                    name="montant"
+                                    id="don-amount" 
+                                    class="form-control" 
+                                    placeholder="Montant" 
+                                    min="1" 
+                                    step="1" 
+                                    required>
+                            </div>
+                            <span class="form-error-message" id="don-amount-error">Veuillez entrer un montant valide</span>
+                        </div>
+                        
+                        <!-- Type de don -->
+                        <div class="form-group">
+                            <label for="don-type" class="form-label">
+                                Type de don
+                                <span class="required">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-icon">
+                                    <i class="fas fa-tag"></i>
+                                </span>
+                                <select name="type_don" id="don-type" class="form-control" required>
+                                    <option value="" disabled selected>Sélectionnez le type de don</option>
+                                    <option value="unique">Don unique</option>
+                                    <option value="mensuel">Don mensuel</option>
+                                </select>
+                            </div>
+                            <span class="form-error-message" id="don-type-error">Veuillez sélectionner le type de don</span>
+                        </div>
+                        
+                        <!-- Message (optionnel) -->
+                        <div class="form-group">
+                            <label for="don-message" class="form-label">
+                                Message
+                                <span class="optional">(optionnel)</span>
+                            </label>
+                            <div class="input-group input-group-textarea">
+                                <span class="input-group-icon">
+                                    <i class="fas fa-comment"></i>
+                                </span>
+                                <textarea name="message"
+                                        id="don-message" 
+                                        class="form-control" 
+                                        rows="3" 
+                                        placeholder="Un message d'encouragement..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Bouton -->
+                        <button type="submit" class="btn btn-accent btn-lg btn-block don-submit-btn">
+                            <i class="fas fa-heart"></i>
+                            Valider mon don
+                        </button>
+                        
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 5 : FAQ DON
+             ============================================================ -->
+        <section class="section don-faq-section" id="faq-don" aria-label="FAQ Don">
+            <div class="container-lg">
+                <div class="section-header">
+                    <span class="section-label">Questions fréquentes</span>
+                    <h2 class="section-title">FAQ Don</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="accordion don-faq-accordion" id="don-faq-accordion">
+                    
+                    <!-- Question 1 -->
+                    <div class="accordion-item active">
+                        <div class="accordion-header">
+                            <span>
+                                <i class="fas fa-question-circle"></i>
+                                Mon don est-il déductible des impôts ?
+                            </span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Contactez-nous pour connaître les dispositions fiscales applicables 
+                                dans votre pays. Nous pouvons fournir un reçu de don sur demande.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>
+                                <i class="fas fa-question-circle"></i>
+                                Comment mon don est-il utilisé ?
+                            </span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Votre don finance directement nos projets de protection des enfants, 
+                                d'éducation, de santé, de sécurité alimentaire et de formation 
+                                professionnelle en République Démocratique du Congo.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>
+                                <i class="fas fa-question-circle"></i>
+                                Puis-je faire un don en nature ?
+                            </span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Oui, nous acceptons les dons en nature (vêtements, livres, matériel 
+                                scolaire, équipement médical, etc.). Contactez-nous pour organiser 
+                                la collecte ou la livraison.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 6 : CTA FINAL
+             ============================================================ -->
+        <section class="section don-cta-section" id="cta-final" aria-label="Appel à l'action final">
+            <div class="container-xl">
+                <div class="don-cta-card reveal-up" data-aos="fade-up">
+                    <div class="don-cta-content">
+                        <div class="don-cta-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h2 class="don-cta-title">
+                            Merci de votre générosité
+                        </h2>
+                        <p class="don-cta-text">
+                            Chaque don, petit ou grand, nous rapproche d'un avenir où chaque enfant 
+                            en RDC a accès à la protection, à l'éducation et à la santé.
+                        </p>
+                        <div class="don-cta-buttons">
+                            <a href="contact.html" class="btn btn-outline-white btn-lg">
+                                <i class="fas fa-envelope"></i>
+                                Nous Contacter
+                            </a>
+                            <a href="partenaires.html" class="btn btn-outline-white btn-lg">
+                                <i class="fas fa-handshake"></i>
+                                Devenir Partenaire
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ============================================================
+         CONTENEUR FOOTER (Injecté par layout.js)
+         ============================================================ -->
+    <div id="footer-container"></div>
+    
+    <!-- ============================================================
+         SCRIPTS JAVASCRIPT
+         ============================================================ -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/don.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,1329 @@
+/* ============================================================
+   HOPE CHILD-DRC — DON.CSS
+   Styles Spécifiques de la Page Faire un Don
+   Version : 1.0.0
+   Auteur : HOPE CHILD-DRC Web Team
+   Description : Tous les styles de la page Don,
+                 raisons de donner, montants, paiements,
+                 formulaire, FAQ, CTA, animations
+   ============================================================ */
+
+/* ============================================================
+   TABLE DES MATIÈRES
+   ------------------------------------------------------------
+   1.  PAGE HERO + BREADCRUMB
+   2.  SECTION POURQUOI DONNER
+   3.  CARTES RAISONS DE DONNER
+   4.  SECTION MONTANTS SUGGÉRÉS
+   5.  TABS DON UNIQUE/MENSUEL
+   6.  GRILLE DES MONTANTS
+   7.  CARTE MONTANT
+   8.  MONTANT PERSONNALISÉ
+   9.  SECTION MOYENS DE PAIEMENT
+   10. CARTES PAIEMENT
+   11. DÉTAILS BANCAIRES
+   12. SECTION FORMULAIRE DE DON
+   13. CARTE FORMULAIRE
+   14. CHAMPS FORMULAIRE
+   15. BOUTON SOUMISSION
+   16. SECTION FAQ
+   17. ACCORDÉON FAQ
+   18. SECTION CTA FINAL
+   19. ANIMATIONS SPÉCIFIQUES
+   20. MESSAGES TOAST
+   21. MEDIA QUERIES
+   22. ACCESSIBILITÉ
+   ============================================================ */
+
+/* ============================================================
+   1. PAGE HERO + BREADCRUMB
+   ============================================================ */
+.page-hero {
+    position: relative;
+    background: var(--gradient-hero);
+    padding: calc(var(--navbar-height) + 3rem) 0 4rem;
+    margin-top: var(--navbar-height);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 209, 59, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 69, 0, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.page-hero .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-lg);
+    padding: 0;
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.6);
+    flex-wrap: wrap;
+}
+
+.page-hero .breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-weight: var(--font-weight-medium);
+}
+
+.page-hero .breadcrumb a:hover {
+    color: var(--color-secondary);
+}
+
+.page-hero .breadcrumb .separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 9px;
+}
+
+.page-hero .breadcrumb .current {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-semibold);
+}
+
+.page-hero-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-black);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: var(--letter-spacing-tight);
+    animation: pageHeroTitleIn 0.8s ease-out both;
+}
+
+.page-hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius-pill);
+    margin: var(--spacing-md) auto 0;
+    animation: pageHeroLineIn 1s ease-out 0.3s both;
+    transform-origin: center;
+}
+
+@keyframes pageHeroTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pageHeroLineIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.page-hero-subtitle {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-light);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.7;
+    animation: pageHeroSubtitleIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes pageHeroSubtitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   2. SECTION POURQUOI DONNER
+   ============================================================ */
+.why-donate-section {
+    background: var(--color-white);
+}
+
+.why-donate-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   3. CARTES RAISONS DE DONNER
+   ============================================================ */
+.why-donate-card {
+    background: var(--color-off-white);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-light-gray);
+}
+
+.why-donate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-secondary);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.why-donate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-white);
+}
+
+.why-donate-card:hover::before {
+    opacity: 1;
+}
+
+.why-donate-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    margin: 0 auto var(--spacing-md);
+    transition: all var(--transition-normal);
+}
+
+.why-donate-card:hover .why-donate-icon {
+    background: var(--color-accent);
+    color: var(--color-white);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.why-donate-title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.why-donate-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+/* ============================================================
+   4. SECTION MONTANTS SUGGÉRÉS
+   ============================================================ */
+.amounts-section {
+    background: var(--color-off-white);
+}
+
+/* ============================================================
+   5. TABS DON UNIQUE/MENSUEL
+   ============================================================ */
+.don-tabs-nav {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    z-index: 1;
+}
+
+.don-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-dark);
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-pill);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+}
+
+.don-tab-btn i {
+    font-size: 14px;
+    transition: all var(--transition-fast);
+}
+
+.don-tab-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.don-tab-btn.active {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.35);
+}
+
+.don-tab-btn.active i {
+    color: var(--color-white);
+}
+
+/* ============================================================
+   6. GRILLE DES MONTANTS
+   ============================================================ */
+.donate-amounts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   7. CARTE MONTANT
+   ============================================================ */
+.donate-amount-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    border: 2px solid var(--color-light-gray);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.donate-amount-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.donate-amount-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-accent);
+}
+
+.donate-amount-card:hover::before {
+    opacity: 1;
+}
+
+.donate-amount-card.selected {
+    border-color: var(--color-accent);
+    background: rgba(255, 69, 0, 0.03);
+    box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.1);
+}
+
+.donate-amount-card.selected::before {
+    opacity: 1;
+}
+
+.donate-amount-value {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-black);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1;
+}
+
+.donate-amount-equivalent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-dark);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+}
+
+.donate-amount-equivalent i {
+    color: var(--color-secondary);
+    font-size: 14px;
+}
+
+.donate-amount-select {
+    margin-top: auto;
+}
+
+.donate-amount-select .select-amount-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: var(--font-size-xs);
+    padding: 8px 16px;
+    transition: all var(--transition-normal);
+}
+
+.donate-amount-select .select-amount-btn:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+}
+
+.donate-amount-card.selected .select-amount-btn {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+}
+
+/* ============================================================
+   8. MONTANT PERSONNALISÉ
+   ============================================================ */
+.custom-amount-section {
+    max-width: 400px;
+    margin: var(--spacing-2xl) auto 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.custom-amount-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.custom-amount-input-group {
+    position: relative;
+}
+
+.custom-amount-input {
+    width: 100%;
+    padding: 14px 60px 14px 20px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    background: var(--color-white);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.custom-amount-input::placeholder {
+    color: var(--color-gray);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-sm);
+}
+
+.custom-amount-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.1);
+}
+
+.custom-amount-currency {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+    pointer-events: none;
+}
+
+/* ============================================================
+   9. SECTION MOYENS DE PAIEMENT
+   ============================================================ */
+.payment-section {
+    background: var(--color-white);
+}
+
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   10. CARTES PAIEMENT
+   ============================================================ */
+.payment-method-card {
+    background: var(--color-off-white);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-light-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.payment-method-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.payment-method-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-white);
+}
+
+.payment-method-card:hover::before {
+    opacity: 1;
+}
+
+.payment-method-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-md);
+    transition: all var(--transition-normal);
+}
+
+.payment-method-icon.mobile-money {
+    background: #25D366;
+    color: var(--color-white);
+}
+
+.payment-method-icon.paypal {
+    background: #003087;
+    color: #FFFFFF;
+}
+
+.payment-method-card:hover .payment-method-icon {
+    transform: scale(1.1);
+}
+
+.payment-method-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.payment-method-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   11. DÉTAILS BANCAIRES
+   ============================================================ */
+.payment-method-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: left;
+}
+
+.bank-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--color-white);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-light-gray);
+}
+
+.bank-detail-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.bank-detail-value {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+}
+
+.paypal-note {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.5;
+}
+
+#paypal-donate-btn {
+    justify-content: center;
+    background: #003087;
+    color: var(--color-white);
+}
+
+#paypal-donate-btn:hover {
+    background: #0044A8;
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 48, 135, 0.4);
+}
+
+/* ============================================================
+   12. SECTION FORMULAIRE DE DON
+   ============================================================ */
+.don-form-section {
+    background: var(--color-off-white);
+    position: relative;
+}
+
+.don-form-section::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 69, 0, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ============================================================
+   13. CARTE FORMULAIRE
+   ============================================================ */
+.don-form-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-2xl) var(--spacing-3xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-light-gray);
+    max-width: 700px;
+    margin: 0 auto;
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
+}
+
+.don-form-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.don-form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.don-form-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-accent);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    margin: 0 auto var(--spacing-md);
+    animation: heartBeat 2s ease-in-out infinite;
+}
+
+.don-form-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.don-form-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    margin: 0;
+}
+
+/* ============================================================
+   14. CHAMPS FORMULAIRE
+   ============================================================ */
+.don-form .form-group {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.don-form .form-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-dark);
+    margin-bottom: 6px;
+}
+
+.don-form .required {
+    color: var(--color-accent);
+}
+
+.don-form .optional {
+    color: var(--color-gray);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-xs);
+}
+
+.don-form .input-group {
+    position: relative;
+}
+
+.don-form .input-group-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-gray);
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1;
+    transition: color var(--transition-fast);
+}
+
+.don-form .input-group-textarea .input-group-icon {
+    top: 16px;
+    transform: none;
+}
+
+.don-form .form-control {
+    width: 100%;
+    padding: 12px 16px 12px 42px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    color: var(--color-dark);
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-normal);
+}
+
+.don-form .form-control::placeholder {
+    color: var(--color-gray);
+}
+
+.don-form .form-control:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.1);
+}
+
+.don-form .form-control:focus + .input-group-icon,
+.don-form .input-group:focus-within .input-group-icon {
+    color: var(--color-accent);
+}
+
+.don-form .form-control.error {
+    border-color: var(--color-danger);
+    box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1);
+}
+
+.don-form .form-control.success {
+    border-color: var(--color-success);
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.1);
+}
+
+.don-form textarea.form-control {
+    min-height: 80px;
+    resize: vertical;
+    padding-left: 42px;
+}
+
+.don-form select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236C757D' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.don-form .form-error-message {
+    display: none;
+    font-size: var(--font-size-xs);
+    color: var(--color-danger);
+    margin-top: 4px;
+    font-weight: var(--font-weight-medium);
+}
+
+.don-form .form-error-message.visible {
+    display: block;
+    animation: errorMessageIn 0.3s ease-out;
+}
+
+@keyframes errorMessageIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   15. BOUTON SOUMISSION
+   ============================================================ */
+.don-submit-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 30px;
+    font-size: var(--font-size-md);
+    margin-top: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.don-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.don-submit-btn.loading {
+    pointer-events: none;
+}
+
+.don-submit-btn .fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+.don-submit-btn i.fa-heart {
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* ============================================================
+   16. SECTION FAQ
+   ============================================================ */
+.don-faq-section {
+    background: var(--color-white);
+}
+
+.don-faq-accordion {
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================================
+   17. ACCORDÉON FAQ
+   ============================================================ */
+.don-faq-accordion .accordion-item {
+    border-bottom: 1px solid var(--color-light-gray);
+    background: var(--color-white);
+}
+
+.don-faq-accordion .accordion-item:last-child {
+    border-bottom: none;
+}
+
+.don-faq-accordion .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    transition: all var(--transition-fast);
+    user-select: none;
+    gap: var(--spacing-sm);
+}
+
+.don-faq-accordion .accordion-header span {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.don-faq-accordion .accordion-header span i {
+    color: var(--color-secondary);
+    font-size: 14px;
+}
+
+.don-faq-accordion .accordion-header > i {
+    transition: transform var(--transition-normal);
+    color: var(--color-gray);
+    font-size: 12px;
+}
+
+.don-faq-accordion .accordion-header:hover {
+    background: var(--color-off-white);
+}
+
+.don-faq-accordion .accordion-item.active .accordion-header > i {
+    transform: rotate(180deg);
+}
+
+.don-faq-accordion .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-slow);
+}
+
+.don-faq-accordion .accordion-item.active .accordion-content {
+    max-height: 300px;
+}
+
+.don-faq-accordion .accordion-body {
+    padding: var(--spacing-lg);
+    color: var(--color-gray-dark);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    border-top: 1px solid var(--color-light-gray);
+    background: var(--color-off-white);
+}
+
+/* ============================================================
+   18. SECTION CTA FINAL
+   ============================================================ */
+.don-cta-section {
+    background: var(--color-off-white);
+}
+
+.don-cta-card {
+    background: var(--gradient-hero);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-4xl) var(--spacing-3xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.don-cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 69, 0, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.don-cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -15%;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 209, 59, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.don-cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.don-cta-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background: var(--color-secondary-alpha);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    margin: 0 auto var(--spacing-lg);
+    animation: float 3s ease-in-out infinite;
+}
+
+.don-cta-title {
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-3xl));
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.don-cta-text {
+    font-size: var(--font-size-md);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: var(--line-height-relaxed);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.don-cta-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.don-cta-buttons .btn {
+    min-width: 180px;
+    justify-content: center;
+}
+
+.don-cta-buttons .btn-outline-white:hover {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    border-color: var(--color-secondary);
+}
+
+/* ============================================================
+   19. ANIMATIONS SPÉCIFIQUES
+   ============================================================ */
+.why-donate-section,
+.amounts-section,
+.payment-section,
+.don-form-section,
+.don-faq-section,
+.don-cta-section {
+    animation: donSectionFadeIn 0.6s ease-out both;
+}
+
+@keyframes donSectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation de sélection de montant */
+.donate-amount-card.selected {
+    animation: amountSelectedPulse 0.4s ease-out;
+}
+
+@keyframes amountSelectedPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ============================================================
+   20. MESSAGES TOAST
+   ============================================================ */
+.don-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: var(--z-index-toast);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    box-shadow: var(--shadow-xl);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.don-toast.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.don-toast.toast-success {
+    background: var(--color-success);
+    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.4);
+}
+
+.don-toast.toast-error {
+    background: var(--color-danger);
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4);
+}
+
+.don-toast.toast-info {
+    background: var(--color-info);
+    box-shadow: 0 10px 30px rgba(0, 163, 218, 0.4);
+}
+
+/* ============================================================
+   21. MEDIA QUERIES
+   ============================================================ */
+
+/* --- LAPTOP LARGE (≤ 1440px) --- */
+@media (max-width: 1440px) {
+    .why-donate-grid {
+        gap: var(--spacing-lg);
+    }
+    
+    .donate-amounts-grid {
+        gap: var(--spacing-md);
+    }
+}
+
+/* --- LAPTOP (≤ 1280px) --- */
+@media (max-width: 1280px) {
+    .why-donate-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .donate-amounts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .payment-methods-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- TABLETTE (≤ 768px) --- */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: calc(var(--navbar-height) + 2rem) 0 3rem;
+    }
+    
+    .page-hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .page-hero .breadcrumb {
+        font-size: 10px;
+    }
+    
+    .why-donate-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .donate-amounts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .donate-amount-value {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .payment-methods-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .don-form-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .don-tabs-nav {
+        gap: var(--spacing-xs);
+    }
+    
+    .don-tab-btn {
+        padding: 10px 18px;
+        font-size: var(--font-size-xs);
+    }
+    
+    .don-cta-card {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+    
+    .don-cta-buttons {
+        flex-direction: column;
+    }
+    
+    .don-cta-buttons .btn {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .don-toast {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        max-width: none;
+    }
+}
+
+/* --- MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+    .page-hero-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .page-hero-subtitle {
+        font-size: var(--font-size-xs);
+    }
+    
+    .why-donate-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-md);
+    }
+    
+    .donate-amounts-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .donate-amount-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .payment-method-icon {
+        width: 55px;
+        height: 55px;
+        font-size: var(--font-size-lg);
+    }
+    
+    .don-form-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-md);
+    }
+    
+    .don-cta-icon {
+        width: 60px;
+        height: 60px;
+        font-size: var(--font-size-xl);
+    }
+    
+    .don-cta-title {
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* --- MOBILE SMALL (≤ 375px) --- */
+@media (max-width: 375px) {
+    .don-form-card {
+        padding: var(--spacing-md);
+    }
+    
+    .don-tab-btn {
+        padding: 8px 14px;
+        font-size: 10px;
+    }
+}
+
+/* ============================================================
+   22. ACCESSIBILITÉ — RÉDUCTION DE MOUVEMENT
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .page-hero-title,
+    .page-hero-subtitle,
+    .why-donate-section,
+    .amounts-section,
+    .payment-section,
+    .don-form-section,
+    .don-faq-section,
+    .don-cta-section {
+        animation: none;
+    }
+    
+    .don-form-icon,
+    .don-cta-icon,
+    .don-submit-btn i.fa-heart {
+        animation: none;
+    }
+    
+    .donate-amount-card.selected {
+        animation: none;
+    }
+    
+    .why-donate-card:hover,
+    .donate-amount-card:hover,
+    .payment-method-card:hover {
+        transform: none;
+    }
+}
+
+/* ============================================================
+   FIN DU FICHIER DON.CSS
+   ============================================================ */

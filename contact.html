@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — CONTACT.HTML
+         Page Contact
+         Version : 1.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Page de contact complète avec
+                       formulaire, coordonnées, réseaux sociaux,
+                       carte et horaires de bureau
+         ============================================================ -->
+    
+    <!-- Métadonnées de base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Contact | HOPE CHILD-DRC</title>
+    <meta name="description" content="Contactez HOPE CHILD-DRC : email, téléphone, WhatsApp, adresse à Goma, Nord-Kivu, RDC. Envoyez-nous un message pour toute question ou partenariat.">
+    <meta name="keywords" content="HOPE CHILD-DRC, contact, email, téléphone, WhatsApp, Goma, Nord-Kivu, RDC, ONG">
+    <meta name="author" content="HOPE CHILD-DRC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hopechilddrc.org/contact">
+    <meta property="og:title" content="Contact | HOPE CHILD-DRC">
+    <meta property="og:description" content="Contactez HOPE CHILD-DRC pour toute question, partenariat ou demande d'information.">
+    <meta property="og:image" content="assets/images/logo/og-image.jpg">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | HOPE CHILD-DRC">
+    <meta name="twitter:description" content="Contactez HOPE CHILD-DRC pour toute question.">
+    <meta name="twitter:image" content="assets/images/logo/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact HOPE CHILD-DRC",
+        "url": "https://www.hopechilddrc.org/contact",
+        "mainEntity": {
+            "@type": "NGO",
+            "name": "HOPE CHILD-DRC",
+            "email": "hopechilddrc@gmail.com",
+            "telephone": "+243995349736",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Goma",
+                "addressRegion": "Nord-Kivu",
+                "addressCountry": "CD"
+            }
+        }
+    }
+    </script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Local -->
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Préchargement -->
+    <link rel="preload" href="assets/css/contact.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/contact.js" as="script">
+</head>
+<body>
+    
+    <!-- ============================================================
+         CONTENEUR NAVBAR (Injecté par layout.js)
+         ============================================================ -->
+    <div id="navbar-container"></div>
+    
+    <!-- ============================================================
+         CONTENU PRINCIPAL
+         ============================================================ -->
+    <main id="main-content" role="main">
+        
+        <!-- ============================================================
+             HERO + BREADCRUMB
+             ============================================================ -->
+        <section class="page-hero" id="page-hero" aria-label="Contact">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            Accueil
+                        </a>
+                        <span class="separator">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="current">Contact</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title">Contactez-Nous</h1>
+                    <p class="page-hero-subtitle">
+                        Nous sommes à votre écoute pour toute question, partenariat ou demande d'information
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 1 : FORMULAIRE + COORDONNÉES
+             ============================================================ -->
+        <section class="section contact-main-section" id="contact" aria-label="Formulaire et coordonnées">
+            <div class="container-xl">
+                
+                <div class="contact-grid">
+                    
+                    <!-- ============ FORMULAIRE ============ -->
+                    <div class="contact-form-wrapper reveal-left" data-aos="fade-right">
+                        <div class="contact-form-card">
+                            <div class="contact-form-header">
+                                <div class="contact-form-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h3 class="contact-form-title">Envoyez-nous un message</h3>
+                                <p class="contact-form-subtitle">
+                                    Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+                                </p>
+                            </div>
+                            
+                            <form class="contact-form" 
+                                id="contact-form" 
+                                name="contact" 
+                                method="POST" 
+                                data-netlify="true"
+                                netlify-honeypot="bot-field"
+                                action="/contact.html"
+                                novalidate>
+                                
+                                <!-- Champ caché obligatoire pour Netlify Forms -->
+                                <input type="hidden" name="form-name" value="contact">
+                                
+                                <!-- Anti-spam honeypot -->
+                                <p style="display: none;">
+                                    <label>Ne remplissez pas ce champ : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                                </p>
+                                
+                                <!-- Nom et Email -->
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-name" class="form-label">
+                                            Votre nom
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="input-group">
+                                            <span class="input-group-icon">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                            <input type="text" 
+                                                name="nom"
+                                                id="contact-name" 
+                                                class="form-control" 
+                                                placeholder="Votre nom complet" 
+                                                required 
+                                                autocomplete="name">
+                                        </div>
+                                        <span class="form-error-message" id="contact-name-error">Veuillez entrer votre nom</span>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="contact-email" class="form-label">
+                                            Votre email
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="input-group">
+                                            <span class="input-group-icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                            <input type="email" 
+                                                name="email"
+                                                id="contact-email" 
+                                                class="form-control" 
+                                                placeholder="Votre adresse email" 
+                                                required 
+                                                autocomplete="email">
+                                        </div>
+                                        <span class="form-error-message" id="contact-email-error">Veuillez entrer un email valide</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Téléphone et Sujet -->
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-phone" class="form-label">
+                                            Téléphone
+                                            <span class="optional">(optionnel)</span>
+                                        </label>
+                                        <div class="input-group">
+                                            <span class="input-group-icon">
+                                                <i class="fas fa-phone"></i>
+                                            </span>
+                                            <input type="tel" 
+                                                name="telephone"
+                                                id="contact-phone" 
+                                                class="form-control" 
+                                                placeholder="+243 ..." 
+                                                autocomplete="tel">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="contact-subject" class="form-label">
+                                            Sujet
+                                            <span class="required">*</span>
+                                        </label>
+                                        <div class="input-group">
+                                            <span class="input-group-icon">
+                                                <i class="fas fa-tag"></i>
+                                            </span>
+                                            <select name="sujet" id="contact-subject" class="form-control" required>
+                                                <option value="" disabled selected>Sélectionnez un sujet</option>
+                                                <option value="general">Demande générale</option>
+                                                <option value="partenariat">Partenariat</option>
+                                                <option value="don">Don</option>
+                                                <option value="benevolat">Bénévolat</option>
+                                                <option value="presse">Presse / Médias</option>
+                                                <option value="autre">Autre</option>
+                                            </select>
+                                        </div>
+                                        <span class="form-error-message" id="contact-subject-error">Veuillez sélectionner un sujet</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Message -->
+                                <div class="form-group">
+                                    <label for="contact-message" class="form-label">
+                                        Votre message
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="input-group input-group-textarea">
+                                        <span class="input-group-icon">
+                                            <i class="fas fa-comment"></i>
+                                        </span>
+                                        <textarea name="message"
+                                                id="contact-message" 
+                                                class="form-control" 
+                                                rows="6" 
+                                                placeholder="Écrivez votre message ici..." 
+                                                required 
+                                                minlength="10"></textarea>
+                                    </div>
+                                    <span class="form-error-message" id="contact-message-error">Veuillez entrer un message (minimum 10 caractères)</span>
+                                    <span class="form-char-count" id="contact-message-count">0 caractères</span>
+                                </div>
+                                
+                                <!-- Consentement -->
+                                <div class="form-group">
+                                    <label class="form-check">
+                                        <input type="checkbox" id="contact-consent" name="consentement" class="form-check-input" required>
+                                        <span class="form-check-label">
+                                            J'accepte que mes données soient utilisées pour traiter ma demande. *
+                                        </span>
+                                    </label>
+                                    <span class="form-error-message" id="contact-consent-error">Veuillez accepter le traitement de vos données</span>
+                                </div>
+                                
+                                <!-- Bouton -->
+                                <button type="submit" class="btn btn-primary btn-lg btn-block contact-submit-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Envoyer le message
+                                </button>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- ============ COORDONNÉES ============ -->
+                    <div class="contact-info-wrapper reveal-right" data-aos="fade-left">
+                        
+                        <!-- Carte coordonnées -->
+                        <div class="contact-info-card">
+                            <div class="contact-info-header">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-address-card"></i>
+                                </div>
+                                <h3 class="contact-info-title">Nos Coordonnées</h3>
+                            </div>
+                            
+                            <div class="contact-info-items">
+                                
+                                <!-- Adresse -->
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-info-item-content">
+                                        <span class="contact-info-item-label">Adresse</span>
+                                        <span class="contact-info-item-value">
+                                            Goma, Nord-Kivu<br>
+                                            République Démocratique du Congo
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-info-item-content">
+                                        <span class="contact-info-item-label">Email</span>
+                                        <a href="mailto:hopechilddrc@gmail.com" class="contact-info-item-value contact-info-link">
+                                            hopechilddrc@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Téléphone -->
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item-icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="contact-info-item-content">
+                                        <span class="contact-info-item-label">Téléphone</span>
+                                        <a href="tel:+243995349736" class="contact-info-item-value contact-info-link">
+                                            +243 995 349 736
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <!-- WhatsApp -->
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item-icon whatsapp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-info-item-content">
+                                        <span class="contact-info-item-label">WhatsApp</span>
+                                        <a href="https://wa.me/243995349736" class="contact-info-item-value contact-info-link" target="_blank" rel="noopener noreferrer">
+                                            +243 995 349 736
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Horaires -->
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="contact-info-item-content">
+                                        <span class="contact-info-item-label">Horaires</span>
+                                        <span class="contact-info-item-value">
+                                            Lundi - Vendredi : 08h00 - 17h00<br>
+                                            Samedi : 09h00 - 13h00
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Réseaux sociaux -->
+                        <div class="contact-social-card">
+                            <h4 class="contact-social-title">
+                                <i class="fas fa-share-alt"></i>
+                                Suivez-nous sur les réseaux sociaux
+                            </h4>
+                            <p class="contact-social-text">
+                                Restez informés de nos actions et de nos actualités
+                            </p>
+                            <div class="social-icons contact-social-icons">
+                                <a href="https://www.facebook.com/profile.php?id=61576466769997" class="social-icon facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/hopechild-drc-801a04362" class="social-icon linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://youtube.com/@hopechilddrc" class="social-icon youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="https://x.com/HopechildDrc" class="social-icon twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" title="Twitter / X">
+                                    <i class="fab fa-x-twitter"></i>
+                                </a>
+                                <a href="https://wa.me/243995349736" class="social-icon whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 2 : CARTE
+             ============================================================ -->
+        <section class="section contact-map-section" id="carte" aria-label="Carte de localisation">
+            <div class="container-xl">
+                <div class="contact-map-container reveal-up" data-aos="fade-up">
+                    <div class="contact-map-placeholder" id="contact-map">
+                        <div class="map-placeholder-content">
+                            <div class="map-placeholder-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h3 class="map-placeholder-title">Notre Localisation</h3>
+                            <p class="map-placeholder-text">
+                                Goma, Province du Nord-Kivu<br>
+                                République Démocratique du Congo
+                            </p>
+                            <a href="https://maps.google.com/?q=Goma,Nord-Kivu,RDC" 
+                               class="btn btn-primary btn-md" 
+                               target="_blank" 
+                               rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                Ouvrir dans Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 3 : CTA
+             ============================================================ -->
+        <section class="section contact-cta-section" id="cta" aria-label="Appel à l'action">
+            <div class="container-xl">
+                <div class="contact-cta-card reveal-up" data-aos="fade-up">
+                    <div class="contact-cta-content">
+                        <div class="contact-cta-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h2 class="contact-cta-title">
+                            Vous souhaitez soutenir notre mission ?
+                        </h2>
+                        <p class="contact-cta-text">
+                            Votre générosité nous aide à protéger les enfants vulnérables, 
+                            à les éduquer et à renforcer la résilience des communautés en RDC.
+                        </p>
+                        <div class="contact-cta-buttons">
+                            <a href="don.html" class="btn btn-accent btn-lg">
+                                <i class="fas fa-heart"></i>
+                                Faire un Don
+                            </a>
+                            <a href="partenaires.html" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-handshake"></i>
+                                Devenir Partenaire
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ============================================================
+         CONTENEUR FOOTER (Injecté par layout.js)
+         ============================================================ -->
+    <div id="footer-container"></div>
+    
+    <!-- ============================================================
+         SCRIPTS JAVASCRIPT
+         ============================================================ -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

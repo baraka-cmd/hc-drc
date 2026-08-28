@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <!-- ============================================================
+         HOPE CHILD-DRC — IMPACT.HTML
+         Page Notre Impact
+         Version : 1.0.0
+         Auteur : HOPE CHILD-DRC Web Team
+         Description : Page d'impact avec compteurs animés,
+                       graphiques, timeline des réalisations
+                       et appel à l'action
+         ============================================================ -->
+    
+    <!-- Métadonnées de base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Notre Impact | HOPE CHILD-DRC</title>
+    <meta name="description" content="Découvrez l'impact de HOPE CHILD-DRC : 70+ acteurs formés, 35 filles autonomisées, 3 projets réalisés, 3 zones d'intervention depuis 2021.">
+    <meta name="keywords" content="HOPE CHILD-DRC, impact, résultats, statistiques, réalisations, ONG RDC, Goma, Nord-Kivu">
+    <meta name="author" content="HOPE CHILD-DRC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#08264B">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hopechilddrc.org/impact">
+    <meta property="og:title" content="Notre Impact | HOPE CHILD-DRC">
+    <meta property="og:description" content="Découvrez l'impact concret de HOPE CHILD-DRC depuis 2021.">
+    <meta property="og:image" content="assets/images/logo/og-image.jpg">
+    <meta property="og:site_name" content="HOPE CHILD-DRC">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notre Impact | HOPE CHILD-DRC">
+    <meta name="twitter:description" content="Découvrez l'impact concret de HOPE CHILD-DRC.">
+    <meta name="twitter:image" content="assets/images/logo/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Notre Impact - HOPE CHILD-DRC",
+        "url": "https://www.hopechilddrc.org/impact",
+        "description": "Impact de HOPE CHILD-DRC : 70+ acteurs formés, 35 filles autonomisées, 3 projets réalisés."
+    }
+    </script>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Local -->
+    <link rel="stylesheet" href="assets/vendors/fontawesome-free-7.2.0/css/all.min.css">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/impact.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Préchargement -->
+    <link rel="preload" href="assets/css/impact.css" as="style">
+    <link rel="preload" href="assets/js/layout.js" as="script">
+    <link rel="preload" href="assets/js/impact.js" as="script">
+</head>
+<body>
+    
+    <!-- ============================================================
+         CONTENEUR NAVBAR (Injecté par layout.js)
+         ============================================================ -->
+    <div id="navbar-container"></div>
+    
+    <!-- ============================================================
+         CONTENU PRINCIPAL
+         ============================================================ -->
+    <main id="main-content" role="main">
+        
+        <!-- ============================================================
+             HERO + BREADCRUMB
+             ============================================================ -->
+        <section class="page-hero" id="page-hero" aria-label="Notre Impact">
+            <div class="page-hero-overlay"></div>
+            <div class="container-xl">
+                <div class="page-hero-content">
+                    <!-- Breadcrumb -->
+                    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            Accueil
+                        </a>
+                        <span class="separator">
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                        <span class="current">Notre Impact</span>
+                    </nav>
+                    
+                    <h1 class="page-hero-title">Notre Impact</h1>
+                    <p class="page-hero-subtitle">
+                        Des résultats concrets depuis notre création en 2021
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 1 : COMPTEURS ANIMÉS
+             ============================================================ -->
+        <section class="section impact-counters-section" id="compteurs" aria-label="Compteurs d'impact">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">En chiffres</span>
+                    <h2 class="section-title">Notre impact en quelques chiffres</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">
+                        Chaque chiffre représente une vie transformée
+                    </p>
+                </div>
+                
+                <div class="impact-counters-grid">
+                    
+                    <!-- Compteur 1 -->
+                    <div class="impact-counter-card reveal-up" data-aos="fade-up" data-delay="0">
+                        <div class="impact-counter-icon" style="background: rgba(255, 69, 0, 0.1); color: #FF4500;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="impact-counter-number">
+                            <span class="counter" data-target="70" data-duration="2000">0</span>
+                            <span class="counter-suffix">+</span>
+                        </div>
+                        <div class="impact-counter-label">Acteurs Humanitaires Formés</div>
+                        <div class="impact-counter-detail">ONG partenaires FHOVE, VIZAZI CONGO et AVDA</div>
+                    </div>
+                    
+                    <!-- Compteur 2 -->
+                    <div class="impact-counter-card reveal-up" data-aos="fade-up" data-delay="100">
+                        <div class="impact-counter-icon" style="background: rgba(255, 209, 59, 0.15); color: #E6B800;">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <div class="impact-counter-number">
+                            <span class="counter" data-target="35" data-duration="2000">0</span>
+                        </div>
+                        <div class="impact-counter-label">Jeunes Filles Autonomisées</div>
+                        <div class="impact-counter-detail">Formées et équipées en informatique</div>
+                    </div>
+                    
+                    <!-- Compteur 3 -->
+                    <div class="impact-counter-card reveal-up" data-aos="fade-up" data-delay="200">
+                        <div class="impact-counter-icon" style="background: rgba(46, 204, 113, 0.12); color: #27AE60;">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="impact-counter-number">
+                            <span class="counter" data-target="3" data-duration="2000">0</span>
+                        </div>
+                        <div class="impact-counter-label">Projets Réalisés</div>
+                        <div class="impact-counter-detail">Protection, Éducation, Agriculture</div>
+                    </div>
+                    
+                    <!-- Compteur 4 -->
+                    <div class="impact-counter-card reveal-up" data-aos="fade-up" data-delay="300">
+                        <div class="impact-counter-icon" style="background: rgba(0, 163, 218, 0.12); color: #00A3DA;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="impact-counter-number">
+                            <span class="counter" data-target="3" data-duration="2000">0</span>
+                        </div>
+                        <div class="impact-counter-label">Zones d'Intervention</div>
+                        <div class="impact-counter-detail">Rutshuru, Nyiragongo, Masisi</div>
+                    </div>
+                    
+                    <!-- Compteur 5 -->
+                    <div class="impact-counter-card reveal-up" data-aos="fade-up" data-delay="400">
+                        <div class="impact-counter-icon" style="background: rgba(155, 89, 182, 0.12); color: #8E44AD;">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="impact-counter-number">
+                            <span class="counter" data-target="2021" data-duration="2000">0</span>
+                        </div>
+                        <div class="impact-counter-label">Année de Création</div>
+                        <div class="impact-counter-detail">25 mai 2021</div>
+                    </div>
+                    
+                    <!-- Compteur 6 -->
+                    <div class="impact-counter-card reveal-up" data-aos="fade-up" data-delay="500">
+                        <div class="impact-counter-icon" style="background: rgba(52, 152, 219, 0.12); color: #2980B9;">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <div class="impact-counter-number">
+                            <span class="counter" data-target="6" data-duration="2000">0</span>
+                        </div>
+                        <div class="impact-counter-label">Domaines d'Intervention</div>
+                        <div class="impact-counter-detail">Protection à Formation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 2 : GRAPHIQUES
+             ============================================================ -->
+        <section class="section impact-charts-section" id="graphiques" aria-label="Graphiques d'impact">
+            <div class="container-xl">
+                <div class="section-header">
+                    <span class="section-label">Visualisation</span>
+                    <h2 class="section-title">Nos données en graphiques</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="charts-grid">
+                    
+                    <!-- Graphique 1 : Bénéficiaires par domaine -->
+                    <div class="chart-card reveal-up" data-aos="fade-up" data-delay="0">
+                        <h3 class="chart-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Bénéficiaires par Domaine
+                        </h3>
+                        <div class="chart-container" id="chart-domaines">
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label">Protection</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill" style="width: 85%; background: #FF4500;"></div>
+                                </div>
+                                <span class="chart-bar-value">85%</span>
+                            </div>
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label">Éducation</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill" style="width: 65%; background: #FFD13B;"></div>
+                                </div>
+                                <span class="chart-bar-value">65%</span>
+                            </div>
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label">Sécurité Alimentaire</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill" style="width: 45%; background: #2ECC71;"></div>
+                                </div>
+                                <span class="chart-bar-value">45%</span>
+                            </div>
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label">Santé & Nutrition</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill" style="width: 55%; background: #00A3DA;"></div>
+                                </div>
+                                <span class="chart-bar-value">55%</span>
+                            </div>
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label">WASH</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill" style="width: 35%; background: #3498DB;"></div>
+                                </div>
+                                <span class="chart-bar-value">35%</span>
+                            </div>
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label">Formation Pro.</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill" style="width: 50%; background: #9B59B6;"></div>
+                                </div>
+                                <span class="chart-bar-value">50%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Graphique 2 : Répartition par zone -->
+                    <div class="chart-card reveal-up" data-aos="fade-up" data-delay="150">
+                        <h3 class="chart-title">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Répartition par Zone
+                        </h3>
+                        <div class="chart-container chart-doughnut-container" id="chart-zones">
+                            <div class="chart-doughnut">
+                                <div class="chart-doughnut-center">
+                                    <span class="chart-doughnut-total">3</span>
+                                    <span class="chart-doughnut-label">Zones</span>
+                                </div>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="chart-legend-item">
+                                    <span class="chart-legend-dot" style="background: #FF4500;"></span>
+                                    <span class="chart-legend-label">Rutshuru</span>
+                                    <span class="chart-legend-value">40%</span>
+                                </div>
+                                <div class="chart-legend-item">
+                                    <span class="chart-legend-dot" style="background: #FFD13B;"></span>
+                                    <span class="chart-legend-label">Nyiragongo</span>
+                                    <span class="chart-legend-value">35%</span>
+                                </div>
+                                <div class="chart-legend-item">
+                                    <span class="chart-legend-dot" style="background: #2ECC71;"></span>
+                                    <span class="chart-legend-label">Masisi</span>
+                                    <span class="chart-legend-value">25%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 3 : TIMELINE DES RÉALISATIONS
+             ============================================================ -->
+        <section class="section impact-timeline-section" id="timeline" aria-label="Timeline des réalisations">
+            <div class="container-lg">
+                <div class="section-header">
+                    <span class="section-label">Notre parcours</span>
+                    <h2 class="section-title">Nos réalisations majeures</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">
+                        Les moments clés qui ont marqué notre histoire
+                    </p>
+                </div>
+                
+                <div class="timeline" id="impact-timeline">
+                    
+                    <!-- Événement 1 -->
+                    <div class="timeline-item reveal-left" data-aos="fade-right">
+                        <div class="timeline-dot">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="timeline-date">25 Mai 2021</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Création de HOPE CHILD-DRC</h3>
+                            <p class="timeline-text">
+                                Fondation de l'organisation à Goma, Province du Nord-Kivu, RDC. 
+                                Une équipe passionnée se mobilise pour protéger les enfants vulnérables.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Événement 2 -->
+                    <div class="timeline-item reveal-right" data-aos="fade-left">
+                        <div class="timeline-dot">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Premier projet de protection à Rutshuru</h3>
+                            <p class="timeline-text">
+                                Lancement du projet de renforcement des mécanismes communautaires 
+                                de protection de l'enfant. Formation de 70 acteurs humanitaires 
+                                des ONG partenaires FHOVE, VIZAZI CONGO et AVDA.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Événement 3 -->
+                    <div class="timeline-item reveal-left" data-aos="fade-right">
+                        <div class="timeline-dot">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Autonomisation des filles à Nyiragongo</h3>
+                            <p class="timeline-text">
+                                35 jeunes filles mineures formées et équipées en machines ordinateurs. 
+                                Restauration de leur dignité et de leur statut social au sein 
+                                de la communauté.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Événement 4 -->
+                    <div class="timeline-item reveal-right" data-aos="fade-left">
+                        <div class="timeline-dot">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="timeline-date">2024</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Résilience climatique à Masisi</h3>
+                            <p class="timeline-text">
+                                Début du projet de renforcement de la résilience climatique pour 
+                                une agriculture durable à Bweremana. Un projet en cours qui 
+                                transforme la communauté.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================================================
+             SECTION 4 : CTA
+             ============================================================ -->
+        <section class="section impact-cta-section" id="cta" aria-label="Appel à l'action">
+            <div class="container-xl">
+                <div class="impact-cta-card reveal-up" data-aos="fade-up">
+                    <div class="impact-cta-content">
+                        <div class="impact-cta-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h2 class="impact-cta-title">
+                            Ensemble, continuons d'avoir un impact
+                        </h2>
+                        <p class="impact-cta-text">
+                            Ces résultats sont le fruit de votre soutien. Rejoignez-nous pour 
+                            amplifier notre impact et toucher encore plus de vies en RDC.
+                        </p>
+                        <div class="impact-cta-buttons">
+                            <a href="don.html" class="btn btn-accent btn-lg">
+                                <i class="fas fa-heart"></i>
+                                Faire un Don
+                            </a>
+                            <a href="projets.html" class="btn btn-outline-white btn-lg">
+                                <i class="fas fa-project-diagram"></i>
+                                Voir nos Projets
+                            </a>
+                            <a href="contact.html" class="btn btn-outline-white btn-lg">
+                                <i class="fas fa-envelope"></i>
+                                Nous Contacter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- ============================================================
+         CONTENEUR FOOTER (Injecté par layout.js)
+         ============================================================ -->
+    <div id="footer-container"></div>
+    
+    <!-- ============================================================
+         SCRIPTS JAVASCRIPT
+         ============================================================ -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/impact.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

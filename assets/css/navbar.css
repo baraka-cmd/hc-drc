@@ -1,0 +1,900 @@
+/* ============================================================
+   HOPE CHILD-DRC — NAVBAR.CSS
+   Styles Spécifiques de la Barre de Navigation
+   Version : 1.0.1 (Responsive Fixes)
+   Auteur : HOPE CHILD-DRC Web Team
+   Description : Tous les styles de la navbar,
+                 du loader, du scroll indicator,
+                 du menu mobile et des dropdowns
+   ============================================================ */
+
+/* ============================================================
+   TABLE DES MATIÈRES
+   ------------------------------------------------------------
+   1.  NAVBAR PRINCIPALE
+   2.  LOGO
+   3.  MENU PRINCIPAL
+   4.  LIENS DE NAVIGATION
+   5.  DROPDOWNS
+   6.  BOUTON DON
+   7.  SÉLECTEUR DE LANGUE
+   8.  HAMBURGER MOBILE
+   9.  OVERLAY MOBILE
+   10. SCROLL EFFECT
+   11. SCROLL INDICATOR
+   12. ANIMATIONS
+   13. MEDIA QUERIES
+   ============================================================ */
+
+/* ============================================================
+   1. NAVBAR PRINCIPALE
+   ============================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: var(--navbar-height, 80px);
+    background: var(--navbar-bg, #1a2a3a);
+    z-index: var(--z-index-fixed, 1000);
+    transition: all var(--transition-normal, 0.3s ease);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    will-change: transform, height, background;
+}
+
+.navbar.scrolled {
+    height: var(--navbar-height-scrolled, 95px);
+    background: var(--navbar-bg-scrolled, rgba(26, 42, 58, 0.95));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--navbar-shadow, 0 4px 20px rgba(0, 0, 0, 0.15));
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 100%; /* CHANGÉ : Enlève la limite stricte de largeur pour exploiter tout l'écran */
+    margin: 0 auto;
+    padding: 0 1rem; /* CHANGÉ : Réduit le padding gauche/droite (était var(--spacing-lg)) */
+    gap: 0.5rem; /* CHANGÉ : Réduit l'espace vide entre le logo et le menu */
+    position: relative;
+}
+
+/* ============================================================
+   2. LOGO
+   ============================================================ */
+/* NAVBAR LOGO — VERTICAL (Logo en haut, texte en dessous) */
+.navbar-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    flex-shrink: 0;
+    padding: 4px 0;
+}
+
+.navbar-logo-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-secondary, #ffd13b);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-normal, 0.3s ease);
+}
+
+.navbar-logo:hover .navbar-logo-img {
+    transform: scale(1.05);
+    border-color: var(--color-accent, #ff4500);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15), 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Fallback icône si image ne charge pas */
+.navbar-logo-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid var(--color-secondary, #ffd13b);
+}
+
+.navbar-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    line-height: 1.1;
+}
+
+.navbar-logo-title {
+    font-family: var(--font-primary, sans-serif);
+    font-size: var(--font-size-sm, 0.875rem);
+    font-weight: var(--font-weight-extrabold, 800);
+    color: var(--color-white, #ffffff);
+    letter-spacing: var(--letter-spacing-wide, 0.05em);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.navbar-logo-subtitle {
+    font-size: 10px;
+    font-weight: var(--font-weight-light, 300);
+    color: var(--color-secondary, #ffd13b);
+    letter-spacing: var(--letter-spacing-wider, 0.1em);
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+/* ============================================================
+   3. MENU PRINCIPAL
+   ============================================================ */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* ============================================================
+   4. LIENS DE NAVIGATION
+   ============================================================ */
+.navbar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs, 0.5rem);
+    padding: var(--spacing-sm, 0.5rem) var(--spacing-md, 1rem);
+    font-family: var(--font-primary, sans-serif);
+    font-size: var(--font-size-sm, 0.875rem);
+    font-weight: var(--font-weight-medium, 500);
+    color: var(--navbar-text, #ffffff);
+    text-decoration: none;
+    border-radius: var(--border-radius-md, 8px);
+    transition: all var(--transition-normal, 0.3s ease);
+    position: relative;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+}
+
+.navbar-link i {
+    font-size: var(--font-size-sm, 0.875rem);
+    transition: all var(--transition-normal, 0.3s ease);
+}
+
+.navbar-link .fa-chevron-down {
+    font-size: 10px;
+    margin-left: 2px;
+    opacity: 0.7;
+    transition: transform var(--transition-normal, 0.3s ease);
+}
+
+/* Effet de soulignement animé (Desktop uniquement) */
+@media (min-width: 769px) {
+    .navbar-link::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--gradient-secondary, #ffd13b);
+        border-radius: var(--border-radius-pill, 9999px);
+        transition: width var(--transition-normal, 0.3s ease);
+    }
+
+    .navbar-link:hover::after,
+    .navbar-link.active::after {
+        width: 60%;
+    }
+}
+
+/* États hover et actif */
+.navbar-link:hover,
+.navbar-link.active {
+    color: var(--navbar-text-hover, #ffd13b);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-link:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Icône dans le lien */
+.navbar-link > i:first-child {
+    color: var(--color-secondary, #ffd13b);
+    font-size: 14px;
+    width: 18px;
+    text-align: center;
+}
+
+.navbar-link:hover > i:first-child {
+    animation: iconBounce 0.5s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* ============================================================
+   5. DROPDOWNS (Version Desktop par défaut)
+   ============================================================ */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    min-width: 260px;
+    background: var(--color-white, #ffffff);
+    border-radius: var(--border-radius-lg, 12px);
+    box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+    padding: var(--spacing-sm, 0.5rem);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal, 0.3s ease);
+    z-index: var(--z-index-dropdown, 1005);
+    list-style: none;
+    margin: 0;
+}
+
+/* Flèche du dropdown en Desktop */
+@media (min-width: 769px) {
+    .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 12px;
+        height: 12px;
+        background: var(--color-white, #ffffff);
+        border-radius: 2px;
+    }
+
+    /* États ouverts en Desktop */
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown.open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Items du dropdown */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm, 0.5rem);
+    padding: var(--spacing-sm, 0.5rem) var(--spacing-md, 1rem);
+    font-family: var(--font-primary, sans-serif);
+    font-size: var(--font-size-sm, 0.875rem);
+    font-weight: var(--font-weight-normal, 400);
+    color: var(--color-dark, #222222);
+    text-decoration: none;
+    border-radius: var(--border-radius-md, 8px);
+    transition: all var(--transition-fast, 0.15s ease);
+    position: relative;
+}
+
+.dropdown-item i {
+    width: 22px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-primary, #1a2a3a);
+    transition: all var(--transition-fast, 0.15s ease);
+    flex-shrink: 0;
+}
+
+.dropdown-item:hover {
+    background: var(--color-light, #f8f9fa);
+    color: var(--color-primary, #1a2a3a);
+    padding-left: var(--spacing-lg, 1.5rem);
+}
+
+.dropdown-item:hover i {
+    color: var(--color-secondary, #ffd13b);
+    transform: scale(1.2);
+}
+
+/* Séparateur */
+.dropdown-divider {
+    height: 1px;
+    background: var(--color-light-gray, #e5e7eb);
+    margin: var(--spacing-xs, 0.25rem) var(--spacing-sm, 0.5rem);
+}
+
+/* ============================================================
+   6. BOUTON DON
+   ============================================================ */
+.navbar-donate {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs, 0.5rem);
+    padding: var(--btn-padding-sm, 0.5rem) var(--btn-padding-md, 1.25rem);
+    background: var(--gradient-accent, linear-gradient(135deg, #ff4500, #ff6b00));
+    color: var(--color-white, #ffffff) !important;
+    font-family: var(--font-primary, sans-serif);
+    font-size: var(--font-size-sm, 0.875rem);
+    font-weight: var(--font-weight-bold, 700);
+    text-decoration: none;
+    border-radius: var(--border-radius-pill, 9999px);
+    transition: all var(--transition-normal, 0.3s ease);
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.35);
+    animation: donatePulse 3s ease-in-out infinite;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+.navbar-donate:hover {
+    background: var(--gradient-button-hover, linear-gradient(135deg, #ff6b00, #ff4500));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.5);
+    color: var(--color-white, #ffffff) !important;
+}
+
+.navbar-donate i {
+    font-size: var(--font-size-md, 1rem);
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes donatePulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(255, 69, 0, 0.35);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(255, 69, 0, 0.55);
+    }
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.15); }
+    80% { transform: scale(1); }
+}
+
+.navbar-donate::after {
+    display: none;
+}
+
+/* ============================================================
+   7. SÉLECTEUR DE LANGUE
+   ============================================================ */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px;
+    border-radius: var(--border-radius-pill, 9999px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.language-btn {
+    padding: 5px 12px;
+    font-family: var(--font-primary, sans-serif);
+    font-size: 11px;
+    font-weight: var(--font-weight-bold, 700);
+    color: rgba(255, 255, 255, 0.6);
+    border: none;
+    background: transparent;
+    border-radius: var(--border-radius-pill, 9999px);
+    cursor: pointer;
+    transition: all var(--transition-fast, 0.15s ease);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide, 0.05em);
+    position: relative;
+}
+
+.language-btn:hover {
+    color: var(--color-white, #ffffff);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.language-btn.active {
+    background: var(--color-secondary, #ffd13b);
+    color: var(--color-primary, #1a2a3a);
+    box-shadow: 0 2px 8px rgba(255, 209, 59, 0.4);
+}
+
+.language-btn.active:hover {
+    color: var(--color-primary, #1a2a3a);
+    background: var(--color-secondary, #ffd13b);
+}
+
+/* ============================================================
+   8. HAMBURGER MOBILE
+   ============================================================ */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: var(--border-radius-md, 8px);
+    cursor: pointer;
+    transition: all var(--transition-normal, 0.3s ease);
+    position: relative;
+    z-index: calc(var(--z-index-fixed, 1000) + 2);
+    flex-shrink: 0;
+}
+
+.navbar-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-white, #ffffff);
+    border-radius: 2px;
+    transition: all var(--transition-normal, 0.3s ease);
+    transform-origin: center;
+}
+
+/* Animation hamburger → X */
+.navbar-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.navbar-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   9. OVERLAY MOBILE
+   ============================================================ */
+.navbar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: calc(var(--z-index-fixed, 1000) - 1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal, 0.3s ease);
+}
+
+.navbar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============================================================
+   10. SCROLL EFFECT
+   ============================================================ */
+.navbar.scrolled .navbar-link {
+    font-size: var(--font-size-xs, 0.75rem);
+}
+
+.navbar.scrolled .navbar-donate {
+    padding: 6px 16px;
+    font-size: var(--font-size-xs, 0.75rem);
+}
+
+/* ============================================================
+   11. SCROLL INDICATOR
+   ============================================================ */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: var(--gradient-secondary, #ffd13b);
+    z-index: calc(var(--z-index-fixed, 1000) + 1);
+    transition: width 0.1s linear;
+    border-radius: 0 var(--border-radius-pill, 9999px) var(--border-radius-pill, 9999px) 0;
+    pointer-events: none;
+}
+
+/* ============================================================
+   12. ANIMATIONS
+   ============================================================ */
+.navbar {
+    animation: navbarSlideDown 0.5s ease-out;
+}
+
+@keyframes navbarSlideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-item {
+        animation: dropdownItemFade 0.3s ease-out both;
+    }
+
+    .dropdown:hover .dropdown-item:nth-child(1) { animation-delay: 0.05s; }
+    .dropdown:hover .dropdown-item:nth-child(2) { animation-delay: 0.1s; }
+    .dropdown:hover .dropdown-item:nth-child(3) { animation-delay: 0.15s; }
+    .dropdown:hover .dropdown-item:nth-child(4) { animation-delay: 0.2s; }
+    .dropdown:hover .dropdown-item:nth-child(5) { animation-delay: 0.25s; }
+    .dropdown:hover .dropdown-item:nth-child(6) { animation-delay: 0.3s; }
+    .dropdown:hover .dropdown-item:nth-child(7) { animation-delay: 0.35s; }
+}
+
+@keyframes dropdownItemFade {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ============================================================
+   13. MEDIA QUERIES
+   ============================================================ */
+
+/* --- LARGE DESKTOP (≤ 1440px) --- */
+@media (max-width: 1440px) {
+    .navbar-link {
+        padding: var(--spacing-xs, 0.25rem) var(--spacing-sm, 0.5rem);
+        font-size: var(--font-size-xs, 0.75rem);
+    }
+
+    .navbar-logo-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .navbar-logo-title {
+        font-size: var(--font-size-md, 1rem);
+    }
+}
+
+/* --- LAPTOP (≤ 1280px) --- */
+@media (max-width: 1280px) {
+    .navbar-menu {
+        gap: 0;
+    }
+
+    .navbar-link {
+        padding: var(--spacing-xs, 0.25rem) var(--spacing-sm, 0.5rem);
+        font-size: 11px;
+        gap: 4px;
+    }
+
+    .navbar-link > i:first-child {
+        font-size: 12px;
+        width: 14px;
+    }
+
+    .navbar-donate {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .language-btn {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+}
+
+/* --- LAPTOP SMALL (≤ 1024px) --- */
+@media (max-width: 1024px) {
+    .navbar-logo-text {
+        display: none;
+    }
+
+    .navbar-logo-img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .navbar-link {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+
+    .navbar-donate {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .language-btn {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    .dropdown-menu {
+        min-width: 220px;
+    }
+}
+
+/* ============================================================
+   CORRECTIONS DE NAVIGATION ET DROPDOWNS MOBILES (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+    .navbar {
+        height: var(--navbar-height-mobile, 65px);
+    }
+
+    .navbar.scrolled {
+        height: var(--navbar-height-mobile, 65px);
+    }
+
+    .navbar-container {
+        padding: 0 var(--spacing-md, 1rem);
+        gap: var(--spacing-xs, 0.5rem);
+    }
+
+    .navbar-logo-img {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* Activation du Hamburger */
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* Menu mobile coulissant */
+    .navbar-menu {
+        position: fixed;
+        top: var(--navbar-height-mobile, 65px);
+        left: -100%;
+        width: 85%;
+        max-width: 360px;
+        height: calc(100vh - var(--navbar-height-mobile, 65px));
+        height: calc(100dvh - var(--navbar-height-mobile, 65px));
+        background: var(--color-primary, #1a2a3a);
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--spacing-md, 1rem) var(--spacing-md, 1rem) var(--spacing-2xl, 2.5rem);
+        gap: var(--spacing-xs, 0.5rem);
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        z-index: var(--z-index-dropdown, 1005);
+        box-shadow: var(--shadow-2xl, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-menu.active {
+        left: 0;
+    }
+
+    .navbar-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar-item:last-child {
+        border-bottom: none;
+    }
+
+    .navbar-link {
+        width: 100%;
+        padding: var(--spacing-md, 0.85rem) var(--spacing-sm, 0.5rem);
+        font-size: var(--font-size-sm, 0.9rem);
+        color: rgba(255, 255, 255, 0.9);
+        justify-content: flex-start;
+        border-radius: var(--border-radius-md, 8px);
+        gap: var(--spacing-sm, 0.5rem);
+    }
+
+    .navbar-link:hover,
+    .navbar-link.active {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--color-secondary, #ffd13b);
+    }
+
+    .navbar-link > i:first-child {
+        font-size: 16px;
+        width: 24px;
+        color: var(--color-secondary, #ffd13b);
+    }
+
+    .navbar-link .fa-chevron-down {
+        margin-left: auto;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.open > .navbar-link .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    /* Submenus / Dropdowns mobiles intégrés */
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none !important;
+        opacity: 1;
+        visibility: visible;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: var(--border-radius-md, 8px);
+        box-shadow: none;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+        min-width: 100%;
+        margin: 0;
+    }
+
+    .dropdown-menu::before {
+        display: none !important;
+    }
+
+    /* Ouverture via classe .open active au clic JS */
+    .dropdown.open > .dropdown-menu {
+        max-height: 500px;
+        padding: var(--spacing-xs, 0.25rem) 0;
+        margin-bottom: var(--spacing-xs, 0.25rem);
+    }
+
+    .dropdown-item {
+        color: rgba(255, 255, 255, 0.8);
+        padding: var(--spacing-sm, 0.6rem) var(--spacing-md, 1rem) var(--spacing-sm, 0.6rem) var(--spacing-xl, 2rem);
+        font-size: var(--font-size-xs, 0.8rem);
+        border-radius: var(--border-radius-sm, 4px);
+    }
+
+    .dropdown-item i {
+        color: var(--color-secondary, #ffd13b);
+        font-size: 13px;
+    }
+
+    .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--color-secondary, #ffd13b);
+        padding-left: calc(var(--spacing-xl, 2rem) + 4px);
+    }
+
+    .dropdown-divider {
+        background: rgba(255, 255, 255, 0.08);
+        margin: var(--spacing-xs, 0.25rem) var(--spacing-md, 1rem);
+    }
+
+    /* Bouton Don mobile */
+    .navbar-donate {
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--spacing-md, 1rem);
+        padding: var(--spacing-md, 0.75rem);
+        font-size: var(--font-size-sm, 0.875rem);
+        animation: none;
+        border-radius: var(--border-radius-md, 8px);
+    }
+
+    /* Sélecteur langue mobile */
+    .language-switcher {
+        width: 100%;
+        justify-content: center;
+        margin-top: var(--spacing-xs, 0.5rem);
+        padding: 4px;
+        gap: var(--spacing-xs, 0.5rem);
+    }
+
+    .language-btn {
+        flex: 1;
+        text-align: center;
+        padding: var(--spacing-xs, 0.4rem) var(--spacing-md, 1rem);
+        font-size: var(--font-size-xs, 0.75rem);
+    }
+}
+
+/* --- MOBILE SMALL (≤ 480px) --- */
+@media (max-width: 480px) {
+    .navbar {
+        height: 56px;
+    }
+
+    .navbar.scrolled {
+        height: 56px;
+    }
+
+    .navbar-container {
+        padding: 0 var(--spacing-sm, 0.75rem);
+    }
+
+    .navbar-logo-img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .navbar-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .navbar-toggle span {
+        width: 18px;
+    }
+
+    .navbar-menu {
+        top: 56px;
+        height: calc(100vh - 56px);
+        height: calc(100dvh - 56px);
+        width: 100%;
+        max-width: 100%;
+        padding: var(--spacing-md, 1rem);
+    }
+
+    .navbar-link {
+        padding: var(--spacing-sm, 0.5rem) var(--spacing-md, 0.75rem);
+        font-size: var(--font-size-xs, 0.8rem);
+    }
+
+    .navbar-donate {
+        padding: var(--spacing-sm, 0.6rem);
+        font-size: var(--font-size-xs, 0.8rem);
+    }
+
+    .language-btn {
+        font-size: 10px;
+        padding: 5px;
+    }
+}
+
+/* --- MOBILE EXTRA SMALL (≤ 375px) --- */
+@media (max-width: 375px) {
+    .navbar-logo-img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .navbar-toggle {
+        width: 34px;
+        height: 34px;
+    }
+
+    .navbar-link {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+}
+
+/* ============================================================
+   FIN DU FICHIER NAVBAR.CSS
+   ============================================================ */
